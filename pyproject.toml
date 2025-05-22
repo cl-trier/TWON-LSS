@@ -1,0 +1,17 @@
+[project]
+name = "twon-lss"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Simon Münker", email = "muenker@uni-trier.de" }
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+twon-lss = "twon_lss:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
