@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from twon-lss!")
+from . import network
+
+__all__ = ["network"]
