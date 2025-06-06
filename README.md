@@ -64,3 +64,11 @@ twon_lss/
 ├── config/
 └── utils/
 ```
+
+## Relevant Packages
+
+- OASIS: Open Agents Social Interaction Simulations on One Million Agents <https://oasis.camel-ai.org>
+- NetworkX: Software for Complex Networks <https://networkx.org/documentation/stable/index.html>
+- DSPy: Declarative framework for building modular AI software <https://dspy.ai>
+- Great Tables: Exporting LaTeX Tables <https://posit-dev.github.io/great-tables/articles/intro.html>
+
