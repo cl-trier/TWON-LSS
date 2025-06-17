@@ -3,17 +3,19 @@ import datetime
 
 import pydantic
 
-from twon_lss.network.schemas import Post
+from twon_lss.schemas import Post
+from twon_lss.utility import Noise
+
+from twon_lss.ranking._interface import RankingInterface, RankingArgsInterface
 
 from .decay import Decay
 from .engagement import Engagement
-from .noise import Noise
 
 
-__all__ = ["Ranker", "RankerArgs", "Decay", "Engagement", "Noise"]
+__all__ = ["Ranker", "RankerArgs", "Decay", "Engagement"]
 
 
-class RankerArgs(pydantic.BaseModel):
+class RankerArgs(RankingArgsInterface):
     class Weights(pydantic.BaseModel):
         likes: float = 1.0
         shares: float = 1.0
@@ -28,11 +30,8 @@ class RankerArgs(pydantic.BaseModel):
     reference_datetime: datetime.datetime = datetime.datetime.now()
 
 
-class Ranker(pydantic.BaseModel):
+class Ranker(RankingInterface):
     args: RankerArgs = RankerArgs()
-
-    def __call__(self, posts: typing.List["Post"]) -> typing.Dict[str, float]:
-        return {post.id: self._compute_post_score(post) for post in posts}
 
     def _compute_post_score(self, post: "Post") -> float:
         observations: typing.List[float] = [

@@ -1,4 +1,4 @@
-# Network
+# Schemas
 
 ### Post
 We model a social media post for the TWON simulation with the following class. The object contains the following attributes:

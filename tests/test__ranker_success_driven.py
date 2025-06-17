@@ -4,7 +4,7 @@ import datetime
 
 import pytest
 
-from twon_lss.network.ranking.success_driven import Decay, Noise, Engagement
+from twon_lss.ranking.success_driven import Decay, Noise, Engagement
 
 
 TOL: float = 1e-3
