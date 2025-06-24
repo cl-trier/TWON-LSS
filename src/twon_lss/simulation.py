@@ -1,9 +1,6 @@
-import typing
-
 import pydantic
 
-from twon_lss.graph import Graph
-from twon_lss.schemas import Post
+from twon_lss.schemas import Feed, Network
 
 
 class SimulationArgs(pydantic.BaseModel):
@@ -13,8 +10,8 @@ class SimulationArgs(pydantic.BaseModel):
 class Simulation(pydantic.BaseModel):
     args: SimulationArgs
 
-    graph: Graph
-    feed: typing.List[Post] = []
+    network: Network
+    feed: Feed = Feed()
 
     def __call__(self) -> None:
         pass

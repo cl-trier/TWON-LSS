@@ -4,8 +4,8 @@ import pydantic
 
 
 class Decay(pydantic.BaseModel):
-    minimum: float
-    reference_timedelta: datetime.timedelta
+    minimum: float = 0.2
+    reference_timedelta: datetime.timedelta = datetime.timedelta(days=3)
 
     def __call__(
         self,

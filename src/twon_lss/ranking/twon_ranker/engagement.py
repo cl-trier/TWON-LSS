@@ -4,20 +4,14 @@ import typing
 
 import pydantic
 
-from .decay import Decay
+from twon_lss.utility import Decay
 
 
 class Engagement(pydantic.BaseModel):
-    func: typing.Literal["count_based", "decay_based"]
-    log_normalize: bool
+    log_normalize: bool = False
 
     def __call__(self, items: typing.List[datetime.datetime], **kwargs) -> float:
-        score: float = (
-            len(items)
-            if self.func == "count_based"
-            else Engagement.get_decayed_score(items, **kwargs)
-        )
-
+        score: float = Engagement.get_decayed_score(items, **kwargs)
         return math.log(score) if self.log_normalize else score
 
     @staticmethod

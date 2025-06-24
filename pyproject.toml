@@ -54,3 +54,4 @@ log_cli_level = "INFO"
 filterwarnings = [
     "ignore::DeprecationWarning"
 ]
+addopts = "--capture=no"

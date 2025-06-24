@@ -1,19 +1,22 @@
 import datetime
-import typing
+import enum
 
 import pydantic
 
-if typing.TYPE_CHECKING:
-    from .user import User
-    from .post import Post
+from .user import User
+
+
+class InteractionTypes(str, enum.Enum):
+    read = "read"
+    like = "like"
+    share = "share"
 
 
 class Interaction(pydantic.BaseModel):
     user: "User"
-    post: "Post"
-    type: typing.Literal["read", "like", "share"]
+    type: InteractionTypes
 
-    timestamp: datetime.datetime
+    timestamp: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)
 
     def __hash__(self):
-        return hash((self.user.id, self.post.id, self.type))
+        return hash((self.user.id, self.type))
