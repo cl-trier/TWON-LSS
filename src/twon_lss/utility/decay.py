@@ -5,16 +5,16 @@ import pydantic
 
 class Decay(pydantic.BaseModel):
     minimum: float = 0.2
-    reference_timedelta: datetime.timedelta = datetime.timedelta(days=3)
+    timedelta: datetime.timedelta = datetime.timedelta(days=3)
 
     def __call__(
         self,
-        observation_datetime: datetime.datetime,
-        reference_datetime: datetime.datetime,
+        observation: datetime.datetime,
+        reference: datetime.datetime,
     ) -> float:
         decay: float = 1.0 - (
-            (reference_datetime - observation_datetime).total_seconds()
-            / self.reference_timedelta.total_seconds()
+            (reference - observation).total_seconds()
+            / self.timedelta.total_seconds()
         )
 
         return max([decay, self.minimum])
