@@ -13,7 +13,7 @@ class InteractionTypes(str, enum.Enum):
 
 
 class Interaction(pydantic.BaseModel):
-    user: "User"
+    user: User
     type: InteractionTypes
 
     timestamp: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)

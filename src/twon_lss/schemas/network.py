@@ -13,7 +13,7 @@ class Network(pydantic.BaseModel):
 
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
 
-    def get_neighbors(self, user: "User") -> typing.List["User"]:
+    def get_neighbors(self, user: User) -> typing.List[User]:
         return list(self.graph.neighbors(user))
 
     @classmethod
