@@ -29,3 +29,5 @@ class Post(pydantic.BaseModel):
 
     def __hash__(self):
         return hash(self.id)
+    
+    # TODO remove read interaction if new comment is added

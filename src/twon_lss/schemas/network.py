@@ -7,6 +7,7 @@ import networkx
 from .user import User
 
 
+# TODO switch to igraph for improved performance
 class Network(pydantic.BaseModel):
     graph: networkx.Graph = networkx.Graph()
 

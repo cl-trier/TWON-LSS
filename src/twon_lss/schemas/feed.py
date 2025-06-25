@@ -7,6 +7,7 @@ from .user import User
 
 
 class Feed(pydantic.BaseModel):
+    # TODO handled displaying of shared posts
     items: typing.List["Post"] = pydantic.Field(default_factory=list)
 
     def get_items_by_user(self, user: "User"):

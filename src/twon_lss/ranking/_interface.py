@@ -43,6 +43,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
     def _individual_posts(
         self, users: typing.List["User"], feed: Feed, network: Network
     ):
+        # TODO remove post a user has already seen
         return list(
             itertools.chain(
                 *[
