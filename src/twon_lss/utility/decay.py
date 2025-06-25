@@ -13,8 +13,7 @@ class Decay(pydantic.BaseModel):
         reference: datetime.datetime,
     ) -> float:
         decay: float = 1.0 - (
-            (reference - observation).total_seconds()
-            / self.timedelta.total_seconds()
+            (reference - observation).total_seconds() / self.timedelta.total_seconds()
         )
 
         return max([decay, self.minimum])
