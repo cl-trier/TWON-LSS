@@ -23,7 +23,7 @@ The `Post` class models a social media post/comment for the simulation with the 
 - **comments:** A list of `Post` objects representing comments, allowing for nested comment structures.
 - **timestamp:** The timestamp of post creation, automatically set to current time if not provided.
 
-The class also provides a computed property `interactions_grouped` that groups interactions by type.
+The class also provides a function `get_interactions` that returns the interactions grouped by type.
 
 ```python
 from src.twon_lss.schemas import Post
