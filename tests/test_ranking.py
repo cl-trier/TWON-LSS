@@ -9,7 +9,6 @@ from twon_lss.ranking.twon_ranker import Engagement
 
 
 class TestRanking:
-    
     @pytest.fixture
     def observations(
         self,
@@ -25,11 +24,14 @@ class TestRanking:
     def test_engagement_count_abs(
         self, observations: typing.List[datetime.datetime], num_observations: int
     ):
-        assert Engagement(log_normalize=False)(items=observations, decay=Decay()) == num_observations
+        assert (
+            Engagement(log_normalize=False)(items=observations, decay=Decay())
+            == num_observations
+        )
 
     def test_engagement_count_log(
         self, observations: typing.List[datetime.datetime], num_observations: int
     ):
-        assert Engagement(log_normalize=True)(items=observations, decay=Decay()) == math.log(
-            num_observations
-        )
+        assert Engagement(log_normalize=True)(
+            items=observations, decay=Decay()
+        ) == math.log(num_observations)
