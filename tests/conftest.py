@@ -7,12 +7,12 @@ from twon_lss.schemas import User, Post, Interaction, InteractionTypes
 
 
 @pytest.fixture
-def users() -> typing.List["User"]:
+def users() -> typing.List[User]:
     return [User(id="U01"), User(id="U02"), User(id="U03"), User(id="U04")]
 
 
 @pytest.fixture
-def network(users: typing.List["User"]) -> typing.List[typing.Tuple["User", "User"]]:
+def network(users: typing.List[User]) -> typing.List[typing.Tuple[User, User]]:
     return [
         (users[0], users[1]),
         (users[0], users[2]),
@@ -22,7 +22,7 @@ def network(users: typing.List["User"]) -> typing.List[typing.Tuple["User", "Use
 
 
 @pytest.fixture
-def posts(users: typing.List["User"]) -> typing.List["Post"]:
+def posts(users: typing.List[User]) -> typing.List[Post]:
     return [
         Post(
             id="P01",
