@@ -1,6 +1,6 @@
 # Schemas
 
-### Post
+## Post
 We model a social media post for the TWON simulation with the following class. The object contains the following attributes:
 - **id:** A unique identifier (ID) of the post as a string.
 - **timestamp:** The timestamp containing the post creation date and time. The class expect a string formatted defined by ISO 8601.
