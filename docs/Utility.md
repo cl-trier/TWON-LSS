@@ -1,33 +1,47 @@
 # Utility
 
 ## Noise
-We draw random floating point numbers from the normal distribution provided lower and upper boundaries to generate a multiplicative noise (the neutral value defined as `LOW = HIGH = 1.` will result in no noise).
+The `Noise` class generates random floating point numbers from a uniform distribution for multiplicative noise with the following attributes:
+- **low:** Lower boundary for the random number generation (default: 0.8).
+- **high:** Upper boundary for the random number generation (default: 1.2).
+
+The neutral value (no noise) is achieved when `low = high = 1.0`. The class provides methods to generate single random numbers or multiple samples.
 
 ```python
 from twon_lss.utility import Noise
 
-low: float
-high: float
-n_samples: int
+noise = Noise(
+    low=0.8,
+    high=1.2
+)
 
-eps = Noise(low=low, high=high)
+# Generate a single random number
+rnd_number: float = noise()
 
-rnd_number: float = eps()
-rnd_samples: List[float] = eps.draw_samples(n_samples)
+# Generate multiple samples
+n_samples: int = 10
+rnd_samples: list[float] = noise.draw_samples(n_samples)
 ```
 
 ## Decay
-We compute a decay factor based on the time elapsed between two references. In the context of this project, the decay factor decreases the relevance of an observation over time. We instantiate a decay object by defining a minimum value that serves as a lower boundary for the decay and a reference time interval (`timedelta`). When called, the decay object calculates a time difference between the reference time stamp and the observed time stamp. The maximum computed value is defined as 1, for `observation == reference`.
+The `Decay` class computes a decay factor based on the time elapsed between two timestamps, decreasing the relevance of observations over time with the following attributes:
+- **minimum:** Lower boundary for the decay factor (default: 0.2).
+- **timedelta:** Reference time interval for decay calculation (default: 3 days).
+
+When called, the decay object calculates the time difference between the reference timestamp and the observed timestamp. The maximum computed value is 1.0, achieved when `observation == reference`.
 
 ```python
 from twon_lss.utility import Decay
+import datetime
 
-minimum: float
-timedelta: timedelta
-observation: datetime
-reference: datetime
+decay = Decay(
+    minimum=0.2,
+    timedelta=datetime.timedelta(days=3)
+)
 
-decay = Decay(minimum=minimum, timedelta=timedelta)
+# Calculate decay factor
+observation: datetime.datetime = datetime.datetime.now()
+reference: datetime.datetime = datetime.datetime.now() + datetime.timedelta(hours=1)
 
-decay_factor: float = decay(observation, reference) 
+decay_factor: float = decay(observation, reference)
 ```
