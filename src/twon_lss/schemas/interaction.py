@@ -34,14 +34,12 @@ class Interaction(pydantic.BaseModel):
         timestamp (datetime.datetime): The timestamp when the interaction occurred, automatically set to current time if not provided.
 
     Example:
-        ```python
-        from src.twon_lss.schemas import Interaction, InteractionTypes
+        >>> from src.twon_lss.schemas import Interaction, InteractionTypes
 
-        interaction = Interaction(
-            user=user,
-            type=InteractionTypes.like
-        )
-        ```
+        >>> interaction = Interaction(
+        ...    user=user,
+        ...    type=InteractionTypes.like
+        ... )
     """
 
     user: User

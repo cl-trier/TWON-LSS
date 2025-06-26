@@ -1,8 +1,10 @@
 import sys
-from pathlib import Path
+import pathlib
+import tomli
 
 
-sys.path.insert(0, str(Path('../..', 'src').resolve()))
+sys.path.insert(0, str(pathlib.Path("..", "src").resolve()))
+project = tomli.load(open("../pyproject.toml"))["project"]
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -12,14 +14,18 @@ sys.path.insert(0, str(Path('../..', 'src').resolve()))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "TWON-LSS"
-copyright = "2025, Simon Münker"
-author = "Simon Münker"
+project = project["name"]
+copyright = f"2025, {project['authors'][0]['name']}"
+author = project["authors"][0]["name"]
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.autosummary"]
+extensions = [
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+]
 autosummary_generate = True
 
 templates_path = ["_templates"]

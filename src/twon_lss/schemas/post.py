@@ -22,21 +22,16 @@ class Post(pydantic.BaseModel):
         comments (List[Post]): A list of Post objects representing comments, allowing for nested comment structures (default: []).
         timestamp (datetime.datetime): The timestamp of post creation (default: current datetime.now).
 
-    Methods:
-        get_interactions(): Returns the interactions grouped by type.
-
     Example:
-        ```python
-        from src.twon_lss.schemas import Post
+        >>> from src.twon_lss.schemas import Post
 
-        post = Post(
-            id="P001",
-            user=user,
-            content="This is a sample post content",
-            interactions=[],  # list of Interaction objects
-            comments=[],      # list of Post objects
-        )
-        ```
+        >>> post = Post(
+        ...     id="P001",
+        ...    user=user,
+        ...    content="This is a sample post content",
+        ...    interactions=[],  # list of Interaction objects
+        ...    comments=[],      # list of Post objects
+        ... )
     """
 
     id: str | int

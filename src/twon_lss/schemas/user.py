@@ -15,14 +15,12 @@ class User(pydantic.BaseModel):
         agent (AgentInterface): An `AgentInterface` object that controls the user's behavior in the simulation.
 
     Example:
-        ```python
-        from src.twon_lss.schemas import User
+        >>> from src.twon_lss.schemas import User
 
-        user = User(
-            id="U001",
-            agent=None
-        )
-        ```
+        ... user = User(
+        ...     id="U001",
+        ...     agent=None
+        ... )
     """
 
     id: int | str
