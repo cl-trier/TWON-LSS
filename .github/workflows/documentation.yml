@@ -17,10 +17,10 @@ jobs:
         with:
           python-version-file: "pyproject.toml"
       - name: Install the project
-        run: uv sync --locked --all-extras --dev
+        run: uv sync --all-extras
       - name: Sphinx build
         run: |
-          sphinx-build -M html docs/ _docs
+          uv run sphinx-build -M html docs/ _docs
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
