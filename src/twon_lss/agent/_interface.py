@@ -4,10 +4,18 @@ import pydantic
 
 
 class AgentArgsInterface(abc.ABC, pydantic.BaseModel):
+    """
+    AgentArgsInterface
+    """
+
     pass
 
 
 class AgentInterface(abc.ABC, pydantic.BaseModel):
+    """
+    AgentInterface
+    """
+
     args: AgentArgsInterface = AgentArgsInterface()
 
 
