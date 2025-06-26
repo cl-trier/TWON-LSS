@@ -23,9 +23,8 @@ class Post(pydantic.BaseModel):
         timestamp (datetime.datetime): The timestamp of post creation (default: current datetime.now).
 
     Example:
-        >>> from src.twon_lss.schemas import Post
-
-        >>> post = Post(
+        ... from src.twon_lss.schemas import Post
+        ... post = Post(
         ...     id="P001",
         ...    user=user,
         ...    content="This is a sample post content",

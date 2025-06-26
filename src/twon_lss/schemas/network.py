@@ -22,13 +22,10 @@ class Network(pydantic.BaseModel):
     Example:
         >>> from src.twon_lss.schemas import Network
         ... import networkx as nx
-
-        >>> graph = nx.Graph()
+        ... graph = nx.Graph()
         ... network = Network.from_graph(graph)
-
-        >>> neighbors = network.get_neighbors(user)
-
-        >>> for user in network:
+        ... neighbors = network.get_neighbors(user)
+        ... for user in network:
         ...    print(user)
     """
 

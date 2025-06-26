@@ -35,8 +35,7 @@ class Interaction(pydantic.BaseModel):
 
     Example:
         >>> from src.twon_lss.schemas import Interaction, InteractionTypes
-
-        >>> interaction = Interaction(
+        ... interaction = Interaction(
         ...    user=user,
         ...    type=InteractionTypes.like
         ... )

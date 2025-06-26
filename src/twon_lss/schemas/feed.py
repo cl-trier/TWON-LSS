@@ -23,15 +23,12 @@ class Feed(pydantic.BaseModel):
 
     Example:
         >>> from src.twon_lss.schemas import Feed
-
-        >>> feed = Feed(
+        ... feed = Feed(
         ...     items=[post1, post2, post3]  # list of Post objects
         ... )
-
-        >>> user_feed = feed.get_items_by_user(user)
-
-        >>> for post in feed:
-        ...   print(post)
+        ... user_feed = feed.get_items_by_user(user)
+        ... for post in feed:
+        ...     print(post)
     """
 
     # TODO handled displaying of shared posts

@@ -16,7 +16,6 @@ class User(pydantic.BaseModel):
 
     Example:
         >>> from src.twon_lss.schemas import User
-
         ... user = User(
         ...     id="U001",
         ...     agent=None
