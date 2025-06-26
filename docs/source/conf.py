@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 
-sys.path.insert(0, str(Path('../../..', 'src').resolve()))
+sys.path.insert(0, str(Path('../..', 'src').resolve()))
 
 # Configuration file for the Sphinx documentation builder.
 #
