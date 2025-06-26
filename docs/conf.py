@@ -15,8 +15,8 @@ project = tomli.load(open("../pyproject.toml", "rb"))["project"]
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = project["name"]
-copyright = f"2025, {project['authors'][0]['name']}"
-author = project["authors"][0]["name"]
+copyright = f"2025, Simon Münker" 
+author = "Simon Münker"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
