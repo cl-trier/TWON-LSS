@@ -13,6 +13,7 @@ class Decay(pydantic.BaseModel):
 
     When called, the decay object calculates the time difference between the reference timestamp and the observed timestamp. The maximum computed value is 1.0, achieved when `observation == reference`.
     """
+
     minimum: float = 0.2
     timedelta: datetime.timedelta = datetime.timedelta(days=3)
 

@@ -6,7 +6,7 @@ from twon_lss.agent import AgentInterface
 class User(pydantic.BaseModel):
     """
     Represents a user in the simulation.
-    
+
     The `User` class models individual users within the social media simulation,
     each with a unique identifier and an agent that controls their behavior.
 
@@ -17,13 +17,14 @@ class User(pydantic.BaseModel):
     Example:
         ```python
         from src.twon_lss.schemas import User
-        
+
         user = User(
             id="U001",
             agent=None
         )
         ```
     """
+
     id: int | str
     agent: AgentInterface | None = None
 
