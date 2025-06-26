@@ -26,7 +26,9 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
 ]
-autosummary_generate = True
+
+autodoc_typehints = "description"
+autodoc_class_signature = "separated"
 
 templates_path = ["_templates"]
 exclude_patterns = []
@@ -34,5 +36,5 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "alabaster"
+html_theme = "sphinx_book_theme"
 html_static_path = ["_static"]
