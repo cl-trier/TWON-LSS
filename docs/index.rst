@@ -2,6 +2,7 @@ TWON-LSS documentation
 ======================
 
 .. toctree::
-   :maxdepth: 6
+   :maxdepth: 4
 
-   modules
+   twon_lss.schemas
+   twon_lss.utility
