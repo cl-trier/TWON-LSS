@@ -18,12 +18,9 @@ class Post(pydantic.BaseModel):
         id (str | int): A unique identifier of the post as either a string or integer.
         user (User): A User object representing the author of the post.
         content (str): The text content of the post as a string.
-        interactions (List[Interaction]): A list of Interaction objects representing 
-            user interactions (likes, shares, reads). Defaults to empty list.
-        comments (List[Post]): A list of Post objects representing comments, 
-            allowing for nested comment structures. Defaults to empty list.
-        timestamp (datetime.datetime): The timestamp of post creation, automatically 
-            set to current time if not provided.
+        interactions (List[Interaction]): A list of Interaction objects representing user interactions (default: []).
+        comments (List[Post]): A list of Post objects representing comments, allowing for nested comment structures (default: []).
+        timestamp (datetime.datetime): The timestamp of post creation (default: current datetime.now).
     
     Methods:
         get_interactions(): Returns the interactions grouped by type.

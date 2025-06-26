@@ -29,10 +29,8 @@ class Interaction(pydantic.BaseModel):
     
     Attributes:
         user (User): A User object representing who performed the interaction.
-        type (InteractionTypes): An InteractionTypes enum value specifying the 
-            interaction type (read, like, or share).
-        timestamp (datetime.datetime): The timestamp when the interaction occurred, 
-            automatically set to current time if not provided.
+        type (InteractionTypes): An InteractionTypes enum value specifying the interaction type (read, like, or share).
+        timestamp (datetime.datetime): The timestamp when the interaction occurred, automatically set to current time if not provided.
     
     Example:
         ```python

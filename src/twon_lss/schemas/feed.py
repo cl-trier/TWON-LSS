@@ -15,8 +15,7 @@ class Feed(pydantic.BaseModel):
     length operations for easy manipulation.
     
     Attributes:
-        items (List[Post]): A list of Post objects contained in the feed.
-            Defaults to empty list.
+        items (List[Post]): A list of Post objects contained in the feed. (default: []).
     
     Methods:
         get_items_by_user(user): Filter posts by a specific user.

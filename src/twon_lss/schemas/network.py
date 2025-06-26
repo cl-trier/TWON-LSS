@@ -16,8 +16,7 @@ class Network(pydantic.BaseModel):
     in the social media simulation using a NetworkX graph structure.
     
     Attributes:
-        graph (networkx.Graph): A NetworkX Graph object representing the network 
-            connections between users. Defaults to empty graph.
+        graph (networkx.Graph): A NetworkX Graph object representing the network connections between users (default: empty graph).
     
     Methods:
         get_neighbors(user): Get neighbors of a specific user.
