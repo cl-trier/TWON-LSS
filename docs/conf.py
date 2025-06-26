@@ -4,7 +4,7 @@ import tomli
 
 
 sys.path.insert(0, str(pathlib.Path("..", "src").resolve()))
-project = tomli.load(open("../pyproject.toml"))["project"]
+project = tomli.load(open("../pyproject.toml", "rb"))["project"]
 
 # Configuration file for the Sphinx documentation builder.
 #
