@@ -15,17 +15,13 @@ project = tomli.load(open("../pyproject.toml", "rb"))["project"]
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = project["name"]
-copyright = f"2025, Simon Münker" 
+copyright = "2025, Simon Münker"
 author = "Simon Münker"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    "sphinx.ext.viewcode",
-    "sphinx.ext.napoleon",
-    "sphinx.ext.autodoc"
-]
+extensions = ["sphinx.ext.viewcode", "sphinx.ext.napoleon", "sphinx.ext.autodoc", "sphinx_mdinclude"]
 
 autodoc_typehints = "description"
 autodoc_class_signature = "separated"
