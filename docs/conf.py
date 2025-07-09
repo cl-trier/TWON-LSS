@@ -1,10 +1,11 @@
 import sys
 import pathlib
 import tomli
+import datetime
 
 
 sys.path.insert(0, str(pathlib.Path("..", "src").resolve()))
-project = tomli.load(open("../pyproject.toml", "rb"))["project"]
+META = tomli.load(open("../pyproject.toml", "rb"))["project"]
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -14,14 +15,19 @@ project = tomli.load(open("../pyproject.toml", "rb"))["project"]
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = project["name"]
-copyright = "2025, Simon Münker"
-author = "Simon Münker"
+project = META["name"].replace("-", " ").upper()
+copyright = f"{datetime.datetime.now().year}, {META['authors'][0]['name']}"
+author = META["authors"][0]["name"]
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.viewcode", "sphinx.ext.napoleon", "sphinx.ext.autodoc", "sphinx_mdinclude"]
+extensions = [
+    "sphinx.ext.viewcode",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autodoc",
+    "sphinx_mdinclude",
+]
 
 autodoc_typehints = "description"
 autodoc_class_signature = "separated"
