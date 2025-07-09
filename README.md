@@ -1,4 +1,4 @@
-# TWON - Large Scale Simulation (LSS) | Proposal & Contents for Discussion
+# TWON - Large Scale Simulation (LSS)
 
 ## Features (TBC)
 

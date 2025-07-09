@@ -1,9 +1,9 @@
-TWON-LSS documentation
-======================
-
 .. mdinclude:: ../README.md
 
-Agent Module
+Modules
+=========================
+
+Agent
 =========================
 
 **Interface**
@@ -12,7 +12,7 @@ Agent Module
    :members:
 
 
-Ranking Module
+Ranking
 =========================
 
 **Interface**
@@ -26,7 +26,7 @@ Ranking Module
    :members:
 
 
-Schemas Module
+Schemas
 =========================
 
 .. autoclass:: twon_lss.schemas.feed.Feed
@@ -36,7 +36,7 @@ Schemas Module
 .. autoclass:: twon_lss.schemas.user.User
 
 
-Utilities Module
+Utilities
 =========================
 
 .. autoclass:: twon_lss.utility.noise.Noise
