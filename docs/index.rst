@@ -1,6 +1,8 @@
 TWON-LSS documentation
 ======================
 
+.. mdinclude:: ../README.md
+
 Agent Module
 =========================
 
