@@ -16,5 +16,6 @@ test:
 .PHONY: docs
 docs:
 	uv run sphinx-build -M html docs/ .docs
+	open -a "Google Chrome" .docs/html/index.html
 	read  -n 1 -p "Remove Docs after Input:" mainmenuinput
 	rm -rf .docs
