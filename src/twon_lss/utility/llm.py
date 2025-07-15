@@ -7,6 +7,16 @@ import huggingface_hub
 
 
 class LLM(pydantic.BaseModel):
+    """
+    The `LLM` class provides a unified interface for interacting with language models through the Hugging Face Hub API.
+    It supports text generation, embedding creation, similarity computation, and text classification tasks. The class wraps
+    the Hugging Face InferenceClient to provide convenient methods for common language model operations.
+
+    Attributes:
+        client (huggingface_hub.InferenceClient): The Hugging Face inference client for API interactions.
+        model (str): The model identifier/name to use for inference operations.
+    
+    """
     client: huggingface_hub.InferenceClient
     model: str
 
