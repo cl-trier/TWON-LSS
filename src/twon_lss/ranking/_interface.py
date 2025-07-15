@@ -96,7 +96,10 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         return {
             (user, post): (
                 self.args.noise()
-                * (self.get_invidual_score(user, post) + global_scores.get(post.id))
+                * (
+                    self.get_invidual_score(user, post, feed)
+                    + global_scores.get(post.id)
+                )
             )
             for user in users
             for post in self.get_individual_posts(user, feed, network)
@@ -141,7 +144,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         """
         return self.args.weights.network * self._compute_network(post)
 
-    def get_invidual_score(self, user: User, post: Post) -> float:
+    def get_invidual_score(self, user: User, post: Post, feed: Feed) -> float:
         """
         Calculate the weighted individual user score for a post.
 
@@ -152,11 +155,12 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         Args:
             user (User): The user to calculate the individual score for.
             post (Post): The post to calculate the individual score for.
+            feed (Feed): Feed containing all posts.
 
         Returns:
             float: Weighted individual score for the user-post pair.
         """
-        return self.args.weights.indivdual * self._compute_invidual(user, post)
+        return self.args.weights.indivdual * self._compute_invidual(user, post, feed)
 
     @abc.abstractmethod
     def _compute_network(self, post: Post) -> float:
@@ -180,7 +184,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         pass
 
     @abc.abstractmethod
-    def _compute_invidual(self, user: User, post: Post) -> float:
+    def _compute_invidual(self, user: User, post: Post, feed: Feed) -> float:
         """
         Abstract method for computing individual user-post scores.
 
@@ -191,6 +195,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         Args:
             user (User): The user to calculate the individual score for.
             post (Post): The post to calculate the individual score for.
+            feed (Feed): Feed containing all posts.
 
         Returns:
             float: Raw individual score for the user-post pair (before weighting).

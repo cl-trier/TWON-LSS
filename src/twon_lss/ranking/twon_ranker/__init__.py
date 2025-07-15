@@ -1,14 +1,14 @@
 import typing
 import datetime
+import statistics
 
 import pydantic
 
-from twon_lss.schemas import User
-from twon_lss.schemas import Post
+from twon_lss.schemas import User, Post, Feed
 
 from twon_lss.ranking._interface import RankingInterface, RankingArgsInterface
 
-from twon_lss.utility import Decay
+from twon_lss.utility import Decay, LLM
 
 from .engagement import Engagement
 
@@ -22,6 +22,7 @@ class RankerArgs(RankingArgsInterface):
         shares: float = 1.0
         comments: float = 1.0
 
+    llm: LLM
     decay: Decay = Decay()
 
     engagement: Engagement = Engagement()
@@ -50,5 +51,9 @@ class Ranker(RankingInterface):
 
         return sum(observations)
 
-    def _compute_invidual(self, user: "User", post: "Post") -> float:
-        return 1.0
+    def _compute_invidual(self, user: User, post: Post, feed: Feed) -> float:
+        return statistics.mean(
+            self.args.llm.similarity(
+                post.content, [item.content for item in feed.get_items_by_user(user)]
+            )
+        )
