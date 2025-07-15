@@ -3,7 +3,8 @@ import typing
 
 import pydantic
 
-from twon_lss.schemas import InteractionTypes
+if typing.TYPE_CHECKING:    
+    from twon_lss.schemas import InteractionTypes
 
 
 class AgentArgsInterface(abc.ABC, pydantic.BaseModel):
