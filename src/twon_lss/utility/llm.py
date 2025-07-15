@@ -16,7 +16,7 @@ class LLM(pydantic.BaseModel):
         return (
             self.client.chat.completions.create(model=self.model, messages=messages)
             .choices[0]
-            .message
+            .message.content
         )
 
     def embed(self, text: str) -> numpy.ndarray:
