@@ -1,10 +1,8 @@
 import abc
 import typing
+import enum
 
 import pydantic
-
-if typing.TYPE_CHECKING:    
-    from twon_lss.schemas import InteractionTypes
 
 
 class AgentArgsInterface(abc.ABC, pydantic.BaseModel):
@@ -23,7 +21,7 @@ class AgentArgsInterface(abc.ABC, pydantic.BaseModel):
     """
 
     initial_action_likelihoods: typing.Dict[
-        typing.Union[InteractionTypes, typing.Literal["post", "reply"]], float
+        typing.Union[enum.Enum, typing.Literal["post", "reply"]], float
     ] = pydantic.Field(default_factory=dict)
 
 
