@@ -15,8 +15,9 @@ class LLM(pydantic.BaseModel):
     Attributes:
         client (huggingface_hub.InferenceClient): The Hugging Face inference client for API interactions.
         model (str): The model identifier/name to use for inference operations.
-    
+
     """
+
     client: huggingface_hub.InferenceClient
     model: str
 
