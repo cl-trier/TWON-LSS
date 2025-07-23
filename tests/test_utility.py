@@ -6,7 +6,7 @@ import dotenv
 
 import huggingface_hub
 
-from twon_lss.utility import Noise, Decay, LLM
+from twon_lss.utility import Noise, Decay, LLM, Message, Chat
 
 
 CFG = dotenv.dotenv_values(".env")
@@ -31,7 +31,7 @@ class TestLLM:
         model: str = "meta-llama/Meta-Llama-3-8B-Instruct"
         llm = LLM(client=client, model=model)
 
-        print(llm.generate([{"role": "user", "content": SAMPLES[0]}]))
+        print(llm.generate(Chat([Message(role="user", content=SAMPLES[0])])))
 
     def test_embed(self, client: huggingface_hub.InferenceClient):
         # BGE M3-Embedding: Multi-Lingual, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation
