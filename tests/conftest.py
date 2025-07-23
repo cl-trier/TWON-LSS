@@ -46,7 +46,6 @@ def posts(users: typing.List[User]) -> typing.List[Post]:
                 Interaction(user=users[0], type=InteractionTypes.read),
                 Interaction(user=users[0], type=InteractionTypes.like),
                 Interaction(user=users[1], type=InteractionTypes.read),
-                Interaction(user=users[1], type=InteractionTypes.share),
                 Interaction(user=users[3], type=InteractionTypes.read),
             ],
             comments=[

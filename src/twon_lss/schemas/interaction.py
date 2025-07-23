@@ -3,7 +3,7 @@ import enum
 
 import pydantic
 
-from .user import User
+from twon_lss.schemas.user import User
 
 
 class InteractionTypes(str, enum.Enum):
@@ -13,12 +13,10 @@ class InteractionTypes(str, enum.Enum):
     Supported interaction types:
         read: User has read the post
         like: User has liked the post
-        share: User has shared the post
     """
 
     read = "read"
     like = "like"
-    share = "share"
 
 
 class Interaction(pydantic.BaseModel):
