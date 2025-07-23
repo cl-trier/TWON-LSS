@@ -4,7 +4,7 @@ import pydantic
 
 import networkx
 
-from .user import User
+from twon_lss.schemas.user import User
 
 
 # TODO switch to igraph for improved performance

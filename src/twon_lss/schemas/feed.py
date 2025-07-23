@@ -2,8 +2,8 @@ import typing
 
 import pydantic
 
-from .post import Post
-from .user import User
+from twon_lss.schemas.post import Post
+from twon_lss.schemas.user import User
 
 
 class Feed(pydantic.BaseModel):

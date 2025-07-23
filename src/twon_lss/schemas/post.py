@@ -3,8 +3,8 @@ import typing
 
 import pydantic
 
-from .user import User
-from .interaction import Interaction, InteractionTypes
+from twon_lss.schemas.user import User
+from twon_lss.schemas.interaction import Interaction, InteractionTypes
 
 
 class Post(pydantic.BaseModel):
