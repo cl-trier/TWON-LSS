@@ -6,6 +6,15 @@ import numpy
 import huggingface_hub
 
 
+class Message(pydantic.BaseModel):
+    role: typing.Literal["system", "user", "assistant"]
+    content: str
+
+
+class Chat(pydantic.RootModel):
+    root: typing.List[Message]
+
+
 class LLM(pydantic.BaseModel):
     """
     The `LLM` class provides a unified interface for interacting with language models through the Hugging Face Hub API.
@@ -23,9 +32,11 @@ class LLM(pydantic.BaseModel):
 
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
 
-    def generate(self, messages: typing.List[typing.Dict]) -> str:
+    def generate(self, chat: Chat) -> str:
         return (
-            self.client.chat.completions.create(model=self.model, messages=messages)
+            self.client.chat.completions.create(
+                model=self.model, messages=chat.model_dump()
+            )
             .choices[0]
             .message.content
         )
