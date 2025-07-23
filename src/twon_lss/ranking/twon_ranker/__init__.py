@@ -5,12 +5,10 @@ import statistics
 import pydantic
 
 from twon_lss.schemas import User, Post, Feed
-
-from twon_lss.ranking._interface import RankingInterface, RankingArgsInterface
-
 from twon_lss.utility import Decay, LLM
 
-from .engagement import Engagement
+from twon_lss.ranking._interface import RankingInterface, RankingArgsInterface
+from twon_lss.ranking.twon_ranker.engagement import Engagement
 
 
 __all__ = ["Ranker", "RankerArgs", "Engagement"]
@@ -22,7 +20,6 @@ class RankerArgs(RankingArgsInterface):
         shares: float = 1.0
         comments: float = 1.0
 
-    llm: LLM
     decay: Decay = Decay()
 
     engagement: Engagement = Engagement()
@@ -30,6 +27,7 @@ class RankerArgs(RankingArgsInterface):
 
 
 class Ranker(RankingInterface):
+    llm: LLM
     args: RankerArgs = RankerArgs()
 
     def _compute_network(self, post: "Post") -> float:
@@ -53,7 +51,7 @@ class Ranker(RankingInterface):
 
     def _compute_invidual(self, user: User, post: Post, feed: Feed) -> float:
         return statistics.mean(
-            self.args.llm.similarity(
+            self.llm.similarity(
                 post.content, [item.content for item in feed.get_items_by_user(user)]
             )
         )
