@@ -4,7 +4,9 @@ import typing
 import pydantic
 
 from twon_lss.utility import Noise
-from twon_lss.schemas import User, Post, Feed, Network
+
+if typing.TYPE_CHECKING:
+    from twon_lss.schemas import User, Post, Feed, Network
 
 
 class RankingInterfaceWeights(pydantic.BaseModel):
@@ -66,8 +68,8 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
     args: RankingArgsInterface = RankingArgsInterface()
 
     def __call__(
-        self, users: typing.List[User], feed: Feed, network: Network
-    ) -> typing.Dict[typing.Tuple[User, Post], float]:
+        self, users: typing.List["User"], feed: "Feed", network: "Network"
+    ) -> typing.Dict[typing.Tuple["User", "Post"], float]:
         """
         Rank posts for all users based on network and individual preferences.
 
@@ -105,7 +107,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
             for post in self.get_individual_posts(user, feed, network)
         }
 
-    def get_individual_posts(self, user: User, feed: Feed, network: Network):
+    def get_individual_posts(self, user: "User", feed: "Feed", network: "Network"):
         """
         Filter posts visible to a specific user based on network connections.
 
@@ -127,7 +129,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
             for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor)
         ]
 
-    def get_network_score(self, post: Post) -> float:
+    def get_network_score(self, post: "Post") -> float:
         """
         Calculate the weighted network-wide score for a post.
 
@@ -144,7 +146,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         """
         return self.args.weights.network * self._compute_network(post)
 
-    def get_invidual_score(self, user: User, post: Post, feed: Feed) -> float:
+    def get_invidual_score(self, user: "User", post: "Post", feed: "Feed") -> float:
         """
         Calculate the weighted individual user score for a post.
 
@@ -163,7 +165,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         return self.args.weights.indivdual * self._compute_invidual(user, post, feed)
 
     @abc.abstractmethod
-    def _compute_network(self, post: Post) -> float:
+    def _compute_network(self, post: "Post") -> float:
         """
         Abstract method for computing network-wide post scores.
 
@@ -184,7 +186,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         pass
 
     @abc.abstractmethod
-    def _compute_invidual(self, user: User, post: Post, feed: Feed) -> float:
+    def _compute_invidual(self, user: "User", post: "Post", feed: "Feed") -> float:
         """
         Abstract method for computing individual user-post scores.
 

@@ -11,7 +11,7 @@ class Simulation(pydantic.BaseModel):
     args: SimulationArgs
 
     network: Network
-    feed: Feed = Feed()
+    
 
     def __call__(self) -> None:
         pass

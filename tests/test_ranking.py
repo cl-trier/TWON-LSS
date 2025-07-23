@@ -22,16 +22,16 @@ class TestRanking:
         ]
 
     def test_engagement_count_abs(
-        self, observations: typing.List[datetime.datetime], num_observations: int
+        self, observations: typing.List[datetime.datetime], ref_datetime: datetime.datetime, num_observations: int
     ):
         assert (
-            Engagement(log_normalize=False)(items=observations, decay=Decay())
+            Engagement(log_normalize=False)(items=observations, reference_datetime=ref_datetime, decay=Decay())
             == num_observations
         )
 
     def test_engagement_count_log(
-        self, observations: typing.List[datetime.datetime], num_observations: int
+        self, observations: typing.List[datetime.datetime], ref_datetime: datetime.datetime, num_observations: int
     ):
         assert Engagement(log_normalize=True)(
-            items=observations, decay=Decay()
+            items=observations, reference_datetime=ref_datetime, decay=Decay()
         ) == math.log(num_observations)

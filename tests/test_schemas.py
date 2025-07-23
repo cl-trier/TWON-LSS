@@ -8,7 +8,7 @@ from twon_lss.schemas import Feed, Post, User
 
 @pytest.fixture
 def feed(posts: typing.List[Post]):
-    return Feed(items=posts)
+    return Feed(posts)
 
 
 def test_feed(feed: Feed):

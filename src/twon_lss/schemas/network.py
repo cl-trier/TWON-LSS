@@ -7,8 +7,7 @@ import networkx
 from twon_lss.schemas.user import User
 
 
-# TODO switch to igraph for improved performance
-class Network(pydantic.BaseModel):
+class Network(pydantic.RootModel):
     """
     Represents the social network structure using NetworkX.
 
@@ -29,12 +28,12 @@ class Network(pydantic.BaseModel):
         ...    print(user)
     """
 
-    graph: networkx.Graph = networkx.Graph()
+    root: networkx.Graph = networkx.Graph()
 
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
 
     def get_neighbors(self, user: User) -> typing.List[User]:
-        return list(self.graph.neighbors(user))
+        return list(self.root.neighbors(user))
 
     @classmethod
     def from_graph(cls, graph: networkx.Graph) -> "Network":
@@ -42,13 +41,6 @@ class Network(pydantic.BaseModel):
 
     @staticmethod
     def _relabel_to_users(graph: networkx.Graph) -> networkx.Graph:
+        from twon_lss.schemas.user import User
+
         return networkx.relabel_nodes(graph, mapping=lambda node_id: User(id=node_id))
-
-    def __iter__(self):
-        return iter(self.graph)
-
-    def __next__(self):
-        return next(self.graph)
-
-    def __str__(self):
-        return str(self.graph)
