@@ -1,3 +1,5 @@
+import uuid
+
 import pydantic
 
 
@@ -8,16 +10,14 @@ class User(pydantic.BaseModel):
     The `User` class models individual users within the social media simulation.
 
     Attributes:
-        id (int | str): A unique identifier of the user as either a string or integer.
+        id (str): A unique identifier of the user as either a string (default: user-uuid4()).
 
     Example:
         >>> from src.twon_lss.schemas import User
-        ... user = User(
-        ...     id="U001",
-        ... )
+        ... user = User()
     """
 
-    id: int | str
+    id: str = pydantic.Field(default_factory=lambda: f"user-{uuid.uuid4()}")
 
     def __hash__(self):
         return hash(self.id)

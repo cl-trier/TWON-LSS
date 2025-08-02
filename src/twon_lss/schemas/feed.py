@@ -33,6 +33,21 @@ class Feed(pydantic.RootModel):
 
     root: typing.List["Post"] = pydantic.Field(default_factory=list)
 
+    def __iter__(self):
+        return iter(self.root)
+
+    def __len__(self):
+        return len(self.root)
+
+    def __getitem__(self, index):
+        return self.root[index]
+
+    def append(self, post: "Post") -> None:
+        self.root.append(post)
+
+    def extend(self, posts: typing.List["Post"]) -> None:
+        self.root.extend(posts)
+
     def get_items_by_user(self, user: User) -> "Feed":
         return Feed(list(filter(lambda post: post.user == user, self.root)))
 

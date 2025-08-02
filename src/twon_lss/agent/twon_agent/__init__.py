@@ -60,7 +60,7 @@ class Agent(AgentInterface):
             "|".join(list(AgentActions._member_names_)), response
         )
 
-        return [AgentActions(item) for item in matches]
+        return {AgentActions(item) for item in matches}
 
     def comment(self, post: "Post") -> str:
         response: str = self._inference(self.instructions.comment, post)

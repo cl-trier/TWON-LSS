@@ -23,7 +23,7 @@ class RankingInterfaceWeights(pydantic.BaseModel):
     """
 
     network: float = 1.0
-    indivdual: float = 1.0
+    individual: float = 1.0
 
 
 class RankingArgsInterface(abc.ABC, pydantic.BaseModel):
@@ -41,8 +41,10 @@ class RankingArgsInterface(abc.ABC, pydantic.BaseModel):
 
     """
 
-    weights: RankingInterfaceWeights = RankingInterfaceWeights()
-    noise: Noise = Noise()
+    weights: RankingInterfaceWeights = pydantic.Field(
+        default_factory=RankingInterfaceWeights
+    )
+    noise: Noise = pydantic.Field(default_factory=Noise)
 
 
 class RankingInterface(abc.ABC, pydantic.BaseModel):
@@ -65,7 +67,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         args (RankingArgsInterface): Configuration object containing weights, noise, and module-specific arguments (default: RankingArgsInterface()).
     """
 
-    args: RankingArgsInterface = RankingArgsInterface()
+    args: RankingArgsInterface = pydantic.Field(default_factory=RankingArgsInterface)
 
     def __call__(
         self, users: typing.List["User"], feed: "Feed", network: "Network"
@@ -90,22 +92,27 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
 
         """
         # retrieve global score for each post
-        global_scores: typing.Dict[str, float] = {
-            post.id: self.get_network_score(post) for post in feed
-        }
+        # TODO parallelize on post level
+        global_scores: typing.Dict[str, float] = {}
+        for post in feed:
+            global_scores[post.id] = self.get_network_score(post)
 
         # retrieve indivual score for visible (if is neighbor) post for each user
-        return {
-            (user, post): (
-                self.args.noise()
-                * (
-                    self.get_invidual_score(user, post, feed)
-                    + global_scores.get(post.id)
+        # TODO parallelize on user level
+        final_scores: typing.Dict[typing.Tuple["User", "Post"], float] = {}
+        for user in users:
+            for post in self.get_individual_posts(user, feed, network):
+                individual_score = self.get_individual_score(user, post, feed)
+                global_score = global_scores[post.id]
+
+                combined_score = (
+                    self.args.weights.individual * individual_score
+                    + self.args.weights.network * global_score
                 )
-            )
-            for user in users
-            for post in self.get_individual_posts(user, feed, network)
-        }
+
+                final_scores[(user, post)] = self.args.noise() * combined_score
+
+        return final_scores
 
     def get_individual_posts(self, user: "User", feed: "Feed", network: "Network"):
         """
@@ -146,7 +153,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         """
         return self.args.weights.network * self._compute_network(post)
 
-    def get_invidual_score(self, user: "User", post: "Post", feed: "Feed") -> float:
+    def get_individual_score(self, user: "User", post: "Post", feed: "Feed") -> float:
         """
         Calculate the weighted individual user score for a post.
 
@@ -162,7 +169,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         Returns:
             float: Weighted individual score for the user-post pair.
         """
-        return self.args.weights.indivdual * self._compute_invidual(user, post, feed)
+        return self.args.weights.individual * self._compute_invidual(user, post, feed)
 
     @abc.abstractmethod
     def _compute_network(self, post: "Post") -> float:
@@ -186,7 +193,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         pass
 
     @abc.abstractmethod
-    def _compute_invidual(self, user: "User", post: "Post", feed: "Feed") -> float:
+    def _compute_individual(self, user: "User", post: "Post", feed: "Feed") -> float:
         """
         Abstract method for computing individual user-post scores.
 

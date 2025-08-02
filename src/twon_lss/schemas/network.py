@@ -32,6 +32,12 @@ class Network(pydantic.RootModel):
 
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
 
+    def __iter__(self):
+        return iter(self.root.nodes())
+
+    def __len__(self):
+        return len(self.root.nodes())
+
     def get_neighbors(self, user: "User") -> typing.List["User"]:
         return list(self.root.neighbors(user))
 
