@@ -32,7 +32,7 @@ class Network(pydantic.RootModel):
 
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
 
-    def get_neighbors(self, user: User) -> typing.List[User]:
+    def get_neighbors(self, user: "User") -> typing.List["User"]:
         return list(self.root.neighbors(user))
 
     @classmethod
@@ -41,6 +41,4 @@ class Network(pydantic.RootModel):
 
     @staticmethod
     def _relabel_to_users(graph: networkx.Graph) -> networkx.Graph:
-        from twon_lss.schemas.user import User
-
         return networkx.relabel_nodes(graph, mapping=lambda node_id: User(id=node_id))

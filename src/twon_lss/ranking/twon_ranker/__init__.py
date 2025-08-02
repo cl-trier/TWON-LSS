@@ -4,13 +4,12 @@ import statistics
 
 import pydantic
 
-from twon_lss.utility import Decay, LLM
-
 from twon_lss.ranking._interface import RankingInterface, RankingArgsInterface
 from twon_lss.ranking.twon_ranker.engagement import Engagement
 
 if typing.TYPE_CHECKING:
     from twon_lss.schemas import User, Post, Feed
+    from twon_lss.utility import Decay, LLM
 
 
 __all__ = ["Ranker", "RankerArgs", "Engagement"]
@@ -22,14 +21,14 @@ class RankerArgs(RankingArgsInterface):
         shares: float = 1.0
         comments: float = 1.0
 
-    decay: Decay = Decay()
-
     engagement: Engagement = Engagement()
     engagementWeights: EngagementWeights = EngagementWeights()
 
 
 class Ranker(RankingInterface):
-    llm: LLM
+    decay: "Decay"
+    llm: "LLM"
+
     args: RankerArgs = RankerArgs()
 
     def _compute_network(self, post: "Post") -> float:
@@ -40,7 +39,7 @@ class Ranker(RankingInterface):
             * self.args.engagement(
                 items=items,
                 reference_datetime=reference_datetime,
-                decay=self.args.decay,
+                decay=self.decay,
             )
             for weight, items in [
                 (self.args.engagementWeights.likes, post.interactions),

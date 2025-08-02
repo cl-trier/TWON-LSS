@@ -31,7 +31,7 @@ class Feed(pydantic.RootModel):
         ...     print(post)
     """
 
-    root: typing.List[Post] = pydantic.Field(default_factory=list)
+    root: typing.List["Post"] = pydantic.Field(default_factory=list)
 
     def get_items_by_user(self, user: User) -> "Feed":
         return Feed(list(filter(lambda post: post.user == user, self.root)))
@@ -49,4 +49,3 @@ class Feed(pydantic.RootModel):
                 )
             )
         )
-

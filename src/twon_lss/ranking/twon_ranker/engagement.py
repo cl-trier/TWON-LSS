@@ -4,7 +4,8 @@ import typing
 
 import pydantic
 
-from twon_lss.utility import Decay
+if typing.TYPE_CHECKING:
+    from twon_lss.utility import Decay
 
 
 class Engagement(pydantic.BaseModel):
@@ -18,6 +19,6 @@ class Engagement(pydantic.BaseModel):
     def get_decayed_score(
         items: typing.List[datetime.datetime],
         reference_datetime: datetime.datetime,
-        decay: Decay,
+        decay: "Decay",
     ) -> float:
         return sum([decay(item, reference_datetime) for item in items])

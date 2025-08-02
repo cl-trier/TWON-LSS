@@ -1,10 +1,18 @@
 import abc
 import typing
+import enum
 
 import pydantic
 
 if typing.TYPE_CHECKING:
     from twon_lss.schemas import Post
+
+
+class AgentActions(enum.Enum):
+    read = "read"
+    like = "like"
+    comment = "comment"
+    post = "post"
 
 
 class AgentInterface(abc.ABC, pydantic.BaseModel):
@@ -22,7 +30,7 @@ class AgentInterface(abc.ABC, pydantic.BaseModel):
     """
 
     @abc.abstractmethod
-    def select_actions(self, post: "Post") -> typing.Set:
+    def select_actions(self, post: "Post") -> typing.Set[AgentActions]:
         pass
 
     @abc.abstractmethod
