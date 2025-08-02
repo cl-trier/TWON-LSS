@@ -169,7 +169,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         Returns:
             float: Weighted individual score for the user-post pair.
         """
-        return self.args.weights.individual * self._compute_invidual(user, post, feed)
+        return self.args.weights.individual * self._compute_individual(user, post, feed)
 
     @abc.abstractmethod
     def _compute_network(self, post: "Post") -> float:

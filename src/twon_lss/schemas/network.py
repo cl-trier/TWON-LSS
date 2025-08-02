@@ -43,7 +43,7 @@ class Network(pydantic.RootModel):
 
     @classmethod
     def from_graph(cls, graph: networkx.Graph) -> "Network":
-        return cls(structure=Network._relabel_to_users(graph))
+        return cls(root=Network._relabel_to_users(graph))
 
     @staticmethod
     def _relabel_to_users(graph: networkx.Graph) -> networkx.Graph:

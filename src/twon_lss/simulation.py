@@ -56,7 +56,7 @@ class Simulation(pydantic.BaseModel):
             actions = agent.select_actions(post)
 
             if actions:
-                if InteractionTypes.read in post.interactions:
+                if InteractionTypes.read in actions:
                     post.interactions.append(
                         Interaction(user=user, type=InteractionTypes.read)
                     )

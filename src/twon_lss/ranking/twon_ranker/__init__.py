@@ -50,7 +50,7 @@ class Ranker(RankingInterface):
 
         return sum(observations)
 
-    def _compute_invidual(self, user: "User", post: "Post", feed: "Feed") -> float:
+    def _compute_individual(self, user: "User", post: "Post", feed: "Feed") -> float:
         return statistics.mean(
             self.llm.similarity(
                 post.content, [item.content for item in feed.get_items_by_user(user)]

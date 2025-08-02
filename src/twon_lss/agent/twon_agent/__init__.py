@@ -28,8 +28,8 @@ class Agent(AgentInterface):
         item: 1.0 for item in AgentActions
     }
 
-    memory: typing.List["Message"] = []
-    memory_length: int = 4
+    memory: typing.List["Message"] = pydantic.Field(default_factory=list)
+    memory_length: int = pydantic.Field(default=4, ge=0, le=20)
 
     def _append_to_memory(self, content: str) -> None:
         self.memory.append(Message(role="system", content=content))
