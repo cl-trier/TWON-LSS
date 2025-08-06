@@ -38,13 +38,16 @@ class Network(pydantic.RootModel):
     def __len__(self):
         return len(self.root.nodes())
 
-    def get_neighbors(self, user: "User") -> typing.List["User"]:
+    def get_neighbors(self, user: User) -> typing.List[User]:
         return list(self.root.neighbors(user))
 
     @classmethod
-    def from_graph(cls, graph: networkx.Graph) -> "Network":
-        return cls(root=Network._relabel_to_users(graph))
+    def from_graph(cls, graph: networkx.Graph, users: typing.List[User]) -> "Network":
+        return cls(Network._relabel_to_users(graph, users))
 
     @staticmethod
-    def _relabel_to_users(graph: networkx.Graph) -> networkx.Graph:
-        return networkx.relabel_nodes(graph, mapping=lambda node_id: User(id=node_id))
+    def _relabel_to_users(
+        graph: networkx.Graph, users: typing.List[User]
+    ) -> networkx.Graph:
+        assert len(graph) == len(users)
+        return networkx.relabel_nodes(graph, mapping=lambda node_id: users[node_id])

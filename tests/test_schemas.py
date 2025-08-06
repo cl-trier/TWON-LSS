@@ -5,6 +5,7 @@ import rich
 
 from twon_lss.schemas import Feed, Post, User
 
+
 class TestFeed:
     @pytest.fixture
     def feed(posts: typing.List[Post]):
@@ -28,6 +29,6 @@ class TestUser:
     @pytest.fixture
     def users(self) -> typing.List[User]:
         return [User() for _ in range(TestUser.num_users)]
-    
+
     def test_uniqueness(self, users: typing.List[User]):
         assert len([u.id for u in users]) == len(users)

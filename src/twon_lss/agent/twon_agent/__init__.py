@@ -3,14 +3,13 @@ import re
 
 import pydantic
 
-from twon_lss.agent import AgentInterface, AgentActions
+from twon_lss.agent._interface import AgentInterface, AgentActions
 
-if typing.TYPE_CHECKING:
-    from twon_lss.schemas import Post
-    from twon_lss.utility import LLM, Chat, Message
+from twon_lss.schemas import Post
+from twon_lss.utility import LLM, Chat, Message
 
 
-__all__ = ["Agent", "AgentInstructions"]
+__all__ = ["Agent", "AgentActions", "AgentInstructions"]
 
 
 class AgentInstructions(pydantic.BaseModel):
@@ -21,14 +20,14 @@ class AgentInstructions(pydantic.BaseModel):
 
 
 class Agent(AgentInterface):
-    llm: "LLM"
-    instructions: "AgentInstructions"
+    llm: LLM
+    instructions: AgentInstructions
 
-    action_likelihoods: typing.Dict["AgentActions", float] = {
+    action_likelihoods: typing.Dict[AgentActions, float] = {
         item: 1.0 for item in AgentActions
     }
 
-    memory: typing.List["Message"] = pydantic.Field(default_factory=list)
+    memory: typing.List[Message] = pydantic.Field(default_factory=list)
     memory_length: int = pydantic.Field(default=4, ge=0, le=20)
 
     def _append_to_memory(self, content: str) -> None:
@@ -51,7 +50,7 @@ class Agent(AgentInterface):
             )
         )
 
-    def select_actions(self, post: "Post") -> typing.Set["AgentActions"]:
+    def select_actions(self, post: Post) -> typing.Set[AgentActions]:
         instruction: str = self.instructions.select_actions + str(
             list(AgentActions._member_names_)
         )
@@ -62,13 +61,13 @@ class Agent(AgentInterface):
 
         return {AgentActions(item) for item in matches}
 
-    def comment(self, post: "Post") -> str:
+    def comment(self, post: Post) -> str:
         response: str = self._inference(self.instructions.comment, post)
         self._append_to_memory(response)
 
         return response
 
-    def post(self, post: "Post") -> str:
+    def post(self, post: Post) -> str:
         response: str = self._inference(self.instructions.post, post)
         self._append_to_memory(response)
 

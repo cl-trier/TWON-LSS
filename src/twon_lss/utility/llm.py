@@ -32,7 +32,7 @@ class LLM(pydantic.BaseModel):
 
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
 
-    def generate(self, chat: "Chat") -> str:
+    def generate(self, chat: Chat) -> str:
         return (
             self.client.chat.completions.create(
                 model=self.model, messages=chat.model_dump()

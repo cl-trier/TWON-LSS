@@ -1,11 +1,7 @@
 import abc
-import typing
 import enum
 
 import pydantic
-
-if typing.TYPE_CHECKING:
-    from twon_lss.schemas import Post
 
 
 class AgentActions(enum.Enum):
@@ -29,14 +25,16 @@ class AgentInterface(abc.ABC, pydantic.BaseModel):
     framework for defining action probabilities and decision-making logic.
     """
 
-    @abc.abstractmethod
-    def select_actions(self, post: "Post") -> typing.Set[AgentActions]:
-        pass
+    pass
 
-    @abc.abstractmethod
-    def comment(self, post: "Post") -> str:
-        pass
+    # @abc.abstractmethod
+    # def select_actions(self, post: "Post") -> typing.Set[AgentActions]:
+    #     pass
 
-    @abc.abstractmethod
-    def post(self, post: "Post") -> str:
-        pass
+    # @abc.abstractmethod
+    # def comment(self, post: "Post") -> str:
+    #     pass
+
+    # @abc.abstractmethod
+    # def post(self, post: "Post") -> str:
+    #     pass

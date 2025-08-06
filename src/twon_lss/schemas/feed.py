@@ -31,7 +31,7 @@ class Feed(pydantic.RootModel):
         ...     print(post)
     """
 
-    root: typing.List["Post"] = pydantic.Field(default_factory=list)
+    root: typing.List[Post] = pydantic.Field(default_factory=list)
 
     def __iter__(self):
         return iter(self.root)
@@ -42,10 +42,10 @@ class Feed(pydantic.RootModel):
     def __getitem__(self, index):
         return self.root[index]
 
-    def append(self, post: "Post") -> None:
+    def append(self, post: Post) -> None:
         self.root.append(post)
 
-    def extend(self, posts: typing.List["Post"]) -> None:
+    def extend(self, posts: typing.List[Post]) -> None:
         self.root.extend(posts)
 
     def get_items_by_user(self, user: User) -> "Feed":

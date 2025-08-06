@@ -7,9 +7,8 @@ import pydantic
 from twon_lss.ranking._interface import RankingInterface, RankingArgsInterface
 from twon_lss.ranking.twon_ranker.engagement import Engagement
 
-if typing.TYPE_CHECKING:
-    from twon_lss.schemas import User, Post, Feed
-    from twon_lss.utility import Decay, LLM
+from twon_lss.schemas import User, Post, Feed
+from twon_lss.utility import Decay, LLM
 
 
 __all__ = ["Ranker", "RankerArgs", "Engagement"]
@@ -26,12 +25,12 @@ class RankerArgs(RankingArgsInterface):
 
 
 class Ranker(RankingInterface):
-    decay: "Decay"
-    llm: "LLM"
+    decay: Decay
+    llm: LLM
 
     args: RankerArgs = RankerArgs()
 
-    def _compute_network(self, post: "Post") -> float:
+    def _compute_network(self, post: Post) -> float:
         reference_datetime: datetime.datetime = datetime.datetime.now()
 
         observations: typing.List[float] = [
@@ -50,7 +49,9 @@ class Ranker(RankingInterface):
 
         return sum(observations)
 
-    def _compute_individual(self, user: "User", post: "Post", feed: "Feed") -> float:
+    def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:
+        return 1.0
+        # FIXME authorization error on huggingface similarity endpoint
         return statistics.mean(
             self.llm.similarity(
                 post.content, [item.content for item in feed.get_items_by_user(user)]

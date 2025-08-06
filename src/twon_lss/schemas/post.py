@@ -41,7 +41,7 @@ class Interaction(pydantic.BaseModel):
         ... )
     """
 
-    user: "User"
+    user: User
     type: InteractionTypes
 
     timestamp: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)
@@ -75,10 +75,10 @@ class Post(pydantic.BaseModel):
         ... )
     """
 
-    user: "User"
+    user: User
     content: str
 
-    interactions: typing.List["Interaction"] = pydantic.Field(default_factory=list)
+    interactions: typing.List[Interaction] = pydantic.Field(default_factory=list)
     comments: typing.List["Post"] = pydantic.Field(default_factory=list)
 
     id: str = pydantic.Field(default_factory=lambda: f"post-{uuid.uuid4()}")
@@ -98,7 +98,7 @@ class Post(pydantic.BaseModel):
 
     def get_interactions(
         self,
-    ) -> typing.Dict["InteractionTypes", typing.List["Interaction"]]:
+    ) -> typing.Dict[InteractionTypes, typing.List[Interaction]]:
         return {
             i_type: list(
                 filter(
