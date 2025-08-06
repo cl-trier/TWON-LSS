@@ -7,7 +7,7 @@ from twon_lss.utility import Noise
 from twon_lss.schemas import User, Post, Feed, Network
 
 
-class RankingInterfaceWeights(pydantic.BaseModel):
+class RankerInterfaceWeights(pydantic.BaseModel):
     """
     Configures the weighting system for ranking algorithms.
 
@@ -24,7 +24,7 @@ class RankingInterfaceWeights(pydantic.BaseModel):
     individual: float = 1.0
 
 
-class RankingArgsInterface(abc.ABC, pydantic.BaseModel):
+class RankerArgsInterface(abc.ABC, pydantic.BaseModel):
     """
     Abstract base class for ranking algorithm configuration.
 
@@ -39,13 +39,13 @@ class RankingArgsInterface(abc.ABC, pydantic.BaseModel):
 
     """
 
-    weights: RankingInterfaceWeights = pydantic.Field(
-        default_factory=RankingInterfaceWeights
+    weights: RankerInterfaceWeights = pydantic.Field(
+        default_factory=RankerInterfaceWeights
     )
     noise: Noise = pydantic.Field(default_factory=Noise)
 
 
-class RankingInterface(abc.ABC, pydantic.BaseModel):
+class RankerInterface(abc.ABC, pydantic.BaseModel):
     """
     Abstract base class for ranking algorithms.
 
@@ -65,7 +65,7 @@ class RankingInterface(abc.ABC, pydantic.BaseModel):
         args (RankingArgsInterface): Configuration object containing weights, noise, and module-specific arguments (default: RankingArgsInterface()).
     """
 
-    args: RankingArgsInterface = pydantic.Field(default_factory=RankingArgsInterface)
+    args: RankerArgsInterface = pydantic.Field(default_factory=RankerArgsInterface)
 
     def __call__(
         self, users: typing.List[User], feed: Feed, network: Network

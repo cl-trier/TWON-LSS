@@ -9,7 +9,7 @@ Table of Contents
 .. toctree::
    :maxdepth: 2
 
-   modules.agent
-   modules.ranking
+   modules.simulations
+   modules.interfaces
    modules.schemas
    modules.utilities

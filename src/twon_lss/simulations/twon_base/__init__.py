@@ -1,37 +1,50 @@
 import typing
+import logging
 
-import pydantic
-
-from rich.progress import track
-
-from twon_lss.agent import AgentInterface, AgentActions
-from twon_lss.ranking import RankingInterface
-
-from twon_lss.schemas import Feed, Network, User, Post, Interaction, InteractionTypes
-
-
-class SimulationArgs(pydantic.BaseModel):
-    num_steps: int = 100
-    num_posts_to_interact_with: int = 5
+from twon_lss.interfaces import (
+    AgentInterface,
+    AgentActions,
+    SimulationInterface,
+    SimulationInterfaceArgs,
+)
+from twon_lss.schemas import Feed, User, Post, Interaction, InteractionTypes
 
 
-class Simulation(pydantic.BaseModel):
-    args: SimulationArgs
+from twon_lss.simulations.twon_base.agent import Agent, AgentInstructions
+from twon_lss.simulations.twon_base.ranker import Ranker, RankerArgs
 
-    ranking: RankingInterface
-    individuals: typing.Dict[User, AgentInterface]
 
-    network: Network
-    feed: Feed
+__all__ = [
+    "Simulation",
+    "SimulationArgs",
+    "Agent",
+    "AgentInstructions",
+    "Ranker",
+    "RankerArgs",
+]
 
-    def __call__(self) -> None:
-        for _ in track(range(self.args.num_steps)):
-            self._step()
+
+class SimulationArgs(SimulationInterfaceArgs):
+    """
+    TODO
+    """
+
+    pass
+
+
+class Simulation(SimulationInterface):
+    """
+    TODO
+    """
 
     def _step(self) -> None:
-        post_scores: typing.Dict[(User, Post), float] = self.ranking(
+        """
+        TODO
+        """
+        post_scores: typing.Dict[(User, Post), float] = self.ranker(
             users=self.individuals.keys(), feed=self.feed, network=self.network
         )
+        logging.debug(f">o global post scores | {post_scores}")
 
         for i_user, i_agent in self.individuals.items():
             # get user's post scores, sort by score, limit to top N
@@ -45,12 +58,16 @@ class Simulation(pydantic.BaseModel):
 
             self._step_agent(i_user, i_agent, Feed([post for post, _ in user_feed_top]))
 
-    def _step_agent(self, user: User, agent: AgentInterface, posts: Feed):
-        print(user)
+    def _step_agent(self, user: User, agent: AgentInterface, feed: Feed):
+        """
+        TODO
+        """
+        logging.debug(f">f perform agent simulation step | {user.id=}")
+        logging.debug(f">i selected feed for agent | {feed}")
 
-        for post in posts:
+        for post in feed:
             actions = agent.select_actions(post)
-            print(actions)
+            logging.debug(f">o selected actions for post | {post.id=} {actions=}")
 
             if actions:
                 if InteractionTypes.read in actions:

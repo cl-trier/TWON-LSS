@@ -1,10 +1,17 @@
+import typing
 import abc
 import enum
 
 import pydantic
 
+from twon_lss.schemas import Post
+
 
 class AgentActions(enum.Enum):
+    """
+    TODO
+    """
+
     read = "read"
     like = "like"
     comment = "comment"
@@ -27,14 +34,23 @@ class AgentInterface(abc.ABC, pydantic.BaseModel):
 
     pass
 
-    # @abc.abstractmethod
-    # def select_actions(self, post: "Post") -> typing.Set[AgentActions]:
-    #     pass
+    @abc.abstractmethod
+    def select_actions(self, post: Post) -> typing.Set[AgentActions]:
+        """
+        TODO
+        """
+        pass
 
-    # @abc.abstractmethod
-    # def comment(self, post: "Post") -> str:
-    #     pass
+    @abc.abstractmethod
+    def comment(self, post: Post) -> str:
+        """
+        TODO
+        """
+        pass
 
-    # @abc.abstractmethod
-    # def post(self, post: "Post") -> str:
-    #     pass
+    @abc.abstractmethod
+    def post(self, post: Post) -> str:
+        """
+        TODO
+        """
+        pass

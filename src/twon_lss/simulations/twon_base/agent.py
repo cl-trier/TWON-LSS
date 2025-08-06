@@ -3,7 +3,7 @@ import re
 
 import pydantic
 
-from twon_lss.agent._interface import AgentInterface, AgentActions
+from twon_lss.interfaces import AgentInterface, AgentActions
 
 from twon_lss.schemas import Post
 from twon_lss.utility import LLM, Chat, Message
@@ -13,6 +13,10 @@ __all__ = ["Agent", "AgentActions", "AgentInstructions"]
 
 
 class AgentInstructions(pydantic.BaseModel):
+    """
+    TODO
+    """
+
     persona: str
     select_actions: str
     comment: str
@@ -20,6 +24,10 @@ class AgentInstructions(pydantic.BaseModel):
 
 
 class Agent(AgentInterface):
+    """
+    TODO
+    """
+
     llm: LLM
     instructions: AgentInstructions
 
@@ -33,7 +41,10 @@ class Agent(AgentInterface):
     def _append_to_memory(self, content: str) -> None:
         self.memory.append(Message(role="system", content=content))
 
-    def _inference(self, instruction: str, post: "Post") -> "Chat":
+    def _inference(self, instruction: str, post: Post) -> Chat:
+        """
+        TODO
+        """
         return self.llm.generate(
             Chat(
                 [
@@ -51,6 +62,9 @@ class Agent(AgentInterface):
         )
 
     def select_actions(self, post: Post) -> typing.Set[AgentActions]:
+        """
+        TODO
+        """
         instruction: str = self.instructions.select_actions + str(
             list(AgentActions._member_names_)
         )
@@ -62,12 +76,18 @@ class Agent(AgentInterface):
         return {AgentActions(item) for item in matches}
 
     def comment(self, post: Post) -> str:
+        """
+        TODO
+        """
         response: str = self._inference(self.instructions.comment, post)
         self._append_to_memory(response)
 
         return response
 
     def post(self, post: Post) -> str:
+        """
+        TODO
+        """
         response: str = self._inference(self.instructions.post, post)
         self._append_to_memory(response)
 
