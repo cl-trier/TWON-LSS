@@ -3,7 +3,9 @@ import typing
 import pytest
 import rich
 
-from twon_lss.schemas import Feed, Post, User
+import networkx
+
+from twon_lss.schemas import Feed, Post, User, Network
 
 
 class TestFeed:
@@ -32,3 +34,14 @@ class TestUser:
 
     def test_uniqueness(self, users: typing.List[User]):
         assert len([u.id for u in users]) == len(users)
+
+
+class TestNetwork:
+    @pytest.fixture
+    def network(self) -> Network:
+        return   Network.from_graph(networkx.random_regular_graph(5, 10))
+    
+    def test_network(self, network: Network) -> None:
+        for user in network:
+            rich.print(user)
+            rich.print(network.get_neighbors(user))

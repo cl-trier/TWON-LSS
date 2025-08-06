@@ -5,10 +5,10 @@ import datetime
 import pytest
 
 from twon_lss.utility import Decay
-from twon_lss.ranking.twon_ranker import Engagement
+from twon_lss.simulations.twon_base.ranker import Engagement
 
 
-class TestRanking:
+class TestRanker:
     @pytest.fixture
     def observations(
         self,
