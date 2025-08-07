@@ -2,110 +2,105 @@
 
 ```mermaid
 flowchart TB
-
-    subgraph "Network"
-        
-        FEED[📱 News Feed]
-
-        ALGO[🤖 Content Ranking]
-        FILTER[🌐 Content Filtering]
-        
-        NOTIFY@{shape: processes, label: "🔔 Notifications"}
-        TIMELINE@{shape: processes, label: "📋 Personalized Timeline"}
-
-        FEED --> ALGO & FILTER & NOTIFY
-        ALGO & FILTER --> TIMELINE
+    subgraph "Schemas_(Data_Classes)"
+        USER[User]
+        POST[Post]
+        FEED[Feed]
+        NETWORK[Network]
+        INTERACTION[Interaction]
+    end
+    subgraph "Engine_(Interfaces)"
+        SIM[Simulation]
+        AGENT[Agent]
+        RANKER[Ranker]
+    end
+    subgraph "Utility"
+        LLM[LLM]
+        NOISE[Noise]
+        DECAY[Decay]
+    end
+    subgraph "External Services"
+        HF[Hugging Face Hub]
     end
 
-    subgraph "Agent" 
-
-        USER@{shape: processes, label: "👤 User"}
-
-        subgraph "Context"
-            CONNECTIONS@{shape: processes, label: "👥 Connnections"}
-            FEATURES@{shape: processes, label: "⚙️ Features: *Success, Motivation, Budget*"}
-            HISTORY@{shape: processes, label: "📚 History/Memory"}
-        end
-
-        subgraph "Tools"
-            ACTION@{shape: processes, label: "🛠️ Actions"}
-            POST[📝 Post:<br>*Generative*]
-            LIKE[👍 Like:<br>*Approximated*]
-            COMMENT[💬 Comment:<br>*Generative*]
-            SHARE[🔄 Share:<br>*Approximated*]
-        end 
-        
-        ACTION --> POST & LIKE & COMMENT & SHARE
-        USER --> ACTION
-        USER & ACTION <-.-> HISTORY & FEATURES
-        USER <-.-> CONNECTIONS
-    end
+    SIM --> AGENT
+    SIM --> RANKER
+    SIM --> FEED
+    SIM --> NETWORK
     
-    TIMELINE --> USER
-    NOTIFY --> USER
-    ACTION --> FEED
-    %% USER --> FILTER
+    AGENT --> LLM
+    RANKER --> DECAY
+    RANKER --> NOISE
     
+    LLM --> HF
+    
+    FEED --> POST
+    POST --> USER
+    POST --> INTERACTION
+    NETWORK --> USER
+
     %% Styling
-    classDef ComponentClass fill:#f3e5f5,stroke:#4a148c,stroke-width:3px
-    classDef actionClass fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef systemClass fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef schemaClass fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef engineClass fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    classDef utilityClass fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef externalClass fill:#fff3e0,stroke:#f57c00,stroke-width:2px
     
-    class FEED,USER ComponentClass
-    class POST,LIKE,COMMENT,SHARE actionClass
-    class ALGO,FILTER,NOTIFY,TIMELINE systemClass
+    class USER,POST,FEED,NETWORK,INTERACTION schemaClass
+    class SIM,AGENT,RANKER engineClass
+    class LLM,NOISE,DECAY utilityClass
+    class HF externalClass
 ```
 
 
 ```mermaid
 sequenceDiagram
-    participant U as 👤 User
-    participant A as 🛠️ Actions
-    participant F as 📱 Feed
-    participant AL as 🤖 Ranking Algorithm
-    participant FT as 🌐 Ranking Filter
-    participant T as 📋 Agent Timeline
-    participant N as 🔔 Notifications
-    participant H as 📚 History
-    participant FE as ⚙️ Features
-    participant C as 👥 Connections
+    participant S as Simulation
+    participant R as Ranker
+    participant A as Agent
+    participant F as Feed
+    participant N as Network
+    participant L as LLM
+    participant HF as HF Hub
 
-    loop for each Timestep
-        Note over U,C: Feed Initialization
-        F->>F: Load Feed items
+    loop for each Simulation Step
+        Note over S,HF: Step Initialization
+        S->>R: Calculate post scores for all users
+        R->>N: Get network connections
+        R->>F: Get available posts
+        R->>R: Compute network-wide scores
+        R->>R: Compute individual user scores
+        R->>S: Return ranked post scores
 
-        Note over U,C: Agent Cycle
-        loop for each Agent | no interdependence, can be parallelized
-            Note over U,C: Setup
-            U->>H: Load History
-            U->>FE: Load Features
-            U->>C: Load Connections
-
-            break
-                FE->>U: Decide if Agent will be active during the Timestep
-            end
-
-            Note over U,N: Feed & Notification Generation
-            U->>T: Request individual Feed
-            T->>FT: Request Ranking Filter
-            T->>AL: Request Ranking Algorithm
-            T-->>U: Return individual Feed
-            N-->>U: Return Notifications
-
-            Note over U,FE: Feed & Notifications Interaction
-            loop for each Item in Notifications & Feed
-                U->>A: Read Item
-                A->>H: Update History
-
-                opt if Notification, update Features: motivation
-                    A->>H: Update Features
-                end
+        Note over S,HF: Agent Processing (Parallelizable)
+        loop for each User
+            S->>S: Get user's top N posts by score
+            S->>A: Execute agent step with ranked feed
+            
+            loop for each Post in User Feed
+                A->>L: Select actions for post
+                L->>HF: Generate LLM response
+                L->>A: Return action decisions
                 
-                alt chooses Action
-                    U->>A: Execute Action:<br>Post/Comment/Like/Share/None 
-                    A->>F: Send Result
-                    A->>H: Update History
-                    A->>FE: Update Features
+                alt Agent chooses to interact
+                    A->>F: Add read interaction
+                    
+                    opt Agent likes post
+                        A->>F: Add like interaction
+                    end
+                    
+                    opt Agent comments
+                        A->>L: Generate comment content
+                        L->>HF: Generate comment text
+                        L->>A: Return comment
+                        A->>F: Add comment to post
+                    end
+                    
+                    opt Agent creates new post
+                        A->>L: Generate post content
+                        L->>HF: Generate post text
+                        L->>A: Return post content
+                        A->>F: Create new post
+                    end
                 end
             end
         end
