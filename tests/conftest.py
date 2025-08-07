@@ -8,7 +8,7 @@ from twon_lss.schemas import User, Post, Interaction, InteractionTypes
 
 @pytest.fixture
 def users() -> typing.List[User]:
-    return [User(), User(), User(), User()]
+    return [User() for _ in range(4)]
 
 
 @pytest.fixture

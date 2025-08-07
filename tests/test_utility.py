@@ -71,30 +71,62 @@ class TestNoise:
     def noise_samples(self, noise: Noise, num_observations: int) -> typing.List[float]:
         return noise.draw_samples(num_observations)
 
-    def test_noise_bounds(self, noise: Noise, noise_samples: typing.List[float]):
+    def test_single_call(self, noise: Noise):
+        value = noise()
+        assert isinstance(value, float)
+        assert noise.low <= value <= noise.high
+
+    def test_bounds(self, noise: Noise, noise_samples: typing.List[float]):
         assert noise.low <= min(noise_samples)
         assert max(noise_samples) <= noise.high
 
-    def test_noise_distribution(self, noise: Noise, noise_samples: typing.List[float]):
-        assert sum(noise_samples) / len(noise_samples) == pytest.approx(
-            sum([noise.low, noise.high]) / 2, abs=1e-3
-        )
+    def test_distribution(self, noise: Noise, noise_samples: typing.List[float]):
+        expected_mean = (noise.low + noise.high) / 2
+        actual_mean = sum(noise_samples) / len(noise_samples)
+        assert actual_mean == pytest.approx(expected_mean, abs=1e-3)
+
+    def test_draw_samples_length(self, noise: Noise):
+        samples = noise.draw_samples(100)
+        assert len(samples) == 100
+        assert all(isinstance(s, float) for s in samples)
 
 
-class TestUtility:
+class TestDecay:
     @pytest.fixture
     def decay(self) -> Decay:
         return Decay()
 
-    def test_decay_abs_now(self, decay: Decay, ref_datetime: datetime.datetime):
-        assert decay(ref_datetime, ref_datetime) == pytest.approx(1.0, abs=1e-3)
+    def test_create(self, decay: Decay):
+        assert decay.minimum == 0.2
+        assert decay.timedelta == datetime.timedelta(days=3)
 
-    def test_decay_abs_past(
+    def test_same_time(self, decay: Decay, ref_datetime: datetime.datetime):
+        factor = decay(ref_datetime, ref_datetime)
+        assert factor == pytest.approx(1.0, abs=1e-3)
+
+    def test_past_reference_time(
         self,
         decay: Decay,
         ref_datetime: datetime.datetime,
         ref_timedelta: datetime.timedelta,
     ):
-        assert decay(ref_datetime - ref_timedelta, ref_datetime) == pytest.approx(
-            decay.minimum, abs=1e-3
-        )
+        factor = decay(ref_datetime - ref_timedelta, ref_datetime)
+        assert factor == pytest.approx(decay.minimum, abs=1e-3)
+
+    def test_intermediate_time(self, decay: Decay, ref_datetime: datetime.datetime):
+        half_time = ref_datetime - decay.timedelta / 2
+        factor = decay(half_time, ref_datetime)
+        assert decay.minimum < factor < 1.0
+
+    def test_decay_monotonic(self, decay: Decay, ref_datetime: datetime.datetime):
+        times = [
+            ref_datetime,
+            ref_datetime - datetime.timedelta(days=1),
+            ref_datetime - datetime.timedelta(days=2),
+            ref_datetime - datetime.timedelta(days=3),
+        ]
+
+        factors = [decay(time, ref_datetime) for time in times]
+
+        for i in range(len(factors) - 1):
+            assert factors[i] >= factors[i + 1]
