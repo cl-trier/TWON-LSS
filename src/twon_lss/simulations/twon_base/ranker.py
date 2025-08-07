@@ -7,7 +7,7 @@ import pydantic
 
 from twon_lss.interfaces import RankerInterface, RankerArgsInterface
 
-from twon_lss.schemas import User, Post, Feed
+from twon_lss.schemas import User, Post, Feed, InteractionTypes
 from twon_lss.utility import Decay, LLM
 
 
@@ -51,7 +51,6 @@ class RankerArgs(RankerArgsInterface):
         """
 
         likes: float = 1.0
-        shares: float = 1.0
         comments: float = 1.0
 
     engagement: Engagement = Engagement()
@@ -82,9 +81,19 @@ class Ranker(RankerInterface):
                 decay=self.decay,
             )
             for weight, items in [
-                (self.args.engagementWeights.likes, post.interactions),
-                (self.args.engagementWeights.shares, post.interactions),
-                (self.args.engagementWeights.comments, post.interactions),
+                (
+                    self.args.engagementWeights.likes,
+                    [
+                        interaction.timestamp
+                        for interaction in post.get_interactions()[
+                            InteractionTypes.like
+                        ]
+                    ],
+                ),
+                (
+                    self.args.engagementWeights.comments,
+                    [comment.timestamp for comment in post.comments],
+                ),
             ]
         ]
 
