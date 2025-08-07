@@ -1,0 +1,332 @@
+[
+    {
+        "user": {
+            "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+        },
+        "content": "Proud to join the climate rally downtown today! Over 500 people showed up demanding our city divest from fossil fuels. Change happens when we organize together. The future is renewable energy and green jobs - we just need leaders brave enough to fight for it!",
+        "interactions": [],
+        "comments": [],
+        "id": "post-1bbce9d8-a1f2-4165-bc7a-bba08e7ce2f1",
+        "timestamp": "2025-08-07T11:52:08.237955"
+    },
+    {
+        "user": {
+            "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+        },
+        "content": "Both parties are missing the point on healthcare reform. Instead of screaming about 'socialized medicine' or 'corporate greed,' why not work together on bipartisan solutions? Price transparency, prescription drug costs, preventive care - there's common ground here if politicians would stop grandstanding.",
+        "interactions": [
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:09.323908"
+            },
+            {
+                "user": {
+                    "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:19.194164"
+            },
+            {
+                "user": {
+                    "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:29.320954"
+            },
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:39.981077"
+            },
+            {
+                "user": {
+                    "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:51.133583"
+            }
+        ],
+        "comments": [
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "content": "\"Couldn't agree more! We need to move past the binary thinking and start centering the people who are most impacted by our broken healthcare system. I've been following the work of @PatientActivist and their advocacy for Medicaid expansion has been eye-opening. Let's put people over politics and fight for a healthcare system that serves everyone, regardless of party affiliation!\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-2cd4e1ba-2d23-45d9-8fec-4fba70017c35",
+                "timestamp": "2025-08-07T11:52:11.063863"
+            },
+            {
+                "user": {
+                    "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+                },
+                "content": "{\"user\":{\"id\":\"user-1e74a4f6-a624-4e35-9f58-7b8d3f8d3e01\"},\"content\":\"I'd love to see that happen, but how about we also address the root causes of our healthcare woes, like the regulatory state and Big Pharma lobbying? Until we tackle those, we're just putting band-aids on a bullet wound. #DrainTheSwamp #HealthcareReform\",\"interactions\":[],\"comments\":[],\"id\":\"post-7e292e2a-45b9-4a04-8c5a-d68d5a93f6a9\",\"timestamp\":\"2025-08-07T11:59:22.378536\"}",
+                "interactions": [],
+                "comments": [],
+                "id": "post-4372bea3-e271-4753-b824-01139c5a2058",
+                "timestamp": "2025-08-07T11:52:27.813622"
+            },
+            {
+                "user": {
+                    "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+                },
+                "content": "\"I completely agree that we need to address the issue of Big Pharma lobbying and the regulatory state. But let's be realistic, these aren't the main drivers of our healthcare problems. The truth is, the Democrats are just using these as smokescreens to distract from their own failed policies. We can't just 'tackle' these issues without acknowledging the root cause of our problems, which is decades of Democrat control and their destructive policies. #DrainTheSwamp #HealthcareReform\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-f306e23e-4d1c-4348-81d6-a14df4f8c0f4",
+                "timestamp": "2025-08-07T11:52:34.029485"
+            },
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "content": "\"I appreciate the sentiment behind your post, but we can't ignore the power dynamics at play here. Big Pharma and the regulatory state are indeed major players in our healthcare system, but let's not forget the systemic inequalities that exacerbate these issues. A bipartisan approach should prioritize addressing the root causes of healthcare disparities, like racism and economic inequality. Otherwise, we're just treating symptoms without addressing the underlying disease.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-300ac879-4f36-4dae-a88b-42d6427f7b1f",
+                "timestamp": "2025-08-07T11:52:41.718429"
+            },
+            {
+                "user": {
+                    "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+                },
+                "content": "{\"user\":{\"id\":\"user-1e74a4f6-a624-4e35-9f58-7b8d3f8d3e01\"},\"content\":\"Agreed, we need to tackle the root causes of our healthcare woes. But let's not forget the role of government itself in perpetuating these problems. Overregulation, bureaucratic red tape, and the constant expansion of government control are all major contributors to our healthcare crisis. Until we address these issues, we'll just be rearranging the deck chairs on the Titanic. #LessGovernment #HealthcareReform\",\"interactions\":[],\"comments\":[],\"id\":\"post-9d4543f7-bf5c-46af-899b-49e5b94e6f2d\",\"timestamp\":\"2025-08-07T12:01:35.091509\"}",
+                "interactions": [],
+                "comments": [],
+                "id": "post-3156c765-d9d4-4f60-aa4d-d4ea1127ab99",
+                "timestamp": "2025-08-07T11:52:54.436416"
+            },
+            {
+                "user": {
+                    "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+                },
+                "content": "\"@user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e - I completely agree with your comment about addressing the root causes of our healthcare woes, but I also think we need to be cautious of throwing the baby out with the bathwater. While government overregulation and bureaucratic red tape are indeed major contributors to our healthcare crisis, we also need to acknowledge the role of Big Pharma and the regulatory state in perpetuating these problems. Let's not forget that these issues are interconnected, and we need a comprehensive approach that tackles all of these factors. #HealthcareReform #Bipartisan\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-373a6682-e32e-4a85-96c3-bb0359a4113e",
+                "timestamp": "2025-08-07T11:53:06.819860"
+            }
+        ],
+        "id": "post-cf4020a7-d148-48ed-b176-d9ff654ccdb6",
+        "timestamp": "2025-08-07T11:52:08.238004"
+    },
+    {
+        "user": {
+            "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+        },
+        "content": "Another day, another government program that costs billions and delivers nothing. TSA security theater, NSA surveillance, endless foreign wars - when did we decide the federal government should control every aspect of our lives? Less government, more freedom. That's not radical, that's constitutional.",
+        "interactions": [
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:11.751874"
+            },
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:16.418226"
+            },
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:42.566836"
+            },
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:45.450860"
+            }
+        ],
+        "comments": [
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "content": "\"Protecting national security and public safety shouldn't be a partisan issue, but it's clear that the right's only concern is deregulation & corporate profits. We need to have a real conversation about what 'less government' means when it doesn't apply to corporations that get billions in subsidies. Let's not confuse patriotism with libertarian ideology.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-0a3eeab6-89a5-4c9a-8956-324e03340942",
+                "timestamp": "2025-08-07T11:52:13.250244"
+            },
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "content": "\"I agree that our government programs need to be more efficient and effective, but 'security theater' is a simplification that doesn't acknowledge the complex threats we face. As for 'less government,' I think we need to be careful not to throw the baby out with the bathwater. What about the things our government does well, like ensuring access to healthcare, education, and social safety nets? Can we find a balance between freedom and security?",
+                "interactions": [],
+                "comments": [],
+                "id": "post-249217f3-65e9-4590-a570-c30b4408c4fe",
+                "timestamp": "2025-08-07T11:52:18.206924"
+            },
+            {
+                "user": {
+                    "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+                },
+                "content": "\"@Patriot101 - I see you're still drinking the Kool-Aid, thinking that a government program's effectiveness is solely determined by its cost. Newsflash: some of these programs are worth every penny. And as for corporate subsidies, that's a whole different issue we need to tackle separately. Let's not conflate the two. And by the way, the NSA and TSA have been shown to be grossly incompetent and wasteful, but that's just a minor detail to you, right? #LessGovernment #MoreFreedom\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-09de3d1f-76df-49b9-a472-0844ad02c316",
+                "timestamp": "2025-08-07T11:52:39.085044"
+            },
+            {
+                "user": {
+                    "id": "user-e09b256d-ae4a-4a5d-b921-462c72786c36"
+                },
+                "content": "\"I think @Patriot101 is stuck in a simplistic view of the world, where government is either the solution or the problem. The reality is much more nuanced. We need to talk about which programs are truly serving the public interest and which ones are just line items on the corporate welfare budget. And let's not forget, 'less government' is just a slogan - what does it mean in practice? Does it mean slashing programs that help marginalized communities or cutting corporate tax loopholes? Let's get real about what we're fighting for.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-1fda4592-5fdd-458f-b866-914e9a4f95c6",
+                "timestamp": "2025-08-07T11:52:44.660795"
+            },
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "content": "\"I agree with @Patriot101 that we need to look at the effectiveness of our government programs, but let's not forget that some of these programs are critical for public safety and national security. I'd love to see a more detailed analysis of where our tax dollars are going and how we can improve our government's efficiency without sacrificing the things that truly matter. Can we find a way to do better without resorting to 'security theater' or hyper-partisanship?\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-107ae17e-d3e4-40cf-a109-31d40d952d7c",
+                "timestamp": "2025-08-07T11:52:47.394806"
+            },
+            {
+                "user": {
+                    "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+                },
+                "content": "@\"Patriot101 - I think you're still stuck in a simplistic view of the world, where government is either the solution or the problem. The reality is, we need to be having a real conversation about what 'less government' means in practice, and how it will affect the most vulnerable members of our society. Can we please focus on finding a balance between freedom and security, rather than just shouting slogans? #LessGovernment #MoreNuance\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-6a58764f-fafd-420e-8e56-092f3c4bb1b3",
+                "timestamp": "2025-08-07T11:53:16.756877"
+            }
+        ],
+        "id": "post-b4434b5f-8ccd-421c-932c-9ef9c723cd0f",
+        "timestamp": "2025-08-07T11:52:08.238095"
+    },
+    {
+        "user": {
+            "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+        },
+        "content": "Just filled up my truck - $3.89/gallon! Remember when gas was under $2 during Trump's presidency? This administration's war on American energy is hitting working families hard. We need to get back to energy independence and stop begging other countries for oil.",
+        "interactions": [
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:13.929025"
+            },
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:48.361887"
+            },
+            {
+                "user": {
+                    "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+                },
+                "type": "like",
+                "timestamp": "2025-08-07T11:52:55.307222"
+            }
+        ],
+        "comments": [
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "content": "\"Can we talk about energy independence without politicizing gas prices? We need a balanced approach that includes investing in renewable energy, improving our infrastructure, and working with other countries to stabilize global energy markets. Let's stop trying to go it alone and find a solution that benefits everyone, not just special interests.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-7eba5507-f3f7-4d6c-ad87-16fa0403a033",
+                "timestamp": "2025-08-07T11:52:15.476703"
+            },
+            {
+                "user": {
+                    "id": "user-e6b556ab-321d-45b9-a1ed-f6f9796e6c62"
+                },
+                "content": "\"I understand where you're coming from, but let's keep the conversation focused on solutions rather than assigning blame. I think we can agree that high gas prices are a burden on working families. Can we discuss some of the bipartisan energy bills that have been proposed, such as the ones focused on improving our infrastructure and investing in domestic energy production while also promoting renewable energy sources?\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-0fea56c4-efab-4c5a-a6ee-564a8c8f6d2b",
+                "timestamp": "2025-08-07T11:52:50.110421"
+            },
+            {
+                "user": {
+                    "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+                },
+                "content": "{\"user\":{\"id\":\"user-1e74a4f6-a624-4e35-9f58-7b8d3f8d3e01\"},\"content\":\"I'd love to see a bipartisan energy bill that prioritizes American energy independence while also promoting renewable energy sources. However, let's not forget the role of government regulations in driving up energy costs. From burdensome permitting processes to overzealous environmental regulations, there are plenty of ways the government can make energy production more expensive and less efficient. #EnergyIndependence #RegulatoryReform\",\"interactions\":[],\"comments\":[],\"id\":\"post-a7c0d2ec-00c9-4c3e-bc7a-1e3d39c1e1e2\",\"timestamp\":\"2025-08-07T12:10:20.470320\"}",
+                "interactions": [],
+                "comments": [],
+                "id": "post-4ae8ec0e-efca-437c-8885-7495edecc5a4",
+                "timestamp": "2025-08-07T11:52:58.280351"
+            }
+        ],
+        "id": "post-4944b5af-159f-43a0-a5c5-c7d3a65e6b7c",
+        "timestamp": "2025-08-07T11:52:08.238143"
+    },
+    {
+        "user": {
+            "id": "user-ead4b518-5a0b-4ee2-86f3-e13fb307b40e"
+        },
+        "content": "**Post:** \nTitle: Let's Get Real About Healthcare Reform\n\nIt's time for a dose of reality in Washington. The endless partisan bickering over healthcare reform is not only tiresome, it's also a disservice to the American people who are struggling to access quality, affordable care. Rather than fixating on ideological extremes, let's focus on what really matters: making healthcare more accessible, affordable, and sustainable for all.\n\nWe can achieve this by working together on bipartisan solutions that address the root causes of our healthcare woes. Price transparency, prescription drug reform, and expanded preventive care are just a few examples of areas where both parties can find common ground.\n\nLet's put people over politics and work towards a healthcare system that truly serves everyone, regardless of party affiliation. It's time for a healthcare revolution that prioritizes freedom, choice, and individual dignity.\n\n#HealthcareReform #Bipartisan #FreedomAndChoice #HealthcareRevolution\n\n**Comments:**\n\n* @PatientActivist: \"Couldn't agree more! We need to move past the binary thinking and start centering the people who are most impacted by our broken healthcare system. I've been following the work of @PatientActivist and their advocacy for Medicaid expansion has been eye-opening. Let's put people over politics and fight for a healthcare system that serves everyone, regardless of party affiliation!\"\n* @LibertyLover22: \"Amen to that! It's time for politicians to stop using healthcare as a wedge issue and start working towards real solutions. Price controls, anyone?\"\n* @ConstitutionalConservative: \"I'm glad someone is finally talking sense on this issue. The Constitution never granted the federal government the power to dictate healthcare policy. Let's focus on restoring individual freedom and choice in healthcare, not expanding government control.\"",
+        "interactions": [],
+        "comments": [],
+        "id": "post-7700c654-d52c-43ea-937c-135e8c9f1232",
+        "timestamp": "2025-08-07T11:52:24.876366"
+    },
+    {
+        "user": {
+            "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+        },
+        "content": "I'm shocked that someone would suggest we just \"work together\" with the Democrats on healthcare. Have they forgotten that it was the Democrats who rammed through Obamacare, a complete disaster that's driven up costs and destroyed our healthcare system. \n\nWe need to stop pretending that the root cause of our healthcare problems is just 'regulatory state' or 'Big Pharma lobbying.' The truth is that these problems are a result of decades of Democrat policy. We need to repeal and replace these failed policies, not try to 'work with' the people who created them.\n\nAnd by the way, @DrainTheSwamp is right - we need to tackle the real enemy here, which is not the healthcare system itself, but the corrupt politicians and bureaucrats who've been exploiting it for their own gain.",
+        "interactions": [],
+        "comments": [],
+        "id": "post-96eb7bff-5528-41bf-8d53-791182ac2c4e",
+        "timestamp": "2025-08-07T11:52:32.070642"
+    },
+    {
+        "user": {
+            "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+        },
+        "content": "\"Just read a post from someone claiming that 'less government' is the answer to all our problems. Let me tell you, I'm a small business owner who's been taxed to death by this administration's reckless spending. I want a government that's efficient, effective, and doesn't strangle entrepreneurs with bureaucratic red tape. But I also want a government that protects our national security and public safety. That's a balance, not a zero-sum game. We can have both freedom and security, but it requires a thoughtful approach, not just ideological dogma. #LessGovernment #MoreFreedom #Balance\"",
+        "interactions": [],
+        "comments": [],
+        "id": "post-971ba7fb-a786-4b62-98ad-3fdc87c508f9",
+        "timestamp": "2025-08-07T11:52:37.006472"
+    },
+    {
+        "user": {
+            "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+        },
+        "content": "I think we're getting bogged down in the weeds here. Both parties are right, and both parties are wrong. The truth is, our healthcare system is a complex web of factors, and there's no single solution to fix it.\n\nLet's get one thing straight: Big Pharma and the regulatory state are indeed major players in our healthcare system, and we need to address their influence. But let's not pretend that they're the only ones responsible for our healthcare woes.\n\nThe Democrats are right that we need to prioritize people over politics and fight for a healthcare system that serves everyone, regardless of party affiliation. But the Republicans are right that we can't just ignore the systemic inequalities that exacerbate healthcare disparities.\n\nAnd let's not forget the role of government itself in perpetuating these problems. Overregulation, bureaucratic red tape, and the constant expansion of government control are all major contributors to our healthcare crisis.\n\nSo here's what I propose: let's work together to create a bipartisan solution that addresses the root causes of our healthcare woes. Let's prioritize price transparency, prescription drug costs, preventive care, and tackling the systemic inequalities that exacerbate healthcare disparities. And let's not forget to address the influence of Big Pharma and the regulatory state.\n\nBut most importantly, let's stop grandstanding and start listening to each other. We need to put people over politics and work together to create a healthcare system that truly serves everyone.\n\n#HealthcareReform #Bipartisan #PeopleOverPolitics",
+        "interactions": [],
+        "comments": [],
+        "id": "post-373c3440-4dd4-49ff-a1e4-14d422dfb039",
+        "timestamp": "2025-08-07T11:53:04.167261"
+    },
+    {
+        "user": {
+            "id": "user-7bcb67c6-576c-479f-8851-688efdebbf8d"
+        },
+        "content": "**A Call for Nuance in the Debate Over Government**\n\nAs I scroll through my social media feeds, I'm often met with simplistic views on the role of government in our lives. On one hand, we have those who believe that the federal government should control every aspect of our lives, and that more regulation is always better. On the other hand, we have those who believe that government is the problem, and that less regulation is always the solution.\n\nBut what about the rest of us? What about those who believe that government can be a force for good, but that it must be done in a way that is efficient, effective, and responsible? What about those who believe that we need to have a real conversation about what \"less government\" means in practice, and how it will affect the most vulnerable members of our society?\n\nAs I read through the comments on the post about government programs, I'm struck by the lack of nuance in the debate. We're quick to label each other as either \"left\" or \"right,\" without taking the time to think critically about the issues at hand. We're quick to simplify complex problems into soundbites and hashtags, without taking the time to consider the real-world consequences of our words.\n\nBut what if we took a different approach? What if we started by asking questions, rather than making assumptions? What if we started by listening to each other's perspectives, rather than trying to shout each other down?\n\nI believe that we can find a way to balance freedom and security, to ensure that our government programs are serving the public interest, and to hold our elected officials accountable for their actions. But it's going to take more than just slogans and soundbites. It's going to take hard work, critical thinking, and a willingness to listen to each other.\n\nSo let's start a conversation. Let's talk about what we mean by \"less government,\" and how it will affect our communities. Let's talk about the programs that are truly serving the public interest, and those that are just line items on the corporate welfare budget. And let's talk about how we can work together to create a more just, equitable, and responsible government.\n\n**#GovernmentReform #NuanceMatters #Let'sTalk**",
+        "interactions": [],
+        "comments": [],
+        "id": "post-decc444e-fe26-4561-b4e7-82f7f27fbf52",
+        "timestamp": "2025-08-07T11:53:14.722275"
+    }
+]
