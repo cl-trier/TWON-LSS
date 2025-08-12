@@ -1,4 +1,3 @@
-import typing
 import logging
 
 from twon_lss.interfaces import (
@@ -36,27 +35,6 @@ class Simulation(SimulationInterface):
     """
     TODO
     """
-
-    def _step(self) -> None:
-        """
-        TODO
-        """
-        post_scores: typing.Dict[(User, Post), float] = self.ranker(
-            users=self.individuals.keys(), feed=self.feed, network=self.network
-        )
-        logging.debug(f">o global post scores | {post_scores}")
-
-        for i_user, i_agent in self.individuals.items():
-            # get user's post scores, sort by score, limit to top N
-            user_feed: typing.List[(Post, float)] = [
-                (post, score)
-                for (user, post), score in post_scores.items()
-                if user == i_user
-            ]
-            user_feed.sort(key=lambda x: x[1], reverse=True)
-            user_feed_top = user_feed[: self.args.num_posts_to_interact_with]
-
-            self._step_agent(i_user, i_agent, Feed([post for post, _ in user_feed_top]))
 
     def _step_agent(self, user: User, agent: AgentInterface, feed: Feed):
         """
