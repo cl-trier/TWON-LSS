@@ -1,4 +1,5 @@
 import typing
+import json
 
 import pydantic
 
@@ -51,3 +52,13 @@ class Network(pydantic.RootModel):
     ) -> networkx.Graph:
         assert len(graph) == len(users)
         return networkx.relabel_nodes(graph, mapping=lambda node_id: users[node_id])
+
+    def to_json(self, path: str) -> None:
+        json.dump(
+            networkx.node_link_data(
+                networkx.relabel_nodes(self.root, mapping=lambda user: user.id),
+                edges="edges",
+            ),
+            open(path, "w"),
+            indent=4,
+        )

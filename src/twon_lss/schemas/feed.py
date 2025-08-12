@@ -1,4 +1,5 @@
 import typing
+import json
 
 import pydantic
 
@@ -64,3 +65,6 @@ class Feed(pydantic.RootModel):
                 )
             )
         )
+
+    def to_json(self, path: str) -> None:
+        json.dump(self.model_dump(mode="json"), open(path, "w"), indent=4)
