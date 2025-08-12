@@ -1,0 +1,802 @@
+{
+    "user-c46e7212-df4e-42a6-a5a1-243bb2e56a53": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.202682104491396
+        ],
+        "memory_length": 4
+    },
+    "user-f7474839-a42c-4fe5-8ffc-1c173d35792e": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.18998447233764182
+        ],
+        "memory_length": 4
+    },
+    "user-27cb7113-78b8-4154-abbb-3f2abb7ae088": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.33778028398186755
+        ],
+        "memory_length": 4
+    },
+    "user-676c8a97-86b2-4a5e-a429-10f02c8263f5": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.8418348451040805
+        ],
+        "memory_length": 4
+    },
+    "user-79939eb9-bd3f-40a6-b0de-f2af8add539c": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.6585923869330002
+        ],
+        "memory_length": 4
+    },
+    "user-cb3c54ec-a639-43d2-8188-d55d5872f713": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.8233570383004334
+        ],
+        "memory_length": 4
+    },
+    "user-941eab60-9a1b-4fcd-8a7c-b09258548b1b": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5996028324948337
+        ],
+        "memory_length": 4
+    },
+    "user-10b0aaea-b2b3-44e8-be39-45b089482bca": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.6557310599389912
+        ],
+        "memory_length": 4
+    },
+    "user-a0c82e9c-e175-4a18-b09b-ffd18a50568c": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.5841378479826784
+        ],
+        "memory_length": 4
+    },
+    "user-4bc02c78-10ef-4148-80b6-9c6e711a72ee": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.6892900323644122
+        ],
+        "memory_length": 4
+    },
+    "user-7a62ed64-bc4b-4c7b-94e0-691ed8fbd902": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.4503398675976962
+        ],
+        "memory_length": 4
+    },
+    "user-461d6068-8024-4f34-8cd4-b08ec29f8dca": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.9056010192041786
+        ],
+        "memory_length": 4
+    },
+    "user-c83a3d0f-78ec-4673-9d16-dce1a1f91839": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.8817848167221964
+        ],
+        "memory_length": 4
+    },
+    "user-63acf08e-7381-48de-a7e8-4811a0355616": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.8754823777812302
+        ],
+        "memory_length": 4
+    },
+    "user-5f559784-b39b-4e0c-8cf0-7dcc7a88edef": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.0959198952060718
+        ],
+        "memory_length": 4
+    },
+    "user-51750d1b-1ebd-41c9-a18f-824178f692d4": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.347722864662106
+        ],
+        "memory_length": 4
+    },
+    "user-15cef6c3-b98e-4b73-b1fd-50213f8f3c44": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.04312121455558415
+        ],
+        "memory_length": 4
+    },
+    "user-bf9a259d-a0a8-4dd5-b631-c50aedc88a98": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.7560143195620188
+        ],
+        "memory_length": 4
+    },
+    "user-f19b4cf1-5403-442b-ac64-c1988eaa56a4": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.38894780738000523
+        ],
+        "memory_length": 4
+    },
+    "user-42a5496e-9919-4418-ac59-bdfd5e088066": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.7841586581037197
+        ],
+        "memory_length": 4
+    },
+    "user-0ba0875e-f063-48cc-9a23-52ecd4bf3802": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.1874320830533065
+        ],
+        "memory_length": 4
+    },
+    "user-a3087b8c-01a4-4de8-9823-77cf69c03816": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.9100316517677358
+        ],
+        "memory_length": 4
+    },
+    "user-e0bd86f9-4847-4d84-9f18-4c23b387c3f7": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.1850354325321335
+        ],
+        "memory_length": 4
+    },
+    "user-afaeadf0-2a4e-4586-8448-193916701b0a": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.6171272769914475
+        ],
+        "memory_length": 4
+    },
+    "user-b2603c8e-99c7-4b16-9c01-6f8b6d5fa431": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5060151360494394
+        ],
+        "memory_length": 4
+    },
+    "user-3181da60-afee-4ef6-bc1a-cf5dd2f54c30": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.13312695378133266
+        ],
+        "memory_length": 4
+    },
+    "user-c263718f-6019-42bf-8595-098d0e0771cf": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.14026138706840063
+        ],
+        "memory_length": 4
+    },
+    "user-fa9b50ef-74ab-4ec1-bb32-eb77213b27b0": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.6356764458312254
+        ],
+        "memory_length": 4
+    },
+    "user-7f525b19-f51f-4122-be4a-0b4b51c4f8ce": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.6619123376543454
+        ],
+        "memory_length": 4
+    },
+    "user-b2dabb0d-b279-4694-a241-e0ea650f0169": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.8368017133113526
+        ],
+        "memory_length": 4
+    },
+    "user-f9293c7a-e477-4dbd-ae35-5174af9e0e63": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.9931826206758105
+        ],
+        "memory_length": 4
+    },
+    "user-a3f8121d-771c-4dfa-9f96-d3c48eea03b3": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.7373751084671978
+        ],
+        "memory_length": 4
+    },
+    "user-2e4817ec-3a67-40c4-ac63-7c383b926fff": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.1860577320456378
+        ],
+        "memory_length": 4
+    },
+    "user-3dea8ac2-5068-4342-a2f5-2f9a5d057130": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5404302251421265
+        ],
+        "memory_length": 4
+    },
+    "user-08a5ad25-89b1-4d92-8c9b-bda93558a4a0": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.5058670503553324
+        ],
+        "memory_length": 4
+    },
+    "user-27edc13c-a23c-4997-be45-56ea56a30dab": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.37956453313692506
+        ],
+        "memory_length": 4
+    },
+    "user-9caa62c2-23d3-4289-959d-282bbfe7ecec": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.34119510247700147
+        ],
+        "memory_length": 4
+    },
+    "user-8e6992a7-d5e1-4b72-a4b3-57ecff414ed3": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.8401819663887304
+        ],
+        "memory_length": 4
+    },
+    "user-b3204297-fb8c-4d27-bd67-640cb7531926": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.9971588147374253
+        ],
+        "memory_length": 4
+    },
+    "user-befe5782-fa8c-4e61-a336-5612762624ed": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5381775530620434
+        ],
+        "memory_length": 4
+    },
+    "user-5bc3ec74-21db-41f5-b47b-2c8640de3f93": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.12439243074446615
+        ],
+        "memory_length": 4
+    },
+    "user-e4300dff-21fa-4ba8-91ef-e3bec01c5d02": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.772191413362326
+        ],
+        "memory_length": 4
+    },
+    "user-5b64bc32-1950-412b-9b99-8f5297d8450c": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.4930866089920445
+        ],
+        "memory_length": 4
+    },
+    "user-58c91fd6-ca6c-419d-b23a-1c17f5b335e6": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.30971138552191513
+        ],
+        "memory_length": 4
+    },
+    "user-1ca6941c-23b2-4dd9-8533-09f35c7a33e5": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.36075558959085563
+        ],
+        "memory_length": 4
+    },
+    "user-0eaf5a49-2322-483a-8627-35cd4721d762": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.42865706835420414
+        ],
+        "memory_length": 4
+    },
+    "user-12233d40-510a-4adb-9924-3c7466a1e111": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.20032874882357454
+        ],
+        "memory_length": 4
+    },
+    "user-51c4dcc0-1a68-4748-9002-c7f28630163a": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5004858941407597
+        ],
+        "memory_length": 4
+    },
+    "user-2ec6e942-ae0d-4c42-8714-efa75def385e": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.46711143101928565
+        ],
+        "memory_length": 4
+    },
+    "user-254b1a5e-084d-4cdf-8add-f2c84d4a9572": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.8048407565469449
+        ],
+        "memory_length": 4
+    },
+    "user-e274f1ef-f0ec-4fd5-9132-4dc191ff4d30": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.6530841413493778
+        ],
+        "memory_length": 4
+    },
+    "user-c7e9746b-d724-4a3a-8234-3874bd612784": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5523964600502282
+        ],
+        "memory_length": 4
+    },
+    "user-11b222ad-9b72-4c2e-95a1-d2360ddd2ae6": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.33166372286077483
+        ],
+        "memory_length": 4
+    },
+    "user-e0b680dc-1071-49be-b7a3-ef1da58c622d": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.05308617827451556
+        ],
+        "memory_length": 4
+    },
+    "user-4e8d0a0c-2a76-48d8-b704-39aab656761d": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.10284524367926795
+        ],
+        "memory_length": 4
+    },
+    "user-830ebb64-011b-4612-ac91-44ec94b39d30": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.839875571480077
+        ],
+        "memory_length": 4
+    },
+    "user-218a9fc5-d65b-4770-af64-d3b6bb92c238": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.57936961526809
+        ],
+        "memory_length": 4
+    },
+    "user-d0101832-5853-4f77-91a8-66b792f9193e": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.5538468514365535
+        ],
+        "memory_length": 4
+    },
+    "user-6872a6b6-c9df-4626-9820-b49bd2cf863c": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.9095557452877536
+        ],
+        "memory_length": 4
+    },
+    "user-008cba61-4782-4a0b-80f8-e6fbecb15348": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.08447036885647852
+        ],
+        "memory_length": 4
+    },
+    "user-dd245365-7024-410c-9322-a66efefd38eb": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.985414308883692
+        ],
+        "memory_length": 4
+    },
+    "user-4a468e1e-1ca7-4417-a6b3-fdfaa0ce9253": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.21369865996055393
+        ],
+        "memory_length": 4
+    },
+    "user-6386f027-58c4-4a5e-b6b5-9c0a9f0a21ba": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.7516665154377824
+        ],
+        "memory_length": 4
+    },
+    "user-f87ef6ef-8de0-4568-869b-731366f58f3b": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.7733674142054194
+        ],
+        "memory_length": 4
+    },
+    "user-30153bf7-7417-4af5-aacb-99d8cd22a360": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.3262430451272531
+        ],
+        "memory_length": 4
+    },
+    "user-b201b115-0181-4dac-89b2-3f67156bb20c": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.39227865548885843
+        ],
+        "memory_length": 4
+    },
+    "user-11138836-9259-4bc2-ae71-9f9514f32039": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.3483027987664673
+        ],
+        "memory_length": 4
+    },
+    "user-818235d2-1e7a-4842-b201-e9ebd14bc86f": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.2773999549752302
+        ],
+        "memory_length": 4
+    },
+    "user-2209500a-8ca0-4095-97fb-3a609a87eebe": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.9244661712985367
+        ],
+        "memory_length": 4
+    },
+    "user-5b026089-3684-4047-9fd1-3d994ad696ba": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.04241666669311983
+        ],
+        "memory_length": 4
+    },
+    "user-489fced6-c77b-43d8-a1a8-25ffa0620bfa": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.9940489801669761
+        ],
+        "memory_length": 4
+    },
+    "user-141daf7e-301f-445a-ae7c-dd19529ab765": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.0016024431823065122
+        ],
+        "memory_length": 4
+    },
+    "user-f98915dc-d9d0-444e-a85a-5faeff75ac0c": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.6417950859525732
+        ],
+        "memory_length": 4
+    },
+    "user-f2d1d1d4-278f-4abd-b284-cabf3e5dcb1f": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.36511611296665425
+        ],
+        "memory_length": 4
+    },
+    "user-6ed0b69c-4ff4-432d-84ff-4be457ac7d98": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.04319613070851824
+        ],
+        "memory_length": 4
+    },
+    "user-67aa0945-2775-4fec-8b82-d0cb5ec64840": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.4918070745930969
+        ],
+        "memory_length": 4
+    },
+    "user-46f5f8d0-4acd-4476-9378-fc342f402702": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.22702696055702853
+        ],
+        "memory_length": 4
+    },
+    "user-2b7c30f6-91ba-4a49-bc56-04b8127e3e36": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5407976382404656
+        ],
+        "memory_length": 4
+    },
+    "user-a0af667b-1477-4180-8d74-01d26d290086": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5397787768873181
+        ],
+        "memory_length": 4
+    },
+    "user-747e3f3f-5c12-4040-9fb5-15b8acdd4eec": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.7128391892251578
+        ],
+        "memory_length": 4
+    },
+    "user-1d9503f5-ef03-4cd4-8719-8d5412cedb9b": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.5411331930283243
+        ],
+        "memory_length": 4
+    },
+    "user-1913c460-d903-424c-a8c3-3a10ffe4039d": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.968323806556689
+        ],
+        "memory_length": 4
+    },
+    "user-d5f935cc-7cf4-49cb-9188-5980b4a66747": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.2989848045547121
+        ],
+        "memory_length": 4
+    },
+    "user-210e8948-e757-49db-b27f-ff4045d2f301": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.502408813998541
+        ],
+        "memory_length": 4
+    },
+    "user-cbb115cc-1738-48df-bd6a-4ca95bac0111": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.8244861299829507
+        ],
+        "memory_length": 4
+    },
+    "user-878ef2e1-b3cd-4cc4-9934-6df35eb734d8": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.7643934702156239
+        ],
+        "memory_length": 4
+    },
+    "user-32ce74aa-7e9d-40af-8f97-1bf2fce16d9d": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.544824516121367
+        ],
+        "memory_length": 4
+    },
+    "user-9557ce0b-f66a-4740-9acc-aa2d4fc54ad1": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.2523972408231234
+        ],
+        "memory_length": 4
+    },
+    "user-33b7328e-2c98-46f2-94f6-2580bed2629d": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.17516203918998885
+        ],
+        "memory_length": 4
+    },
+    "user-a5721265-994d-4558-8439-abb7288278e6": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.34980747385164856
+        ],
+        "memory_length": 4
+    },
+    "user-3f2c0311-1b16-4af4-8a53-d9abe96adb67": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.042872637499736355
+        ],
+        "memory_length": 4
+    },
+    "user-ddfc5318-abbe-4f22-b3a3-f7e4020c0f14": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.9927558229454487
+        ],
+        "memory_length": 4
+    },
+    "user-0628d466-f38a-42b6-af7c-6f711ad04595": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.09377926679626691
+        ],
+        "memory_length": 4
+    },
+    "user-85f8f33b-5048-497b-a1c5-88299fabe25e": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.9422588265461698
+        ],
+        "memory_length": 4
+    },
+    "user-d8a283c7-e1f7-426f-9954-f5f39f3d653b": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.013942727688009082
+        ],
+        "memory_length": 4
+    },
+    "user-79727831-5bf9-414e-8ad8-dbe1811a9911": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.6585925185029884
+        ],
+        "memory_length": 4
+    },
+    "user-ff66e9f8-2bb6-40c0-892a-15470ced778e": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.8671941894563677
+        ],
+        "memory_length": 4
+    },
+    "user-98b9dceb-d966-49dc-9924-0b291a279e0c": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.053752128115922115
+        ],
+        "memory_length": 4
+    },
+    "user-12755950-1cc5-4377-8bad-28f6d527c556": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            0.3922304349111283
+        ],
+        "memory_length": 4
+    },
+    "user-baadef41-e46a-4c0a-bdfc-588b26ce1e90": {
+        "eps": 0.4,
+        "delta": 0.1,
+        "memory": [
+            -0.860952167416974
+        ],
+        "memory_length": 4
+    }
+}
