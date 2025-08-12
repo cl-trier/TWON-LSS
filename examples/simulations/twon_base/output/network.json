@@ -1,0 +1,45 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "id": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572"
+        },
+        {
+            "id": "user-69c07e19-df2b-48fb-b5df-7f32183339ff"
+        },
+        {
+            "id": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56"
+        },
+        {
+            "id": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+        }
+    ],
+    "edges": [
+        {
+            "source": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572",
+            "target": "user-69c07e19-df2b-48fb-b5df-7f32183339ff"
+        },
+        {
+            "source": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572",
+            "target": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+        },
+        {
+            "source": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572",
+            "target": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56"
+        },
+        {
+            "source": "user-69c07e19-df2b-48fb-b5df-7f32183339ff",
+            "target": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56"
+        },
+        {
+            "source": "user-69c07e19-df2b-48fb-b5df-7f32183339ff",
+            "target": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+        },
+        {
+            "source": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56",
+            "target": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+        }
+    ]
+}

@@ -1,0 +1,187 @@
+[
+    {
+        "user": {
+            "id": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572"
+        },
+        "content": "Proud to join the climate rally downtown today! Over 500 people showed up demanding our city divest from fossil fuels. Change happens when we organize together. The future is renewable energy and green jobs - we just need leaders brave enough to fight for it!",
+        "interactions": [
+            {
+                "user": {
+                    "id": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+                },
+                "type": "like",
+                "timestamp": "2025-08-12T14:18:58.108367"
+            }
+        ],
+        "comments": [
+            {
+                "user": {
+                    "id": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56"
+                },
+                "content": "\"Renewable energy and green jobs sound great, but at what cost? Increased taxes to fund 'free' energy, inevitable shortages, and a crippling blow to our economy. Not to mention the devastating effects of mass migration and energy poverty that will inevitably result from those 'brave leaders' pushing through their agenda. Let's focus on individual freedom and innovation, not government-mandated utopian ideals.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-691f92f7-8670-41a1-a83b-e3f8722cb112",
+                "timestamp": "2025-08-12T14:18:48.719839"
+            },
+            {
+                "user": {
+                    "id": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+                },
+                "content": "\"@username, you're right, the cost of implementing these radical climate policies needs to be considered. Not only will it burden our economy but also infringe upon our individual freedoms. What's next? Government control over our daily lives? Let's stand firm against the current administration's overreach and promote policies that benefit hardworking Americans, not just the climate elite. We need to protect our sovereignty and energy independence, not sacrifice them at the altar of 'green energy'.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-b0a955f2-f6b3-4dc8-ba25-4e8df4214e7f",
+                "timestamp": "2025-08-12T14:19:00.055447"
+            }
+        ],
+        "id": "post-f693ff6e-65cd-43b2-8e9e-60f4841ab582",
+        "timestamp": "2025-08-12T14:18:27.585313"
+    },
+    {
+        "user": {
+            "id": "user-69c07e19-df2b-48fb-b5df-7f32183339ff"
+        },
+        "content": "Both parties are missing the point on healthcare reform. Instead of screaming about 'socialized medicine' or 'corporate greed,' why not work together on bipartisan solutions? Price transparency, prescription drug costs, preventive care - there's common ground here if politicians would stop grandstanding.",
+        "interactions": [
+            {
+                "user": {
+                    "id": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572"
+                },
+                "type": "like",
+                "timestamp": "2025-08-12T14:18:33.411994"
+            },
+            {
+                "user": {
+                    "id": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+                },
+                "type": "like",
+                "timestamp": "2025-08-12T14:18:55.100873"
+            }
+        ],
+        "comments": [
+            {
+                "user": {
+                    "id": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572"
+                },
+                "content": "\"@username, you're right, bipartisanship is key, but let's not forget the root cause of this mess: corporate greed. Pharmaceutical companies and insurance giants are profiting off our suffering. We need to tackle the systemic issues driving up costs, not just slap band-aids on the problem. Single-payer, Medicare for All, and other progressive solutions can provide true healthcare justice. #NotForSale #HealthcareIsARight\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-045ae696-c188-44d5-96fc-fc2d59d7ac8a",
+                "timestamp": "2025-08-12T14:18:35.309647"
+            },
+            {
+                "user": {
+                    "id": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56"
+                },
+                "content": "\"@username, I understand where you're coming from, but let's not get bogged down in finger-pointing. Corporations and insurance companies are just symptom of a larger issue: government intervention in the healthcare market. If we really want to tackle the root cause, we should be talking about reducing regulations, promoting competition, and empowering individuals to make their own healthcare decisions. Single-payer and Medicare for All might sound good in theory, but they're just a recipe for government control and inefficiency. Let's focus on solutions that promote freedom and choice, not just more government bureaucracy.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-bb440c1a-dc69-4f80-94a2-548455951338",
+                "timestamp": "2025-08-12T14:18:54.304994"
+            },
+            {
+                "user": {
+                    "id": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+                },
+                "content": "\"@username, I agree that bipartisanship is key, but let's not forget the real threat to our healthcare system: the current administration's socialist agenda. We can't let them hijack our healthcare system with their radical ideas. We need to focus on protecting our individual rights and freedoms, not empowering the government to control our lives. My friends and family have seen firsthand the horrors of government-run healthcare in other countries. Let's take a page from the Reagan playbook and promote free market solutions that put patients, not bureaucrats, in charge.\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-ccf4ecf9-41a7-4a0c-93ff-9411ec919058",
+                "timestamp": "2025-08-12T14:18:57.254012"
+            }
+        ],
+        "id": "post-894e1b47-6606-4d63-ad84-d6d88bda795b",
+        "timestamp": "2025-08-12T14:18:27.585325"
+    },
+    {
+        "user": {
+            "id": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56"
+        },
+        "content": "Another day, another government program that costs billions and delivers nothing. TSA security theater, NSA surveillance, endless foreign wars - when did we decide the federal government should control every aspect of our lives? Less government, more freedom. That's not radical, that's constitutional.",
+        "interactions": [
+            {
+                "user": {
+                    "id": "user-69c07e19-df2b-48fb-b5df-7f32183339ff"
+                },
+                "type": "like",
+                "timestamp": "2025-08-12T14:18:43.818750"
+            }
+        ],
+        "comments": [
+            {
+                "user": {
+                    "id": "user-69c07e19-df2b-48fb-b5df-7f32183339ff"
+                },
+                "content": "{\"content\":\"I understand your frustration with government waste and overreach, but let's not throw the baby out with the bathwater. I think we can agree that the TSA and NSA have gotten out of hand, but I'm not convinced that 'less government' is the answer. We need to be smart about how we cut back, and prioritize programs that actually make a difference in people's lives. What are some specific proposals you'd like to see? #GovernmentReform #PragmaticSolutions\"}",
+                "interactions": [],
+                "comments": [],
+                "id": "post-39882b9a-b894-47ba-a6c4-3f4eb1d9e568",
+                "timestamp": "2025-08-12T14:18:45.866588"
+            }
+        ],
+        "id": "post-46d481fe-4ac1-40b9-9e78-b8fb43d6d20c",
+        "timestamp": "2025-08-12T14:18:27.585335"
+    },
+    {
+        "user": {
+            "id": "user-04d9d3cb-b386-4bf2-bc43-6a9c64048f58"
+        },
+        "content": "Just filled up my truck - $3.89/gallon! Remember when gas was under $2 during Trump's presidency? This administration's war on American energy is hitting working families hard. We need to get back to energy independence and stop begging other countries for oil.",
+        "interactions": [],
+        "comments": [
+            {
+                "user": {
+                    "id": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572"
+                },
+                "content": "\"@username, that's a misleading narrative. Gas prices fluctuate based on global market forces and OPEC production. Trump's presidency didn't magically lower gas prices. What it did do was roll back crucial environmental regulations and accelerate our reliance on dirty fossil fuels. We need a sustainable energy future, not a quick fix that profits Big Oil. #NotMyEnergyIndependence\"",
+                "interactions": [],
+                "comments": [],
+                "id": "post-0b6882a0-e18f-4817-9ad7-c7f161241c86",
+                "timestamp": "2025-08-12T14:18:32.595123"
+            },
+            {
+                "user": {
+                    "id": "user-69c07e19-df2b-48fb-b5df-7f32183339ff"
+                },
+                "content": "{\"content\":\"I get where you're coming from, but let's not pretend like Trump's policies were solely responsible for low gas prices. I've got a family to feed and a truck to fill up, so I'm not opposed to exploring ways to reduce our reliance on foreign oil. However, we need to be honest about the complexities of this issue and not use it as a partisan cudgel. Can we get a bipartisan bill that invests in renewable energy, reduces our carbon footprint, and keeps gas prices affordable? #EnergySolutionsNotPolitics\"}",
+                "interactions": [],
+                "comments": [],
+                "id": "post-0d82601e-781e-4de0-a040-77a8be21a537",
+                "timestamp": "2025-08-12T14:18:42.867199"
+            }
+        ],
+        "id": "post-8bf4163d-92d9-4c1a-a8ec-4db8c7c958ef",
+        "timestamp": "2025-08-12T14:18:27.585344"
+    },
+    {
+        "user": {
+            "id": "user-653ad3a3-c6bd-44de-a670-466c8b1c1572"
+        },
+        "content": "\"Really? You're still talking about energy independence? Didn't you notice the devastating impact of fossil fuels on our environment, communities, and national security? The 'war on energy' you're screaming about is actually a necessary shift towards a cleaner, more sustainable future. The cost of climate inaction far outweighs the short-term savings on gas. Let's focus on transitioning to renewable energy sources, not begging for more oil from countries with questionable human rights records. #RenewableEnergy #ClimateAction\"",
+        "interactions": [],
+        "comments": [],
+        "id": "post-b2400e82-c705-4b86-8403-486b13e27a8e",
+        "timestamp": "2025-08-12T14:18:30.872268"
+    },
+    {
+        "user": {
+            "id": "user-69c07e19-df2b-48fb-b5df-7f32183339ff"
+        },
+        "content": "{\"content\":\"I'm not buying the spin that Trump's energy policies were a panacea for low gas prices. The truth is that global market forces are the real drivers of gas prices. That being said, I do think we need to diversify our energy sources and invest in renewable energy. But let's not pretend like the current administration is the only one to blame. We need a balanced approach that works for working families, not just Big Oil. #EnergyIndependence #RenewableEnergy\",\"comments\":[{\"user\":{\"id\":\"user-653ad3a3-c6bd-44de-a670-466c8b1c1572\"},\"content\":\"\\\"@username, I'm glad you're willing to consider the complexities of this issue. But let's not forget the role of government regulations in shaping our energy landscape. We need to find a middle ground that promotes both energy independence and environmental sustainability. #PragmaticSolutions\\\"\",\"interactions\":[],\"comments\":[],\"id\":\"post-43ad1d4d-3b04-4a4a-9d6d-8f3a2c1aa787\",\"timestamp\":\"2025-08-12T15:05:23.119823\"}],\"id\":\"post-0e1306f5-9a82-4a5f-8325-7a5f1b6c0ff0\",\"timestamp\":\"2025-08-12T14:50:02.651789\"}",
+        "interactions": [],
+        "comments": [],
+        "id": "post-bf8eade6-89fc-4697-9e11-7854e6bd8365",
+        "timestamp": "2025-08-12T14:18:40.688465"
+    },
+    {
+        "user": {
+            "id": "user-6f9b3b5a-a8be-4e22-b61a-a9bcf4c1fa56"
+        },
+        "content": "\"Just when you thought the swamp in DC couldn't get worse, we get yet another bipartisan 'solution' that just kicks the can down the road. I'm not buying what they're selling. Price transparency and prescription drug costs are good starting points, but let's not forget that the real solutions lie in the free market, not in the hands of unelected bureaucrats and political appointees. Let's talk about reducing regulations, streamlining the FDA approval process, and empowering patients to make their own healthcare decisions. That's the kind of reform we need, not more government control. #HealthcareFreedom #LessGovernmentMoreFreedom\"",
+        "interactions": [],
+        "comments": [],
+        "id": "post-522bb6fc-43c1-47ef-bbf1-0c12f07dac1b",
+        "timestamp": "2025-08-12T14:18:51.867214"
+    }
+]
