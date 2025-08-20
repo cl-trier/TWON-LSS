@@ -28,7 +28,7 @@ class Agent(AgentInterface):
         return str(self.memory[-1])
 
     def _bcm(self, xi: float, xj: float) -> float:
-        if abs(xi - xj < self.eps):
+        if abs(xi - xj) < self.eps:
             return xi + self.delta * (xj - xi)
         else:
             return xi
