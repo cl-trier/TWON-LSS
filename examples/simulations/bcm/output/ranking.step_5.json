@@ -1,0 +1,1252 @@
+[
+    {
+        "user": "user-b0926ea3-8943-4c41-b2c6-b06d87fe6c95",
+        "post": "post-1bf57498-302b-4b85-b797-52373dc54dc1",
+        "score": 0.5560771994642401
+    },
+    {
+        "user": "user-b0926ea3-8943-4c41-b2c6-b06d87fe6c95",
+        "post": "post-993bbc24-718e-49a6-869a-1254869b8b23",
+        "score": 0.5677297608674509
+    },
+    {
+        "user": "user-b0926ea3-8943-4c41-b2c6-b06d87fe6c95",
+        "post": "post-9a9c5082-0f73-48ff-a161-bc153324cca3",
+        "score": -1.0156709156623807
+    },
+    {
+        "user": "user-b0926ea3-8943-4c41-b2c6-b06d87fe6c95",
+        "post": "post-12e5c551-882c-4b47-93b5-676428d28542",
+        "score": -0.7543638360402896
+    },
+    {
+        "user": "user-b0926ea3-8943-4c41-b2c6-b06d87fe6c95",
+        "post": "post-2d2ba5b0-8944-4dab-8035-9f2c915a2e10",
+        "score": 0.43031258433496283
+    },
+    {
+        "user": "user-727bf383-e183-4db1-8e37-342132a77184",
+        "post": "post-475538c1-efbf-4f00-a1e3-383eca09c85d",
+        "score": -0.207281405543896
+    },
+    {
+        "user": "user-727bf383-e183-4db1-8e37-342132a77184",
+        "post": "post-68b0e8a1-9342-4e51-a38f-832c96e32d92",
+        "score": -0.7088313722934286
+    },
+    {
+        "user": "user-727bf383-e183-4db1-8e37-342132a77184",
+        "post": "post-4c235924-b308-407a-8436-f4ff31bd0dcb",
+        "score": 0.524672728532961
+    },
+    {
+        "user": "user-727bf383-e183-4db1-8e37-342132a77184",
+        "post": "post-06cda16f-3010-46eb-a27f-22c587c1ff28",
+        "score": -0.9278017477730256
+    },
+    {
+        "user": "user-727bf383-e183-4db1-8e37-342132a77184",
+        "post": "post-36a06a66-9199-42a3-8619-228733e608eb",
+        "score": 0.7537188592502475
+    },
+    {
+        "user": "user-e9d7920a-3b40-4241-a078-74d2dfac7f49",
+        "post": "post-10ae61ef-d248-4d95-bd8d-2eb9eb228891",
+        "score": 0.7957400386744988
+    },
+    {
+        "user": "user-e9d7920a-3b40-4241-a078-74d2dfac7f49",
+        "post": "post-2d92eb2d-c3bf-465b-8bfe-b783be09aed1",
+        "score": 0.2920825792035645
+    },
+    {
+        "user": "user-e9d7920a-3b40-4241-a078-74d2dfac7f49",
+        "post": "post-993bbc24-718e-49a6-869a-1254869b8b23",
+        "score": 0.6932206166165297
+    },
+    {
+        "user": "user-e9d7920a-3b40-4241-a078-74d2dfac7f49",
+        "post": "post-1643da21-5cd5-44d4-9f86-6032c4439c7b",
+        "score": 1.0667734456378588
+    },
+    {
+        "user": "user-e9d7920a-3b40-4241-a078-74d2dfac7f49",
+        "post": "post-c2ada087-4276-42cb-9d8d-fc12bf972af6",
+        "score": 0.08374525058835748
+    },
+    {
+        "user": "user-163ada75-8449-4bdf-a6b7-107e09e17eed",
+        "post": "post-9a9c5082-0f73-48ff-a161-bc153324cca3",
+        "score": -0.874982979764364
+    },
+    {
+        "user": "user-163ada75-8449-4bdf-a6b7-107e09e17eed",
+        "post": "post-c418c6ce-7864-4f6d-aa75-ba726473c9ba",
+        "score": 0.20612468902830244
+    },
+    {
+        "user": "user-163ada75-8449-4bdf-a6b7-107e09e17eed",
+        "post": "post-5d416b2c-011a-4f59-a066-ccf297751511",
+        "score": -0.5480384882977931
+    },
+    {
+        "user": "user-163ada75-8449-4bdf-a6b7-107e09e17eed",
+        "post": "post-c2ada087-4276-42cb-9d8d-fc12bf972af6",
+        "score": 0.10288948563417903
+    },
+    {
+        "user": "user-163ada75-8449-4bdf-a6b7-107e09e17eed",
+        "post": "post-85f7964a-6f63-4c53-a4cb-084dde67c728",
+        "score": -0.3389513992754
+    },
+    {
+        "user": "user-f307d4d2-1cd4-4caa-9cbc-07a42466dd17",
+        "post": "post-12fa9525-d2a8-443b-99be-1c865ff8bb8a",
+        "score": -0.33691839636681403
+    },
+    {
+        "user": "user-f307d4d2-1cd4-4caa-9cbc-07a42466dd17",
+        "post": "post-5542761b-e268-489a-9813-2844ec617b16",
+        "score": 0.5378737647876753
+    },
+    {
+        "user": "user-f307d4d2-1cd4-4caa-9cbc-07a42466dd17",
+        "post": "post-cce068a3-0b0c-4e18-bd60-5d24c967d670",
+        "score": -0.8595893746652037
+    },
+    {
+        "user": "user-f307d4d2-1cd4-4caa-9cbc-07a42466dd17",
+        "post": "post-4c367c4b-cf3b-4b62-9f97-652108668974",
+        "score": 0.4023123138351045
+    },
+    {
+        "user": "user-f307d4d2-1cd4-4caa-9cbc-07a42466dd17",
+        "post": "post-c2ada087-4276-42cb-9d8d-fc12bf972af6",
+        "score": 0.09431005048362859
+    },
+    {
+        "user": "user-e72d6440-9818-447d-818e-fe1bd222d130",
+        "post": "post-b494b5ec-3642-4ccc-b420-4bff36d062cd",
+        "score": 0.8847527701374084
+    },
+    {
+        "user": "user-e72d6440-9818-447d-818e-fe1bd222d130",
+        "post": "post-86bb2d99-aac2-49bc-b79a-b61b6f210f80",
+        "score": -0.062079672014569015
+    },
+    {
+        "user": "user-e72d6440-9818-447d-818e-fe1bd222d130",
+        "post": "post-81aafae8-01ed-4552-a5a5-5c318a882eb4",
+        "score": -0.5853107455534556
+    },
+    {
+        "user": "user-e72d6440-9818-447d-818e-fe1bd222d130",
+        "post": "post-12e5c551-882c-4b47-93b5-676428d28542",
+        "score": -1.0483893904207646
+    },
+    {
+        "user": "user-e72d6440-9818-447d-818e-fe1bd222d130",
+        "post": "post-c418c6ce-7864-4f6d-aa75-ba726473c9ba",
+        "score": 0.21651188119502976
+    },
+    {
+        "user": "user-c88643bc-ad47-4ab5-bd9c-69f95358170c",
+        "post": "post-b494b5ec-3642-4ccc-b420-4bff36d062cd",
+        "score": 0.8934068942404045
+    },
+    {
+        "user": "user-c88643bc-ad47-4ab5-bd9c-69f95358170c",
+        "post": "post-1bf57498-302b-4b85-b797-52373dc54dc1",
+        "score": 0.7143321129378981
+    },
+    {
+        "user": "user-c88643bc-ad47-4ab5-bd9c-69f95358170c",
+        "post": "post-72f93bdf-a8c8-4a64-be7a-bce65e5ee47f",
+        "score": -0.3716973479510758
+    },
+    {
+        "user": "user-c88643bc-ad47-4ab5-bd9c-69f95358170c",
+        "post": "post-a60ea2f4-df07-4a2a-8499-fa844198738b",
+        "score": -0.5227936138848597
+    },
+    {
+        "user": "user-c88643bc-ad47-4ab5-bd9c-69f95358170c",
+        "post": "post-97a28964-9f9e-479b-867d-4181eb57f7ff",
+        "score": 0.16963555743172923
+    },
+    {
+        "user": "user-3d7b5033-bfdd-4e7e-ac5c-4100b1c9b93c",
+        "post": "post-2d2ba5b0-8944-4dab-8035-9f2c915a2e10",
+        "score": 0.48651807764276045
+    },
+    {
+        "user": "user-3d7b5033-bfdd-4e7e-ac5c-4100b1c9b93c",
+        "post": "post-928d6c6a-19f7-46db-9dab-e780e4cdcfef",
+        "score": 0.21117408556050896
+    },
+    {
+        "user": "user-3d7b5033-bfdd-4e7e-ac5c-4100b1c9b93c",
+        "post": "post-85f7964a-6f63-4c53-a4cb-084dde67c728",
+        "score": -0.32982533365442457
+    },
+    {
+        "user": "user-3d7b5033-bfdd-4e7e-ac5c-4100b1c9b93c",
+        "post": "post-cdc0c586-6a0d-451c-ab34-79748dbd96a7",
+        "score": -0.8500408104723735
+    },
+    {
+        "user": "user-3d7b5033-bfdd-4e7e-ac5c-4100b1c9b93c",
+        "post": "post-1db65714-f843-4a50-9ea7-6c4d532c309b",
+        "score": -0.21196757702548763
+    },
+    {
+        "user": "user-7f8780a0-1ab1-45e8-8190-6959c0060fe1",
+        "post": "post-10ae61ef-d248-4d95-bd8d-2eb9eb228891",
+        "score": 0.6625364791161946
+    },
+    {
+        "user": "user-7f8780a0-1ab1-45e8-8190-6959c0060fe1",
+        "post": "post-4c40952b-ff80-4ce9-bf1a-51b7ac41ce1a",
+        "score": -0.4040180133824375
+    },
+    {
+        "user": "user-7f8780a0-1ab1-45e8-8190-6959c0060fe1",
+        "post": "post-6f9f9c02-7feb-4e2e-9e4d-cae54a30f627",
+        "score": -0.10111776845685394
+    },
+    {
+        "user": "user-7f8780a0-1ab1-45e8-8190-6959c0060fe1",
+        "post": "post-cdc0c586-6a0d-451c-ab34-79748dbd96a7",
+        "score": -1.1348787196187347
+    },
+    {
+        "user": "user-7f8780a0-1ab1-45e8-8190-6959c0060fe1",
+        "post": "post-72f93bdf-a8c8-4a64-be7a-bce65e5ee47f",
+        "score": -0.3470551899329833
+    },
+    {
+        "user": "user-dacb492d-3079-4879-b4ce-cc5120956eba",
+        "post": "post-a40447e1-fcf1-45f4-a567-b8ba80bd6f17",
+        "score": -0.32847163690930525
+    },
+    {
+        "user": "user-dacb492d-3079-4879-b4ce-cc5120956eba",
+        "post": "post-7a013978-57aa-401c-9279-61444babb9c3",
+        "score": 0.4477436196436621
+    },
+    {
+        "user": "user-dacb492d-3079-4879-b4ce-cc5120956eba",
+        "post": "post-4c40952b-ff80-4ce9-bf1a-51b7ac41ce1a",
+        "score": -0.5230072205116393
+    },
+    {
+        "user": "user-dacb492d-3079-4879-b4ce-cc5120956eba",
+        "post": "post-5542761b-e268-489a-9813-2844ec617b16",
+        "score": 0.4834719938925257
+    },
+    {
+        "user": "user-dacb492d-3079-4879-b4ce-cc5120956eba",
+        "post": "post-bef1427c-c45a-4ea3-b4ed-150f7d6a25d9",
+        "score": 0.4096058649092402
+    },
+    {
+        "user": "user-39733395-fa26-46ca-adfa-42fb3103b595",
+        "post": "post-1bf57498-302b-4b85-b797-52373dc54dc1",
+        "score": 0.7774383596196627
+    },
+    {
+        "user": "user-39733395-fa26-46ca-adfa-42fb3103b595",
+        "post": "post-bef1427c-c45a-4ea3-b4ed-150f7d6a25d9",
+        "score": 0.38106500104657953
+    },
+    {
+        "user": "user-39733395-fa26-46ca-adfa-42fb3103b595",
+        "post": "post-d4974fa1-3e1c-4533-b2f2-367b4162f832",
+        "score": 0.5976558616423332
+    },
+    {
+        "user": "user-39733395-fa26-46ca-adfa-42fb3103b595",
+        "post": "post-99e19263-1e00-495e-9d89-a352b1ebf06f",
+        "score": 0.18852454037978486
+    },
+    {
+        "user": "user-39733395-fa26-46ca-adfa-42fb3103b595",
+        "post": "post-5399a960-2769-4074-8a4a-67deee96e21d",
+        "score": -0.43694565445237776
+    },
+    {
+        "user": "user-d84e0074-030a-45d7-8ece-885bf1a35ebb",
+        "post": "post-68b0e8a1-9342-4e51-a38f-832c96e32d92",
+        "score": -0.6938774553235451
+    },
+    {
+        "user": "user-d84e0074-030a-45d7-8ece-885bf1a35ebb",
+        "post": "post-12fa9525-d2a8-443b-99be-1c865ff8bb8a",
+        "score": -0.3312593639046975
+    },
+    {
+        "user": "user-d84e0074-030a-45d7-8ece-885bf1a35ebb",
+        "post": "post-6f9f9c02-7feb-4e2e-9e4d-cae54a30f627",
+        "score": -0.1009440769623678
+    },
+    {
+        "user": "user-d84e0074-030a-45d7-8ece-885bf1a35ebb",
+        "post": "post-475538c1-efbf-4f00-a1e3-383eca09c85d",
+        "score": -0.20256799734423106
+    },
+    {
+        "user": "user-d84e0074-030a-45d7-8ece-885bf1a35ebb",
+        "post": "post-a60ea2f4-df07-4a2a-8499-fa844198738b",
+        "score": -0.4672989226453097
+    },
+    {
+        "user": "user-e15024c7-2cc6-45e8-b449-6ba706ca4f82",
+        "post": "post-12e5c551-882c-4b47-93b5-676428d28542",
+        "score": -0.9121809776470388
+    },
+    {
+        "user": "user-e15024c7-2cc6-45e8-b449-6ba706ca4f82",
+        "post": "post-5716a2a8-a476-4ea2-bd22-743e28d1e1c8",
+        "score": -0.17187215545567347
+    },
+    {
+        "user": "user-e15024c7-2cc6-45e8-b449-6ba706ca4f82",
+        "post": "post-2d2ba5b0-8944-4dab-8035-9f2c915a2e10",
+        "score": 0.359327227615599
+    },
+    {
+        "user": "user-e15024c7-2cc6-45e8-b449-6ba706ca4f82",
+        "post": "post-1643da21-5cd5-44d4-9f86-6032c4439c7b",
+        "score": 0.9419143270748871
+    },
+    {
+        "user": "user-e15024c7-2cc6-45e8-b449-6ba706ca4f82",
+        "post": "post-05535d04-d646-4c6b-8af3-1fc6eed6bb72",
+        "score": -0.25657709578162097
+    },
+    {
+        "user": "user-bb4eb331-bbf3-4c05-a3dd-c8d5ecce00f1",
+        "post": "post-a40447e1-fcf1-45f4-a567-b8ba80bd6f17",
+        "score": -0.4023998387363483
+    },
+    {
+        "user": "user-bb4eb331-bbf3-4c05-a3dd-c8d5ecce00f1",
+        "post": "post-12fa9525-d2a8-443b-99be-1c865ff8bb8a",
+        "score": -0.3237531320400188
+    },
+    {
+        "user": "user-bb4eb331-bbf3-4c05-a3dd-c8d5ecce00f1",
+        "post": "post-1643da21-5cd5-44d4-9f86-6032c4439c7b",
+        "score": 0.7632350067627459
+    },
+    {
+        "user": "user-bb4eb331-bbf3-4c05-a3dd-c8d5ecce00f1",
+        "post": "post-7a013978-57aa-401c-9279-61444babb9c3",
+        "score": 0.3601787744375614
+    },
+    {
+        "user": "user-bb4eb331-bbf3-4c05-a3dd-c8d5ecce00f1",
+        "post": "post-71af80ef-2d54-4cad-b517-906d89cd1002",
+        "score": 0.027492832324399127
+    },
+    {
+        "user": "user-6d0af9e5-281e-4d78-98c8-2a63a7d40474",
+        "post": "post-86bb2d99-aac2-49bc-b79a-b61b6f210f80",
+        "score": -0.06441843306356089
+    },
+    {
+        "user": "user-6d0af9e5-281e-4d78-98c8-2a63a7d40474",
+        "post": "post-303b6e91-959c-4c6b-9114-5dac8c655bfc",
+        "score": 1.0502843970886413
+    },
+    {
+        "user": "user-6d0af9e5-281e-4d78-98c8-2a63a7d40474",
+        "post": "post-2611b1f4-d7c2-43c6-9f47-e000327ff563",
+        "score": -0.7220394350009226
+    },
+    {
+        "user": "user-6d0af9e5-281e-4d78-98c8-2a63a7d40474",
+        "post": "post-c2ada087-4276-42cb-9d8d-fc12bf972af6",
+        "score": 0.08846492056349747
+    },
+    {
+        "user": "user-6d0af9e5-281e-4d78-98c8-2a63a7d40474",
+        "post": "post-60fc52e3-1e52-492a-a933-86b538ebc5f9",
+        "score": -0.8825274524792627
+    },
+    {
+        "user": "user-7a54e4dd-86cb-47c5-b7f9-415e172e4380",
+        "post": "post-12e5c551-882c-4b47-93b5-676428d28542",
+        "score": -0.7440753102028268
+    },
+    {
+        "user": "user-7a54e4dd-86cb-47c5-b7f9-415e172e4380",
+        "post": "post-68b0e8a1-9342-4e51-a38f-832c96e32d92",
+        "score": -0.8027203290364737
+    },
+    {
+        "user": "user-7a54e4dd-86cb-47c5-b7f9-415e172e4380",
+        "post": "post-4c235924-b308-407a-8436-f4ff31bd0dcb",
+        "score": 0.5354156010156664
+    },
+    {
+        "user": "user-7a54e4dd-86cb-47c5-b7f9-415e172e4380",
+        "post": "post-81aafae8-01ed-4552-a5a5-5c318a882eb4",
+        "score": -0.4296502929288879
+    },
+    {
+        "user": "user-7a54e4dd-86cb-47c5-b7f9-415e172e4380",
+        "post": "post-1643da21-5cd5-44d4-9f86-6032c4439c7b",
+        "score": 1.0432021281448907
+    },
+    {
+        "user": "user-d0394955-0d59-4a9d-8e38-8db18912dfba",
+        "post": "post-99e19263-1e00-495e-9d89-a352b1ebf06f",
+        "score": 0.20276235422959343
+    },
+    {
+        "user": "user-d0394955-0d59-4a9d-8e38-8db18912dfba",
+        "post": "post-1db65714-f843-4a50-9ea7-6c4d532c309b",
+        "score": -0.2221702394541173
+    },
+    {
+        "user": "user-d0394955-0d59-4a9d-8e38-8db18912dfba",
+        "post": "post-d4974fa1-3e1c-4533-b2f2-367b4162f832",
+        "score": 0.6474294987709974
+    },
+    {
+        "user": "user-d0394955-0d59-4a9d-8e38-8db18912dfba",
+        "post": "post-928d6c6a-19f7-46db-9dab-e780e4cdcfef",
+        "score": 0.183837696175649
+    },
+    {
+        "user": "user-d0394955-0d59-4a9d-8e38-8db18912dfba",
+        "post": "post-6f9f9c02-7feb-4e2e-9e4d-cae54a30f627",
+        "score": -0.10049254157823934
+    },
+    {
+        "user": "user-a087dad0-32ff-4f74-a7e8-da6193b1b87e",
+        "post": "post-b494b5ec-3642-4ccc-b420-4bff36d062cd",
+        "score": 0.8639884726142211
+    },
+    {
+        "user": "user-a087dad0-32ff-4f74-a7e8-da6193b1b87e",
+        "post": "post-23b73a35-a001-4f99-aab5-ca73278fbf7e",
+        "score": -1.0135556064312055
+    },
+    {
+        "user": "user-a087dad0-32ff-4f74-a7e8-da6193b1b87e",
+        "post": "post-97a28964-9f9e-479b-867d-4181eb57f7ff",
+        "score": 0.12458732901210602
+    },
+    {
+        "user": "user-a087dad0-32ff-4f74-a7e8-da6193b1b87e",
+        "post": "post-303b6e91-959c-4c6b-9114-5dac8c655bfc",
+        "score": 0.9513842093076016
+    },
+    {
+        "user": "user-a087dad0-32ff-4f74-a7e8-da6193b1b87e",
+        "post": "post-928d6c6a-19f7-46db-9dab-e780e4cdcfef",
+        "score": 0.18216608945555546
+    },
+    {
+        "user": "user-36ea0b3c-ac1b-48a1-ab8a-9ac22bd58a30",
+        "post": "post-5d416b2c-011a-4f59-a066-ccf297751511",
+        "score": -0.605416062612965
+    },
+    {
+        "user": "user-36ea0b3c-ac1b-48a1-ab8a-9ac22bd58a30",
+        "post": "post-81aafae8-01ed-4552-a5a5-5c318a882eb4",
+        "score": -0.5289269085644062
+    },
+    {
+        "user": "user-36ea0b3c-ac1b-48a1-ab8a-9ac22bd58a30",
+        "post": "post-2d92eb2d-c3bf-465b-8bfe-b783be09aed1",
+        "score": 0.3750650179844014
+    },
+    {
+        "user": "user-36ea0b3c-ac1b-48a1-ab8a-9ac22bd58a30",
+        "post": "post-bef1427c-c45a-4ea3-b4ed-150f7d6a25d9",
+        "score": 0.45313737241666685
+    },
+    {
+        "user": "user-36ea0b3c-ac1b-48a1-ab8a-9ac22bd58a30",
+        "post": "post-cce068a3-0b0c-4e18-bd60-5d24c967d670",
+        "score": -0.6523837392049324
+    },
+    {
+        "user": "user-b56a7896-7642-4078-8709-7eb9f67074c8",
+        "post": "post-a40447e1-fcf1-45f4-a567-b8ba80bd6f17",
+        "score": -0.40871284654482565
+    },
+    {
+        "user": "user-b56a7896-7642-4078-8709-7eb9f67074c8",
+        "post": "post-36a06a66-9199-42a3-8619-228733e608eb",
+        "score": 0.7044276055746438
+    },
+    {
+        "user": "user-b56a7896-7642-4078-8709-7eb9f67074c8",
+        "post": "post-2d92eb2d-c3bf-465b-8bfe-b783be09aed1",
+        "score": 0.30710196179102367
+    },
+    {
+        "user": "user-b56a7896-7642-4078-8709-7eb9f67074c8",
+        "post": "post-9a9c5082-0f73-48ff-a161-bc153324cca3",
+        "score": -0.6886669980243215
+    },
+    {
+        "user": "user-b56a7896-7642-4078-8709-7eb9f67074c8",
+        "post": "post-ed5eeb94-9282-4c59-bea6-e6f55145f879",
+        "score": 0.6091200274880766
+    },
+    {
+        "user": "user-874e7a7a-444e-4382-8526-616663dea20f",
+        "post": "post-c418c6ce-7864-4f6d-aa75-ba726473c9ba",
+        "score": 0.21926623163548592
+    },
+    {
+        "user": "user-874e7a7a-444e-4382-8526-616663dea20f",
+        "post": "post-cce068a3-0b0c-4e18-bd60-5d24c967d670",
+        "score": -0.8441620349369338
+    },
+    {
+        "user": "user-874e7a7a-444e-4382-8526-616663dea20f",
+        "post": "post-475538c1-efbf-4f00-a1e3-383eca09c85d",
+        "score": -0.15031231415626722
+    },
+    {
+        "user": "user-874e7a7a-444e-4382-8526-616663dea20f",
+        "post": "post-ed5eeb94-9282-4c59-bea6-e6f55145f879",
+        "score": 0.566112125495048
+    },
+    {
+        "user": "user-874e7a7a-444e-4382-8526-616663dea20f",
+        "post": "post-5399a960-2769-4074-8a4a-67deee96e21d",
+        "score": -0.3821479497385782
+    },
+    {
+        "user": "user-1fec1e66-3311-40e6-b1ee-e507d40e44c2",
+        "post": "post-99e19263-1e00-495e-9d89-a352b1ebf06f",
+        "score": 0.16328630538863304
+    },
+    {
+        "user": "user-1fec1e66-3311-40e6-b1ee-e507d40e44c2",
+        "post": "post-2d2ba5b0-8944-4dab-8035-9f2c915a2e10",
+        "score": 0.4567526265522407
+    },
+    {
+        "user": "user-1fec1e66-3311-40e6-b1ee-e507d40e44c2",
+        "post": "post-85f7964a-6f63-4c53-a4cb-084dde67c728",
+        "score": -0.3821373175305409
+    },
+    {
+        "user": "user-1fec1e66-3311-40e6-b1ee-e507d40e44c2",
+        "post": "post-2d92eb2d-c3bf-465b-8bfe-b783be09aed1",
+        "score": 0.36546800809370994
+    },
+    {
+        "user": "user-1fec1e66-3311-40e6-b1ee-e507d40e44c2",
+        "post": "post-faf8f1b9-c007-4231-8904-461b36864e2c",
+        "score": 0.445951357464363
+    },
+    {
+        "user": "user-15eb73b4-dea5-4e09-9b8c-9f5624155e38",
+        "post": "post-b494b5ec-3642-4ccc-b420-4bff36d062cd",
+        "score": 0.8208622288798793
+    },
+    {
+        "user": "user-15eb73b4-dea5-4e09-9b8c-9f5624155e38",
+        "post": "post-918c6563-4a8c-4a5e-bcca-4a56246c0c1b",
+        "score": -0.7469105756348818
+    },
+    {
+        "user": "user-15eb73b4-dea5-4e09-9b8c-9f5624155e38",
+        "post": "post-4c367c4b-cf3b-4b62-9f97-652108668974",
+        "score": 0.5371150131152969
+    },
+    {
+        "user": "user-15eb73b4-dea5-4e09-9b8c-9f5624155e38",
+        "post": "post-71af80ef-2d54-4cad-b517-906d89cd1002",
+        "score": 0.03508321991597086
+    },
+    {
+        "user": "user-15eb73b4-dea5-4e09-9b8c-9f5624155e38",
+        "post": "post-475538c1-efbf-4f00-a1e3-383eca09c85d",
+        "score": -0.1588838075181908
+    },
+    {
+        "user": "user-74aa5952-21e1-47cf-938f-0107353b2ac2",
+        "post": "post-23b73a35-a001-4f99-aab5-ca73278fbf7e",
+        "score": -0.924468401789999
+    },
+    {
+        "user": "user-74aa5952-21e1-47cf-938f-0107353b2ac2",
+        "post": "post-2611b1f4-d7c2-43c6-9f47-e000327ff563",
+        "score": -0.6918501153160349
+    },
+    {
+        "user": "user-74aa5952-21e1-47cf-938f-0107353b2ac2",
+        "post": "post-2d2ba5b0-8944-4dab-8035-9f2c915a2e10",
+        "score": 0.453672881819378
+    },
+    {
+        "user": "user-74aa5952-21e1-47cf-938f-0107353b2ac2",
+        "post": "post-cce068a3-0b0c-4e18-bd60-5d24c967d670",
+        "score": -0.849712183267255
+    },
+    {
+        "user": "user-74aa5952-21e1-47cf-938f-0107353b2ac2",
+        "post": "post-c2ada087-4276-42cb-9d8d-fc12bf972af6",
+        "score": 0.09180531010947578
+    },
+    {
+        "user": "user-5f71913f-85f7-445d-9d2f-5b0d42c80f5f",
+        "post": "post-918c6563-4a8c-4a5e-bcca-4a56246c0c1b",
+        "score": -0.6767506292716072
+    },
+    {
+        "user": "user-5f71913f-85f7-445d-9d2f-5b0d42c80f5f",
+        "post": "post-1bf57498-302b-4b85-b797-52373dc54dc1",
+        "score": 0.6800551137172253
+    },
+    {
+        "user": "user-5f71913f-85f7-445d-9d2f-5b0d42c80f5f",
+        "post": "post-dbe83d12-7382-4809-9dd2-9a61d9b91f3e",
+        "score": -0.6860398632401556
+    },
+    {
+        "user": "user-5f71913f-85f7-445d-9d2f-5b0d42c80f5f",
+        "post": "post-993bbc24-718e-49a6-869a-1254869b8b23",
+        "score": 0.5667741161892595
+    },
+    {
+        "user": "user-5f71913f-85f7-445d-9d2f-5b0d42c80f5f",
+        "post": "post-faf8f1b9-c007-4231-8904-461b36864e2c",
+        "score": 0.45294004796187143
+    },
+    {
+        "user": "user-71b57ac5-0eea-436b-828b-2f985278f749",
+        "post": "post-10ae61ef-d248-4d95-bd8d-2eb9eb228891",
+        "score": 0.7340931615129774
+    },
+    {
+        "user": "user-71b57ac5-0eea-436b-828b-2f985278f749",
+        "post": "post-72f93bdf-a8c8-4a64-be7a-bce65e5ee47f",
+        "score": -0.2780702164608371
+    },
+    {
+        "user": "user-71b57ac5-0eea-436b-828b-2f985278f749",
+        "post": "post-cdc0c586-6a0d-451c-ab34-79748dbd96a7",
+        "score": -0.9691513465020172
+    },
+    {
+        "user": "user-71b57ac5-0eea-436b-828b-2f985278f749",
+        "post": "post-faf8f1b9-c007-4231-8904-461b36864e2c",
+        "score": 0.5431369459344672
+    },
+    {
+        "user": "user-71b57ac5-0eea-436b-828b-2f985278f749",
+        "post": "post-a60ea2f4-df07-4a2a-8499-fa844198738b",
+        "score": -0.4544602947515184
+    },
+    {
+        "user": "user-e659704f-53e9-4c2b-84fe-543b5b261f7f",
+        "post": "post-12e5c551-882c-4b47-93b5-676428d28542",
+        "score": -0.8948134819066739
+    },
+    {
+        "user": "user-e659704f-53e9-4c2b-84fe-543b5b261f7f",
+        "post": "post-4c40952b-ff80-4ce9-bf1a-51b7ac41ce1a",
+        "score": -0.3904880409535512
+    },
+    {
+        "user": "user-e659704f-53e9-4c2b-84fe-543b5b261f7f",
+        "post": "post-4c235924-b308-407a-8436-f4ff31bd0dcb",
+        "score": 0.5802313165300056
+    },
+    {
+        "user": "user-e659704f-53e9-4c2b-84fe-543b5b261f7f",
+        "post": "post-5399a960-2769-4074-8a4a-67deee96e21d",
+        "score": -0.3179218874715622
+    },
+    {
+        "user": "user-e659704f-53e9-4c2b-84fe-543b5b261f7f",
+        "post": "post-60fc52e3-1e52-492a-a933-86b538ebc5f9",
+        "score": -0.8066154683391562
+    },
+    {
+        "user": "user-43491b7c-faa8-4f12-90f1-8af72f605cf6",
+        "post": "post-68b0e8a1-9342-4e51-a38f-832c96e32d92",
+        "score": -0.7565848910850125
+    },
+    {
+        "user": "user-43491b7c-faa8-4f12-90f1-8af72f605cf6",
+        "post": "post-4c40952b-ff80-4ce9-bf1a-51b7ac41ce1a",
+        "score": -0.4000104264540576
+    },
+    {
+        "user": "user-43491b7c-faa8-4f12-90f1-8af72f605cf6",
+        "post": "post-2611b1f4-d7c2-43c6-9f47-e000327ff563",
+        "score": -0.7746211823901294
+    },
+    {
+        "user": "user-43491b7c-faa8-4f12-90f1-8af72f605cf6",
+        "post": "post-d4974fa1-3e1c-4533-b2f2-367b4162f832",
+        "score": 0.5838532254085752
+    },
+    {
+        "user": "user-43491b7c-faa8-4f12-90f1-8af72f605cf6",
+        "post": "post-05535d04-d646-4c6b-8af3-1fc6eed6bb72",
+        "score": -0.32120194708448196
+    },
+    {
+        "user": "user-c4abf0ea-bfc4-4e71-b20e-41540225eca1",
+        "post": "post-86bb2d99-aac2-49bc-b79a-b61b6f210f80",
+        "score": -0.04823052490431097
+    },
+    {
+        "user": "user-c4abf0ea-bfc4-4e71-b20e-41540225eca1",
+        "post": "post-2611b1f4-d7c2-43c6-9f47-e000327ff563",
+        "score": -0.6425329492259297
+    },
+    {
+        "user": "user-c4abf0ea-bfc4-4e71-b20e-41540225eca1",
+        "post": "post-6f9f9c02-7feb-4e2e-9e4d-cae54a30f627",
+        "score": -0.11437969948282299
+    },
+    {
+        "user": "user-c4abf0ea-bfc4-4e71-b20e-41540225eca1",
+        "post": "post-5716a2a8-a476-4ea2-bd22-743e28d1e1c8",
+        "score": -0.16057622817866135
+    },
+    {
+        "user": "user-c4abf0ea-bfc4-4e71-b20e-41540225eca1",
+        "post": "post-bef1427c-c45a-4ea3-b4ed-150f7d6a25d9",
+        "score": 0.3720859271767401
+    },
+    {
+        "user": "user-a8aa0183-5d19-4d79-b083-9f41a570f9c0",
+        "post": "post-23b73a35-a001-4f99-aab5-ca73278fbf7e",
+        "score": -0.7518756041215942
+    },
+    {
+        "user": "user-a8aa0183-5d19-4d79-b083-9f41a570f9c0",
+        "post": "post-68b0e8a1-9342-4e51-a38f-832c96e32d92",
+        "score": -0.8314255798991671
+    },
+    {
+        "user": "user-a8aa0183-5d19-4d79-b083-9f41a570f9c0",
+        "post": "post-4c235924-b308-407a-8436-f4ff31bd0dcb",
+        "score": 0.6043497005385924
+    },
+    {
+        "user": "user-a8aa0183-5d19-4d79-b083-9f41a570f9c0",
+        "post": "post-7a013978-57aa-401c-9279-61444babb9c3",
+        "score": 0.40500231292516203
+    },
+    {
+        "user": "user-a8aa0183-5d19-4d79-b083-9f41a570f9c0",
+        "post": "post-71af80ef-2d54-4cad-b517-906d89cd1002",
+        "score": 0.026214303231005365
+    },
+    {
+        "user": "user-9a395218-bebe-4352-81cd-710789ec513c",
+        "post": "post-12fa9525-d2a8-443b-99be-1c865ff8bb8a",
+        "score": -0.3590101687119759
+    },
+    {
+        "user": "user-9a395218-bebe-4352-81cd-710789ec513c",
+        "post": "post-5542761b-e268-489a-9813-2844ec617b16",
+        "score": 0.5036954064158191
+    },
+    {
+        "user": "user-9a395218-bebe-4352-81cd-710789ec513c",
+        "post": "post-cdc0c586-6a0d-451c-ab34-79748dbd96a7",
+        "score": -0.8606381705461658
+    },
+    {
+        "user": "user-9a395218-bebe-4352-81cd-710789ec513c",
+        "post": "post-05535d04-d646-4c6b-8af3-1fc6eed6bb72",
+        "score": -0.28363640391951245
+    },
+    {
+        "user": "user-9a395218-bebe-4352-81cd-710789ec513c",
+        "post": "post-1db65714-f843-4a50-9ea7-6c4d532c309b",
+        "score": -0.26093438179821365
+    },
+    {
+        "user": "user-7ebdf616-23e7-409d-866d-19f1203975a8",
+        "post": "post-12fa9525-d2a8-443b-99be-1c865ff8bb8a",
+        "score": -0.35433670157311237
+    },
+    {
+        "user": "user-7ebdf616-23e7-409d-866d-19f1203975a8",
+        "post": "post-86bb2d99-aac2-49bc-b79a-b61b6f210f80",
+        "score": -0.067278441950735
+    },
+    {
+        "user": "user-7ebdf616-23e7-409d-866d-19f1203975a8",
+        "post": "post-629ef8da-36b5-4679-acc0-8b680b00d621",
+        "score": -0.8305375561618169
+    },
+    {
+        "user": "user-7ebdf616-23e7-409d-866d-19f1203975a8",
+        "post": "post-d4974fa1-3e1c-4533-b2f2-367b4162f832",
+        "score": 0.7586364833824232
+    },
+    {
+        "user": "user-7ebdf616-23e7-409d-866d-19f1203975a8",
+        "post": "post-cce068a3-0b0c-4e18-bd60-5d24c967d670",
+        "score": -0.6614606605747261
+    },
+    {
+        "user": "user-6edbfb21-e909-4b86-926b-1aa8ac0a28c7",
+        "post": "post-86bb2d99-aac2-49bc-b79a-b61b6f210f80",
+        "score": -0.05681405063220051
+    },
+    {
+        "user": "user-6edbfb21-e909-4b86-926b-1aa8ac0a28c7",
+        "post": "post-dbe83d12-7382-4809-9dd2-9a61d9b91f3e",
+        "score": -0.7231404171354857
+    },
+    {
+        "user": "user-6edbfb21-e909-4b86-926b-1aa8ac0a28c7",
+        "post": "post-a60ea2f4-df07-4a2a-8499-fa844198738b",
+        "score": -0.6040776128622782
+    },
+    {
+        "user": "user-6edbfb21-e909-4b86-926b-1aa8ac0a28c7",
+        "post": "post-85f7964a-6f63-4c53-a4cb-084dde67c728",
+        "score": -0.44812685541546304
+    },
+    {
+        "user": "user-6edbfb21-e909-4b86-926b-1aa8ac0a28c7",
+        "post": "post-5d416b2c-011a-4f59-a066-ccf297751511",
+        "score": -0.6394097406925707
+    },
+    {
+        "user": "user-39289b71-26f2-49c0-bd7e-b3869d1f0c20",
+        "post": "post-a40447e1-fcf1-45f4-a567-b8ba80bd6f17",
+        "score": -0.4282910884251969
+    },
+    {
+        "user": "user-39289b71-26f2-49c0-bd7e-b3869d1f0c20",
+        "post": "post-629ef8da-36b5-4679-acc0-8b680b00d621",
+        "score": -0.8194641219277209
+    },
+    {
+        "user": "user-39289b71-26f2-49c0-bd7e-b3869d1f0c20",
+        "post": "post-dbe83d12-7382-4809-9dd2-9a61d9b91f3e",
+        "score": -0.8920157651819163
+    },
+    {
+        "user": "user-39289b71-26f2-49c0-bd7e-b3869d1f0c20",
+        "post": "post-928d6c6a-19f7-46db-9dab-e780e4cdcfef",
+        "score": 0.21458522507468936
+    },
+    {
+        "user": "user-39289b71-26f2-49c0-bd7e-b3869d1f0c20",
+        "post": "post-bef1427c-c45a-4ea3-b4ed-150f7d6a25d9",
+        "score": 0.44663486665397767
+    },
+    {
+        "user": "user-35bfe68e-470e-47cd-bca9-342fa88ec540",
+        "post": "post-918c6563-4a8c-4a5e-bcca-4a56246c0c1b",
+        "score": -0.7735753215373493
+    },
+    {
+        "user": "user-35bfe68e-470e-47cd-bca9-342fa88ec540",
+        "post": "post-23b73a35-a001-4f99-aab5-ca73278fbf7e",
+        "score": -0.8574334757661863
+    },
+    {
+        "user": "user-35bfe68e-470e-47cd-bca9-342fa88ec540",
+        "post": "post-303b6e91-959c-4c6b-9114-5dac8c655bfc",
+        "score": 1.0444183000111573
+    },
+    {
+        "user": "user-35bfe68e-470e-47cd-bca9-342fa88ec540",
+        "post": "post-5399a960-2769-4074-8a4a-67deee96e21d",
+        "score": -0.3633998475289052
+    },
+    {
+        "user": "user-35bfe68e-470e-47cd-bca9-342fa88ec540",
+        "post": "post-71af80ef-2d54-4cad-b517-906d89cd1002",
+        "score": 0.026194118061003992
+    },
+    {
+        "user": "user-cc02c594-60d8-4318-ac18-c921571b51c0",
+        "post": "post-4c367c4b-cf3b-4b62-9f97-652108668974",
+        "score": 0.47699322581488257
+    },
+    {
+        "user": "user-cc02c594-60d8-4318-ac18-c921571b51c0",
+        "post": "post-dbe83d12-7382-4809-9dd2-9a61d9b91f3e",
+        "score": -0.9255705884326918
+    },
+    {
+        "user": "user-cc02c594-60d8-4318-ac18-c921571b51c0",
+        "post": "post-36a06a66-9199-42a3-8619-228733e608eb",
+        "score": 0.7006203536494282
+    },
+    {
+        "user": "user-cc02c594-60d8-4318-ac18-c921571b51c0",
+        "post": "post-2d92eb2d-c3bf-465b-8bfe-b783be09aed1",
+        "score": 0.33325825584998264
+    },
+    {
+        "user": "user-cc02c594-60d8-4318-ac18-c921571b51c0",
+        "post": "post-1db65714-f843-4a50-9ea7-6c4d532c309b",
+        "score": -0.20587021175689066
+    },
+    {
+        "user": "user-95f9bf45-b480-4bb0-95f2-1a1ca1847931",
+        "post": "post-06cda16f-3010-46eb-a27f-22c587c1ff28",
+        "score": -0.9381958107047408
+    },
+    {
+        "user": "user-95f9bf45-b480-4bb0-95f2-1a1ca1847931",
+        "post": "post-629ef8da-36b5-4679-acc0-8b680b00d621",
+        "score": -0.8841470949233703
+    },
+    {
+        "user": "user-95f9bf45-b480-4bb0-95f2-1a1ca1847931",
+        "post": "post-4c367c4b-cf3b-4b62-9f97-652108668974",
+        "score": 0.3887749668802224
+    },
+    {
+        "user": "user-95f9bf45-b480-4bb0-95f2-1a1ca1847931",
+        "post": "post-303b6e91-959c-4c6b-9114-5dac8c655bfc",
+        "score": 0.8636763017580883
+    },
+    {
+        "user": "user-95f9bf45-b480-4bb0-95f2-1a1ca1847931",
+        "post": "post-ed5eeb94-9282-4c59-bea6-e6f55145f879",
+        "score": 0.4412946615002362
+    },
+    {
+        "user": "user-638e679f-9dbd-4201-9922-21ec9253aa2f",
+        "post": "post-06cda16f-3010-46eb-a27f-22c587c1ff28",
+        "score": -0.9318811780733958
+    },
+    {
+        "user": "user-638e679f-9dbd-4201-9922-21ec9253aa2f",
+        "post": "post-97a28964-9f9e-479b-867d-4181eb57f7ff",
+        "score": 0.12755265064732424
+    },
+    {
+        "user": "user-638e679f-9dbd-4201-9922-21ec9253aa2f",
+        "post": "post-5542761b-e268-489a-9813-2844ec617b16",
+        "score": 0.5435121693754519
+    },
+    {
+        "user": "user-638e679f-9dbd-4201-9922-21ec9253aa2f",
+        "post": "post-72f93bdf-a8c8-4a64-be7a-bce65e5ee47f",
+        "score": -0.3265882887008303
+    },
+    {
+        "user": "user-638e679f-9dbd-4201-9922-21ec9253aa2f",
+        "post": "post-36a06a66-9199-42a3-8619-228733e608eb",
+        "score": 0.8557769344255337
+    },
+    {
+        "user": "user-f45f8ba5-da8d-431e-a35f-f45f52aefdbc",
+        "post": "post-99e19263-1e00-495e-9d89-a352b1ebf06f",
+        "score": 0.16659683120276492
+    },
+    {
+        "user": "user-f45f8ba5-da8d-431e-a35f-f45f52aefdbc",
+        "post": "post-a60ea2f4-df07-4a2a-8499-fa844198738b",
+        "score": -0.612293117042139
+    },
+    {
+        "user": "user-f45f8ba5-da8d-431e-a35f-f45f52aefdbc",
+        "post": "post-81aafae8-01ed-4552-a5a5-5c318a882eb4",
+        "score": -0.5767185172067324
+    },
+    {
+        "user": "user-f45f8ba5-da8d-431e-a35f-f45f52aefdbc",
+        "post": "post-5716a2a8-a476-4ea2-bd22-743e28d1e1c8",
+        "score": -0.20822117353554906
+    },
+    {
+        "user": "user-f45f8ba5-da8d-431e-a35f-f45f52aefdbc",
+        "post": "post-993bbc24-718e-49a6-869a-1254869b8b23",
+        "score": 0.7656982432913129
+    },
+    {
+        "user": "user-541cb89c-a2d0-4494-9ef2-093646fc28cc",
+        "post": "post-5542761b-e268-489a-9813-2844ec617b16",
+        "score": 0.4770045743807298
+    },
+    {
+        "user": "user-541cb89c-a2d0-4494-9ef2-093646fc28cc",
+        "post": "post-9a9c5082-0f73-48ff-a161-bc153324cca3",
+        "score": -0.999521381174244
+    },
+    {
+        "user": "user-541cb89c-a2d0-4494-9ef2-093646fc28cc",
+        "post": "post-cdc0c586-6a0d-451c-ab34-79748dbd96a7",
+        "score": -0.9842698970709272
+    },
+    {
+        "user": "user-541cb89c-a2d0-4494-9ef2-093646fc28cc",
+        "post": "post-85f7964a-6f63-4c53-a4cb-084dde67c728",
+        "score": -0.41899252110415913
+    },
+    {
+        "user": "user-541cb89c-a2d0-4494-9ef2-093646fc28cc",
+        "post": "post-475538c1-efbf-4f00-a1e3-383eca09c85d",
+        "score": -0.17943673111070638
+    },
+    {
+        "user": "user-a4946f35-80e6-48a2-8218-6d159952e280",
+        "post": "post-303b6e91-959c-4c6b-9114-5dac8c655bfc",
+        "score": 0.9223461118161185
+    },
+    {
+        "user": "user-a4946f35-80e6-48a2-8218-6d159952e280",
+        "post": "post-c418c6ce-7864-4f6d-aa75-ba726473c9ba",
+        "score": 0.17598427852290724
+    },
+    {
+        "user": "user-a4946f35-80e6-48a2-8218-6d159952e280",
+        "post": "post-4c235924-b308-407a-8436-f4ff31bd0dcb",
+        "score": 0.5377180642193612
+    },
+    {
+        "user": "user-a4946f35-80e6-48a2-8218-6d159952e280",
+        "post": "post-36a06a66-9199-42a3-8619-228733e608eb",
+        "score": 0.873399680330547
+    },
+    {
+        "user": "user-a4946f35-80e6-48a2-8218-6d159952e280",
+        "post": "post-5d416b2c-011a-4f59-a066-ccf297751511",
+        "score": -0.6825711760726215
+    },
+    {
+        "user": "user-2e4b941e-e2ad-4185-8a15-628f8d5da8af",
+        "post": "post-97a28964-9f9e-479b-867d-4181eb57f7ff",
+        "score": 0.1448817568123453
+    },
+    {
+        "user": "user-2e4b941e-e2ad-4185-8a15-628f8d5da8af",
+        "post": "post-6f9f9c02-7feb-4e2e-9e4d-cae54a30f627",
+        "score": -0.0879851315041703
+    },
+    {
+        "user": "user-2e4b941e-e2ad-4185-8a15-628f8d5da8af",
+        "post": "post-7a013978-57aa-401c-9279-61444babb9c3",
+        "score": 0.4422476590421673
+    },
+    {
+        "user": "user-2e4b941e-e2ad-4185-8a15-628f8d5da8af",
+        "post": "post-1db65714-f843-4a50-9ea7-6c4d532c309b",
+        "score": -0.21619028528509646
+    },
+    {
+        "user": "user-2e4b941e-e2ad-4185-8a15-628f8d5da8af",
+        "post": "post-5716a2a8-a476-4ea2-bd22-743e28d1e1c8",
+        "score": -0.23332636514193691
+    },
+    {
+        "user": "user-02bfbf0d-eb76-432f-9fc6-5ff3d8d0d793",
+        "post": "post-10ae61ef-d248-4d95-bd8d-2eb9eb228891",
+        "score": 0.8604637330996411
+    },
+    {
+        "user": "user-02bfbf0d-eb76-432f-9fc6-5ff3d8d0d793",
+        "post": "post-4c40952b-ff80-4ce9-bf1a-51b7ac41ce1a",
+        "score": -0.46107625066968494
+    },
+    {
+        "user": "user-02bfbf0d-eb76-432f-9fc6-5ff3d8d0d793",
+        "post": "post-dbe83d12-7382-4809-9dd2-9a61d9b91f3e",
+        "score": -0.6576425433509165
+    },
+    {
+        "user": "user-02bfbf0d-eb76-432f-9fc6-5ff3d8d0d793",
+        "post": "post-9a9c5082-0f73-48ff-a161-bc153324cca3",
+        "score": -0.8830538713056928
+    },
+    {
+        "user": "user-02bfbf0d-eb76-432f-9fc6-5ff3d8d0d793",
+        "post": "post-71af80ef-2d54-4cad-b517-906d89cd1002",
+        "score": 0.0347458522073287
+    },
+    {
+        "user": "user-fc352c0b-227f-4c81-82ad-c9349e24fe7a",
+        "post": "post-10ae61ef-d248-4d95-bd8d-2eb9eb228891",
+        "score": 0.7998405859505794
+    },
+    {
+        "user": "user-fc352c0b-227f-4c81-82ad-c9349e24fe7a",
+        "post": "post-4c367c4b-cf3b-4b62-9f97-652108668974",
+        "score": 0.4912744470503804
+    },
+    {
+        "user": "user-fc352c0b-227f-4c81-82ad-c9349e24fe7a",
+        "post": "post-ed5eeb94-9282-4c59-bea6-e6f55145f879",
+        "score": 0.5047909955868901
+    },
+    {
+        "user": "user-fc352c0b-227f-4c81-82ad-c9349e24fe7a",
+        "post": "post-1643da21-5cd5-44d4-9f86-6032c4439c7b",
+        "score": 0.9103946060543676
+    },
+    {
+        "user": "user-fc352c0b-227f-4c81-82ad-c9349e24fe7a",
+        "post": "post-faf8f1b9-c007-4231-8904-461b36864e2c",
+        "score": 0.5795865049810112
+    },
+    {
+        "user": "user-50bfbab4-2b09-4fcc-bd4d-97ebf493dab1",
+        "post": "post-918c6563-4a8c-4a5e-bcca-4a56246c0c1b",
+        "score": -0.5856165950340644
+    },
+    {
+        "user": "user-50bfbab4-2b09-4fcc-bd4d-97ebf493dab1",
+        "post": "post-629ef8da-36b5-4679-acc0-8b680b00d621",
+        "score": -0.9098578926924514
+    },
+    {
+        "user": "user-50bfbab4-2b09-4fcc-bd4d-97ebf493dab1",
+        "post": "post-5399a960-2769-4074-8a4a-67deee96e21d",
+        "score": -0.3922576804248277
+    },
+    {
+        "user": "user-50bfbab4-2b09-4fcc-bd4d-97ebf493dab1",
+        "post": "post-faf8f1b9-c007-4231-8904-461b36864e2c",
+        "score": 0.5098045433050796
+    },
+    {
+        "user": "user-50bfbab4-2b09-4fcc-bd4d-97ebf493dab1",
+        "post": "post-81aafae8-01ed-4552-a5a5-5c318a882eb4",
+        "score": -0.484454949814632
+    },
+    {
+        "user": "user-727e9976-3726-4e4c-aee6-0192b003bcf4",
+        "post": "post-97a28964-9f9e-479b-867d-4181eb57f7ff",
+        "score": 0.1617363842441872
+    },
+    {
+        "user": "user-727e9976-3726-4e4c-aee6-0192b003bcf4",
+        "post": "post-d4974fa1-3e1c-4533-b2f2-367b4162f832",
+        "score": 0.6139738640553862
+    },
+    {
+        "user": "user-727e9976-3726-4e4c-aee6-0192b003bcf4",
+        "post": "post-60fc52e3-1e52-492a-a933-86b538ebc5f9",
+        "score": -1.0045148329062341
+    },
+    {
+        "user": "user-727e9976-3726-4e4c-aee6-0192b003bcf4",
+        "post": "post-05535d04-d646-4c6b-8af3-1fc6eed6bb72",
+        "score": -0.2500746451351582
+    },
+    {
+        "user": "user-727e9976-3726-4e4c-aee6-0192b003bcf4",
+        "post": "post-993bbc24-718e-49a6-869a-1254869b8b23",
+        "score": 0.717284012166005
+    },
+    {
+        "user": "user-2a60bbf8-3d43-4693-bfe4-1edaf4dfcd1a",
+        "post": "post-06cda16f-3010-46eb-a27f-22c587c1ff28",
+        "score": -1.0116091062106587
+    },
+    {
+        "user": "user-2a60bbf8-3d43-4693-bfe4-1edaf4dfcd1a",
+        "post": "post-918c6563-4a8c-4a5e-bcca-4a56246c0c1b",
+        "score": -0.6372192819374666
+    },
+    {
+        "user": "user-2a60bbf8-3d43-4693-bfe4-1edaf4dfcd1a",
+        "post": "post-a40447e1-fcf1-45f4-a567-b8ba80bd6f17",
+        "score": -0.30371558653572606
+    },
+    {
+        "user": "user-2a60bbf8-3d43-4693-bfe4-1edaf4dfcd1a",
+        "post": "post-99e19263-1e00-495e-9d89-a352b1ebf06f",
+        "score": 0.14835756737715217
+    },
+    {
+        "user": "user-2a60bbf8-3d43-4693-bfe4-1edaf4dfcd1a",
+        "post": "post-928d6c6a-19f7-46db-9dab-e780e4cdcfef",
+        "score": 0.19610582992495976
+    },
+    {
+        "user": "user-17637db4-a029-4840-8c0e-9331e67521bb",
+        "post": "post-b494b5ec-3642-4ccc-b420-4bff36d062cd",
+        "score": 0.857109366359666
+    },
+    {
+        "user": "user-17637db4-a029-4840-8c0e-9331e67521bb",
+        "post": "post-06cda16f-3010-46eb-a27f-22c587c1ff28",
+        "score": -0.9241235730930701
+    },
+    {
+        "user": "user-17637db4-a029-4840-8c0e-9331e67521bb",
+        "post": "post-c418c6ce-7864-4f6d-aa75-ba726473c9ba",
+        "score": 0.18442449426091884
+    },
+    {
+        "user": "user-17637db4-a029-4840-8c0e-9331e67521bb",
+        "post": "post-60fc52e3-1e52-492a-a933-86b538ebc5f9",
+        "score": -0.9219498868929895
+    },
+    {
+        "user": "user-17637db4-a029-4840-8c0e-9331e67521bb",
+        "post": "post-5716a2a8-a476-4ea2-bd22-743e28d1e1c8",
+        "score": -0.19951410143713036
+    },
+    {
+        "user": "user-247f4b6b-7e9e-4097-af3b-b5882e1a4d16",
+        "post": "post-1bf57498-302b-4b85-b797-52373dc54dc1",
+        "score": 0.5659728182312563
+    },
+    {
+        "user": "user-247f4b6b-7e9e-4097-af3b-b5882e1a4d16",
+        "post": "post-72f93bdf-a8c8-4a64-be7a-bce65e5ee47f",
+        "score": -0.3183238577047208
+    },
+    {
+        "user": "user-247f4b6b-7e9e-4097-af3b-b5882e1a4d16",
+        "post": "post-629ef8da-36b5-4679-acc0-8b680b00d621",
+        "score": -0.6949615646171756
+    },
+    {
+        "user": "user-247f4b6b-7e9e-4097-af3b-b5882e1a4d16",
+        "post": "post-60fc52e3-1e52-492a-a933-86b538ebc5f9",
+        "score": -1.0027143649207577
+    },
+    {
+        "user": "user-247f4b6b-7e9e-4097-af3b-b5882e1a4d16",
+        "post": "post-5d416b2c-011a-4f59-a066-ccf297751511",
+        "score": -0.6908990168977687
+    },
+    {
+        "user": "user-20e79044-af02-4d83-a2bf-058be65e3094",
+        "post": "post-23b73a35-a001-4f99-aab5-ca73278fbf7e",
+        "score": -0.9024985615047632
+    },
+    {
+        "user": "user-20e79044-af02-4d83-a2bf-058be65e3094",
+        "post": "post-2611b1f4-d7c2-43c6-9f47-e000327ff563",
+        "score": -0.8304895168200979
+    },
+    {
+        "user": "user-20e79044-af02-4d83-a2bf-058be65e3094",
+        "post": "post-7a013978-57aa-401c-9279-61444babb9c3",
+        "score": 0.5079929095331557
+    },
+    {
+        "user": "user-20e79044-af02-4d83-a2bf-058be65e3094",
+        "post": "post-ed5eeb94-9282-4c59-bea6-e6f55145f879",
+        "score": 0.6033013585776129
+    },
+    {
+        "user": "user-20e79044-af02-4d83-a2bf-058be65e3094",
+        "post": "post-05535d04-d646-4c6b-8af3-1fc6eed6bb72",
+        "score": -0.261251565553665
+    }
+]

@@ -44,3 +44,6 @@ class Simulation(SimulationInterface):
 
                     new_post = Post(user=user, content=content)
                     self.feed.root.append(new_post)
+
+
+        return user, agent

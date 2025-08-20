@@ -3,6 +3,7 @@ import typing
 import logging
 import pathlib
 import json
+import multiprocessing
 
 import pydantic
 
@@ -10,6 +11,7 @@ from rich.progress import track
 
 from twon_lss.interfaces import AgentInterface, RankerInterface
 from twon_lss.schemas import User, Network, Feed, Post
+
 
 
 class SimulationInterfaceArgs(pydantic.BaseModel):
@@ -69,17 +71,39 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         )
         self._rankings_to_json(post_scores, self.output_path / f"ranking.step_{n}.json")
 
-        # TODO make it parallel
-        for user, agent in self.individuals.items():
-            # get user's post scores, sort by score, limit to top N
-            user_feed = self._filter_posts_by_user(post_scores, user)
-            user_feed.sort(key=lambda x: x[1], reverse=True)
-            user_feed_top = user_feed[: self.args.num_posts_to_interact_with]
+        with multiprocessing.Pool() as pool:
+            self.individuals = {
+                user: agent
+                for user, agent in 
+                    pool.starmap(
+                    self._wrapper_step_agent, 
+                    [
+                        (post_scores, user, agent)
+                        for user, agent in self.individuals.items()
+                    ]
+                ) 
+            }
+            pool.close()
+            pool.join()
+    
+    def _wrapper_step_agent(
+            self, 
+            post_scores: typing.Dict[typing.Tuple[User, Post], float],
+            user: User, agent: AgentInterface
+        ) -> typing.Tuple[User, AgentInterface]:
+        user_feed = self._filter_posts_by_user(post_scores, user)
+        user_feed.sort(key=lambda x: x[1], reverse=True)
+        user_feed_top = user_feed[: self.args.num_posts_to_interact_with]
 
-            self._step_agent(user, agent, Feed([post for post, _ in user_feed_top]))
+        return self._step_agent(user, agent, Feed([post for post, _ in user_feed_top]))
 
     @abc.abstractmethod
-    def _step_agent(self, user: User, agent: AgentInterface, feed: Feed):
+    def _step_agent(
+        self, 
+        user: User, 
+        agent: AgentInterface, 
+        feed: Feed
+    ) -> typing.Tuple[User, AgentInterface]:
         """
         TODO
         """
