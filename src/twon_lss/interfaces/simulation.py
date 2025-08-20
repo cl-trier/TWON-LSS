@@ -69,6 +69,7 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         )
         self._rankings_to_json(post_scores, self.output_path / f"ranking.step_{n}.json")
 
+        # TODO make it parallel
         for user, agent in self.individuals.items():
             # get user's post scores, sort by score, limit to top N
             user_feed = self._filter_posts_by_user(post_scores, user)
