@@ -1,5 +1,6 @@
 import typing
 import json
+import functools
 
 import pydantic
 
@@ -24,7 +25,7 @@ class Network(pydantic.RootModel):
         ... import networkx as nx
         ... graph = nx.Graph()
         ... network = Network.from_graph(graph)
-        ... neighbors = network.get_neighbors(user)
+        ... neighbors = network.neighbors[user]
         ... for user in network:
         ...    print(user)
     """
@@ -38,9 +39,14 @@ class Network(pydantic.RootModel):
 
     def __len__(self):
         return len(self.root.nodes())
-
-    def get_neighbors(self, user: User) -> typing.List[User]:
-        return list(self.root.neighbors(user))
+    
+    @pydantic.computed_field()
+    @functools.cached_property
+    def neighbors(self) -> typing.Dict[User, typing.List[User]]:
+        return {
+            user: self.root.neighbors(user)
+            for user in self.root.nodes
+        }
 
     @classmethod
     def from_graph(cls, graph: networkx.Graph, users: typing.List[User]) -> "Network":

@@ -206,7 +206,7 @@ class TestNetwork:
     def test_get_neighbors(self, small_network: Network):
         users = list(small_network)
         for user in users:
-            neighbors = small_network.get_neighbors(user)
+            neighbors = small_network.neighbors[user]
             assert isinstance(neighbors, list)
             assert all(isinstance(neighbor, User) for neighbor in neighbors)
             # In a 4-node cycle, each node should have 2 neighbors
