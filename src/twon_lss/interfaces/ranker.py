@@ -1,5 +1,6 @@
 import abc
 import typing
+import logging
 
 import pydantic
 
@@ -8,37 +9,11 @@ from twon_lss.schemas import User, Post, Feed, Network
 
 
 class RankerInterfaceWeights(pydantic.BaseModel):
-    """
-    Configures the weighting system for ranking algorithms.
-
-    The RankingInterfaceWeights class defines how different scoring components
-    are weighted when calculating post rankings.
-
-    Attributes:
-        network (float): Weight applied to network-wide scoring components (default: 1.0).
-        individual (float): Weight applied to individual user preference scoring (default: 1.0).
-
-    """
-
     network: float = 1.0
     individual: float = 1.0
 
 
 class RankerArgsInterface(abc.ABC, pydantic.BaseModel):
-    """
-    Abstract base class for ranking algorithm configuration.
-
-    The RankingArgsInterface class provides a standardized configuration
-    interface for ranking algorithms, including weighting systems, noise
-    injection, and module-specific arguments. This ensures consistent
-    configuration patterns across different ranking implementations.
-
-    Attributes:
-        weights (RankingInterfaceWeights): Weighting configuration for different scoring components (default: RankingInterfaceWeights()).
-        noise (Noise): Noise injection configuration for score randomization (default: Noise()).
-
-    """
-
     weights: RankerInterfaceWeights = pydantic.Field(
         default_factory=RankerInterfaceWeights
     )
@@ -46,49 +21,13 @@ class RankerArgsInterface(abc.ABC, pydantic.BaseModel):
 
 
 class RankerInterface(abc.ABC, pydantic.BaseModel):
-    """
-    Abstract base class for ranking algorithms.
-
-    The `RankingInterface` class provides a standardized framework for implementing
-    ranking algorithms in the social media simulation. It defines the core ranking
-    workflow that combines network-wide signals with individual user preferences,
-    applies weighting and noise, and filters posts based on network connectivity.
-
-    The ranking process follows these steps:
-    1. Calculate global (network-wide) scores for all posts
-    2. For each user, identify posts from their network neighbors
-    3. Calculate individual user-specific scores for accessible posts
-    4. Combine global and individual scores with configured weights
-    5. Apply noise injection for score randomization
-
-    Attributes:
-        args (RankingArgsInterface): Configuration object containing weights, noise, and module-specific arguments (default: RankingArgsInterface()).
-    """
-
     args: RankerArgsInterface = pydantic.Field(default_factory=RankerArgsInterface)
 
     def __call__(
         self, users: typing.List[User], feed: Feed, network: Network
     ) -> typing.Dict[typing.Tuple[User, Post], float]:
-        """
-        Rank posts for all users based on network and individual preferences.
+        logging.debug(f"{len(feed)=}")
 
-        This method orchestrates the complete ranking process by computing
-        global scores for all posts, then calculating personalized scores
-        for each user based on their network connections and individual
-        preferences.
-
-        Args:
-            users (List[User]): List of users to generate rankings for.
-            feed (Feed): Feed containing all posts to be ranked.
-            network (Network): Social network structure defining user connections.
-
-        Returns:
-            Dict[Tuple[User, Post], float]: Dictionary mapping (user, post) tuples
-            to their respective ranking scores. Only includes posts visible to
-            each user based on network connectivity.
-
-        """
         # retrieve global score for each post
         # TODO parallelize on post level
         global_scores: typing.Dict[str, float] = {}
@@ -113,21 +52,6 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
         return final_scores
 
     def get_individual_posts(self, user: User, feed: Feed, network: Network):
-        """
-        Filter posts visible to a specific user based on network connections.
-
-        This method determines which posts a user can see by checking their
-        network connections. Users can only see unread posts from their
-        direct neighbors in the social network.
-
-        Args:
-            user (User): The user to filter posts for.
-            feed (Feed): Feed containing all posts.
-            network (Network): Social network structure.
-
-        Returns:
-            List[Post]: List of posts visible to the specified user.
-        """
         return [
             post
             for neighbor in network.neighbors[user]
@@ -136,44 +60,8 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
 
     @abc.abstractmethod
     def _compute_network(self, post: Post) -> float:
-        """
-        Abstract method for computing network-wide post scores.
-
-        This method must be implemented by subclasses to define how posts
-        are scored based on network-wide signals such as engagement metrics,
-        viral potential, or content quality indicators.
-
-        Args:
-            post (Post): The post to calculate the network score for.
-
-        Returns:
-            float: Raw network score for the post (before weighting).
-
-        Note:
-            This method should return a raw score that will be weighted
-            by the network weight configuration.
-        """
         pass
 
     @abc.abstractmethod
     def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:
-        """
-        Abstract method for computing individual user-post scores.
-
-        This method must be implemented by subclasses to define how posts
-        are scored based on individual user preferences, interests, or
-        behavioral patterns.
-
-        Args:
-            user (User): The user to calculate the individual score for.
-            post (Post): The post to calculate the individual score for.
-            feed (Feed): Feed containing all posts.
-
-        Returns:
-            float: Raw individual score for the user-post pair (before weighting).
-
-        Note:
-            This method should return a raw score that will be weighted
-            by the individual weight configuration.
-        """
         pass

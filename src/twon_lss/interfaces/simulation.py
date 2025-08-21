@@ -88,9 +88,6 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         agent: AgentInterface, 
         feed: Feed
     ) -> typing.Tuple[User, AgentInterface, typing.List[Post]]:
-        """
-        TODO
-        """
         pass
 
     def _individuals_to_json(self, path: str):
