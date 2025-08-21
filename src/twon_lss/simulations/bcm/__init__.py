@@ -37,6 +37,7 @@ class Simulation(SimulationInterface):
             actions = agent.select_actions(post)
 
             if AgentActions.post in actions:
-                new_posts.append(Post(user=user, content=agent.post(post)))
+                new_posts.append(Post(user=user.id, content=agent.post(post)))
 
+        user.posts.extend(new_posts)
         return user, agent, new_posts

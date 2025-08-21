@@ -1,18 +1,19 @@
 import typing
 import json
 import functools
+import logging
 
 import pydantic
 
 import networkx
 
-from twon_lss.schemas.user import User
+from twon_lss.schemas.mappings import UserID
 
 
 class Network(pydantic.RootModel):
     root: networkx.Graph = networkx.Graph()
 
-    _neighbors: typing.Dict[User, typing.List[User]]
+    _neighbors: typing.Dict[UserID, typing.List[UserID]]
 
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
 
@@ -30,26 +31,17 @@ class Network(pydantic.RootModel):
     
     @pydantic.computed_field()
     @functools.cached_property
-    def neighbors(self) -> typing.Dict[User, typing.List[User]]:
+    def neighbors(self) -> typing.Dict[UserID, typing.List[UserID]]:
+        logging.debug([(key, val) for key, val in self._neighbors.items()])
         return self._neighbors
 
-    @classmethod
-    def from_graph(cls, graph: networkx.Graph, users: typing.List[User]) -> "Network":
-        return cls(Network._relabel_to_users(graph, users))
-
-    @staticmethod
-    def _relabel_to_users(
-        graph: networkx.Graph, users: typing.List[User]
-    ) -> networkx.Graph:
-        assert len(graph) == len(users)
-        return networkx.relabel_nodes(graph, mapping=lambda node_id: users[node_id])
+    def relabel(self, labels: typing.List[typing.Any]) -> "Network":
+        assert len(self.root) == len(labels)
+        return Network(networkx.relabel_nodes(self.root, mapping=lambda node_id: labels[node_id]))
 
     def to_json(self, path: str) -> None:
         json.dump(
-            networkx.node_link_data(
-                networkx.relabel_nodes(self.root, mapping=lambda user: user.id),
-                edges="edges",
-            ),
+            networkx.node_link_data(self.root, edges="edges"),
             open(path, "w"),
             indent=4,
         )

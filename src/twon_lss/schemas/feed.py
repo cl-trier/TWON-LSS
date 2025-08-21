@@ -3,8 +3,8 @@ import json
 
 import pydantic
 
-from twon_lss.schemas.user import User
 from twon_lss.schemas.post import Post
+from twon_lss.schemas.mappings import UserID, PostID
 
 
 class Feed(pydantic.RootModel):
@@ -25,13 +25,16 @@ class Feed(pydantic.RootModel):
     def extend(self, posts: typing.List[Post]) -> None:
         self.root.extend(posts)
 
-    def get_items_by_user(self, user: User) -> "Feed":
-        return Feed(list(filter(lambda post: post.user == user, self.root)))
+    def get_item_by_id(self, post_id: PostID) -> Post:
+        return list(filter(lambda post: post.id == post_id, self.root))[0]
 
-    def get_unread_items_by_user(self, user: User) -> "Feed":
+    def get_items_by_user(self, user_id: UserID) -> "Feed":
+        return Feed(list(filter(lambda post: post.user == user_id, self.root)))
+
+    def get_unread_items_by_user(self, user_id: UserID) -> "Feed":
         return Feed(
             list(
-                filter(lambda post: user not in post.reads, self.root)
+                filter(lambda post: user_id not in post.reads, self.root)
             )
         )
 

@@ -4,14 +4,14 @@ import logging
 import pathlib
 import json
 import multiprocessing
+import itertools, functools
 
 import pydantic
 
 from rich.progress import track
 
-from twon_lss.interfaces import AgentInterface, RankerInterface
-from twon_lss.schemas import User, Network, Feed, Post
-
+from twon_lss.interfaces import AgentInterface, RankerInterface, RankerScores
+from twon_lss.schemas import User, Network, Feed, Post, PostID
 
 
 class SimulationInterfaceArgs(pydantic.BaseModel):
@@ -34,7 +34,7 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         default_factory=lambda: pathlib.Path.cwd() / "output/"
     )
 
-    def model_post_init(self, __context: typing.Any):
+    def model_post_init(self, _: typing.Any):
         logging.debug(">f init simulation")
         self.output_path.mkdir(exist_ok=True)
 
@@ -48,38 +48,32 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         self._individuals_to_json(self.output_path / "individuals.json")
 
     def _step(self, n: int = 0) -> None:
-        post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
+        post_scores: RankerScores = self.ranker(
             users=self.individuals.keys(), feed=self.feed, network=self.network
         )
-        logging.debug(len(self.feed))
-        logging.debug(len(post_scores.keys()))
+        logging.debug(f">i number of feed items {len(self.feed)}")
 
-        with multiprocessing.Pool() as pool:
-            responses: typing.Tuple[User, AgentInterface, typing.List[Post]] = pool.starmap(
+        # with multiprocessing.Pool() as pool:
+        responses: typing.List[typing.Tuple[User, AgentInterface, typing.List[Post]]] = list(
+            itertools.starmap(
                 self._wrapper_step_agent, 
-                [
-                    (post_scores, user, agent)
-                    for user, agent in self.individuals.items()
-                ]
+                [(post_scores, user, agent) for user, agent in self.individuals.items()]
             )
-            
-            self.individuals = {user: agent for user, agent, _ in responses}
-            self.feed = Feed([post for _, _, agent_posts in responses for post in agent_posts])
-            pool.close()
-            pool.join()
-    
+        )
+        self.individuals = {user: agent for user, agent, _ in list(responses)}
+        self.feed.extend([post for _, _, agent_posts in responses for post in agent_posts])
+
     def _wrapper_step_agent(
             self, 
-            post_scores: typing.Dict[typing.Tuple[User, Post], float],
+            post_scores: RankerScores,
             user: User, agent: AgentInterface
         ) -> typing.Tuple[User, AgentInterface]:
-        user_feed = self._filter_posts_by_user(post_scores, user)
+        user_feed = post_scores.filter_by_user(user)
         user_feed.sort(key=lambda x: x[1], reverse=True)
         user_feed_top = user_feed[: self.args.num_posts_to_interact_with]
 
-        logging.debug(f">i {len(user_feed)=}")
-
-        return self._step_agent(user, agent, Feed([post for post, _ in user_feed_top]))
+        logging.debug(f">i number of feed items {len(user_feed)} for user {user.id}")
+        return self._step_agent(user, agent, Feed([self.feed.get_item_by_id(post_id) for post_id, _ in user_feed_top]))
 
     @abc.abstractmethod
     def _step_agent(
@@ -99,25 +93,3 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
             open(path, "w"),
             indent=4,
         )
-
-    def _rankings_to_json(
-        self, rankings: typing.Dict[typing.Tuple[User, Post], float], path: str
-    ):
-        json.dump(
-            [
-                {"user": user.id, "post": post.id, "score": score}
-                for (user, post), score in rankings.items()
-            ],
-            open(path, "w"),
-            indent=4,
-        )
-
-    @staticmethod
-    def _filter_posts_by_user(
-        posts_scores: typing.Dict[typing.Tuple[User, Post], float], user: User
-    ) -> typing.List[typing.Tuple[Post, float]]:
-        return [
-            (post_content, post_score)
-            for (post_user, post_content), post_score in posts_scores.items()
-            if user == post_user
-        ]

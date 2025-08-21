@@ -15,7 +15,6 @@ class Agent(AgentInterface):
     delta: float = 0.05
 
     memory: typing.List[float] = pydantic.Field(default_factory=list)
-    memory_length: int = pydantic.Field(default=4, ge=0, le=20)
 
     def select_actions(self, post: Post) -> typing.Set[AgentActions]:
         self.memory.append(self._bcm(self.memory[-1], float(post.content)))
