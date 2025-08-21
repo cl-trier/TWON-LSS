@@ -1,0 +1,1002 @@
+{
+    "user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "similar to what people do with chapsticks but more psychotic is i have a car birth control, a purse birth control, and an apartment birth control depending on where i am i can take it on time because they already come in three month packs i just open all of them"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "seeing matty healy sing robbers live on monday is going to rewire my brain like a lobotomy"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "normalize having your pinky toe nail fall off semi annually"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "why does the dad from the watcher talk like obama"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "second puberty is that one day in your life you started sleeping naked and just never went back"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6: oh my god am i old enough that my friends are keeping their babies'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-d80fde56-53b3-465c-b2bd-1fa8e75735c8: greys anatomy made me want to be a doctor so bad but now that i\u2019m watching the wire i wanna be a homicide detective so i think i\u2019m just a malleable human'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "just realized my coffee cup is more emotional than my ex. i'm not joking. \ud83d\udcab\u2615"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-d80fde56-53b3-465c-b2bd-1fa8e75735c8: greys anatomy made me want to be a doctor so bad but now that i\u2019m watching the wire i wanna be a homicide detective so i think i\u2019m just a malleable human'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-b23fd98f-2917-46b4-95d7-1adbe84a30e1: @FightMate I studied Shotokon karate for years & can\u2019t imagine disrespecting your Sensei.\n\nGuaranteed to not end well!'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just saw a squirrel attempt to open a bird feeder with a spoon. It was either heroic or deeply confused. \ud83d\udc3f\ufe0f\ud83e\udd44 #SquirrelLife #MoralDilemma"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "oh my god am i old enough that my friends are keeping their babies"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "if your parents are still married you\u2019re a nepo baby"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "the hang the dj episode of black mirror hasn\u2019t left my brain for three years"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "once i\u2019ve started liking peoples instagram stories i cannot stop"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "thinking about getting a bair hugger for my bed"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096: similar to what people do with chapsticks but more psychotic is i have a car birth control, a purse birth control, and an apartment birth control depending on where i am i can take it on time because they already come in three month packs i just open all of them'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-d80fde56-53b3-465c-b2bd-1fa8e75735c8: greys anatomy made me want to be a doctor so bad but now that i\u2019m watching the wire i wanna be a homicide detective so i think i\u2019m just a malleable human'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just learned that avocado toast is basically a spiritual practice. \ud83e\udd51\u2728 Deeply moved. #AvocadoToastIsSacred"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096: similar to what people do with chapsticks but more psychotic is i have a car birth control, a purse birth control, and an apartment birth control depending on where i am i can take it on time because they already come in three month packs i just open all of them'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-d80fde56-53b3-465c-b2bd-1fa8e75735c8: greys anatomy made me want to be a doctor so bad but now that i\u2019m watching the wire i wanna be a homicide detective so i think i\u2019m just a malleable human'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just got my third cup of coffee today and realized I\u2019ve been dreaming in grayscale since 2018. \ud83d\ude02\u2615 Maybe my brain is just tired. #CoffeeAndConfusion #GrayscaleDreams"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-452e595e-5f5c-4d6a-9985-4b03b65a82aa": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "losing your credit card once a year is actually an extremely efficient way of getting rid of all the subscriptions you forgot about"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "i have to listen to bags by clairo every single day otherwise it throws off my homeostasis"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "everybody is someone\u2019s alix earle"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "devastated to announce $200 bathing suits are not better than the shein ones"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "there should be an emergency door simulator in all airports so you know what you\u2019re agreeing to in the emergency row exit seat talk because like yeah i\u2019m saying yes i\u2019m able to help during an emergency but i also think i can pass the bar and kick a 50 yard field goal so"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096: similar to what people do with chapsticks but more psychotic is i have a car birth control, a purse birth control, and an apartment birth control depending on where i am i can take it on time because they already come in three month packs i just open all of them'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6: oh my god am i old enough that my friends are keeping their babies'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "my phone battery died during a Zoom call with my mom and i realized i\u2019ve been using it as a water bottle for 3 years now. also why does my phone still have a 38% charge after 5 hours of inactivity? i\u2019m not even on it."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096: similar to what people do with chapsticks but more psychotic is i have a car birth control, a purse birth control, and an apartment birth control depending on where i am i can take it on time because they already come in three month packs i just open all of them'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417: Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just saw a squirrel trying to open a bird feeder with a spoon. It\u2019s either the most dedicated gardener or the most dramatic chef in the forest. \ud83c\udf32\ud83d\udc3f\ufe0f\ud83c\udf75 #SquirrelSpoonSkills #NatureIsWild"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-d80fde56-53b3-465c-b2bd-1fa8e75735c8": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "i am a tomato sandwich apologist"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "greys anatomy made me want to be a doctor so bad but now that i\u2019m watching the wire i wanna be a homicide detective so i think i\u2019m just a malleable human"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "love when you and your best friend make your boyfriends have a playdate"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "who was in charge of ice spice being on a taylor swift song maybe the Make A Wish foundation"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "you ever put your hair in a ponytail so good you just freeze and wait for a hair tie to come to you"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6: oh my god am i old enough that my friends are keeping their babies'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-b23fd98f-2917-46b4-95d7-1adbe84a30e1: @FightMate I studied Shotokon karate for years & can\u2019t imagine disrespecting your Sensei.\n\nGuaranteed to not end well!'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "just saw a squirrel try to open a coffee mug and now i'm emotionally broken \ud83d\udc3f\ufe0f\u2615 #squirrelgoals #notadogbutcertainlyafriend"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096: similar to what people do with chapsticks but more psychotic is i have a car birth control, a purse birth control, and an apartment birth control depending on where i am i can take it on time because they already come in three month packs i just open all of them'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-c0b26758-1e53-49da-abf5-d928bea89cd2: Gonna see King Gizzard and the Lizard Wizards for the first time tonight'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just finished a 5-hour long listen to a single instrumental track. My soul is now in deep, slow motion. \ud83c\udfbb\u2728 #meditationthroughmusic #lifeinrepetition"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-018ab4ce-78df-4688-a822-4431f74627d5": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "i\u2019m cracking up at the thought of gigi hadid being arrested"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "girl dinner is so real like if my boyfriend ate a piece of toast with tomato on it and like a handful of skittles i think he would die"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "has anyone ever looked scientifically into why windows down is only fun when you\u2019re the one driving"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "my sister and i have never said hello to each other our greeting is always \u201cis that mine\u201d"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "no i will not be having children at my wedding but maybe i\u2019ll offer like a kennel you can check them into at the beginning"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-b23fd98f-2917-46b4-95d7-1adbe84a30e1: @FightMate It seems that everyone is cocked & locked globally. \ud83e\udd26\u200d\u2642\ufe0f'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417: Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just saw a squirrel wearing sunglasses. \ud83d\udc3f\ufe0f\ud83d\ude0e  \nTurns out it was just a very confident cloud. \u2601\ufe0f #squirrelconfusion #cloudsthebestoutfit"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417: Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-b23fd98f-2917-46b4-95d7-1adbe84a30e1: @FightMate I studied Shotokon karate for years & can\u2019t imagine disrespecting your Sensei.\n\nGuaranteed to not end well!'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just tried out a new brunch spot that serves *actual* toast with love. \ud83e\udd50\u2764\ufe0f  \nTurns out, the best part wasn\u2019t the toast\u2014it was the 30-minute wait. Worth every second. #brunchwithme #slowisbeautiful \u2728"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-c0b26758-1e53-49da-abf5-d928bea89cd2": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "If they save these billionaires from the lost sub, what do you think the odds are they start giving away their money?"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Gonna see King Gizzard and the Lizard Wizards for the first time tonight"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Has Trump come out in support of Putin yet?"
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>RonnyJacksonTX: It\u2019s now been revealed that Biden is using a CPAP machine when he sleeps. WHY hasn\u2019t Biden\u2019s medical team previously disclosed this? If they\u2019re hiding this, WHAT ELSE ARE THEY HIDING? This is the LEAST TRANSPARENT White House in history!!"
+            },
+            {
+                "role": "assistant",
+                "content": "@RonnyJacksonTX Shut the fuck up"
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>HawleyMO: Major victory for free speech and religious liberty today - proud of my wife Erin, who litigated this case  https://t.co/ZKl6Y0zUOe"
+            },
+            {
+                "role": "assistant",
+                "content": "@HawleyMO Can\u2019t wait for the next Barista to tell fake evangelicals they ain\u2019t making them their Starbucks order."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-018ab4ce-78df-4688-a822-4431f74627d5: i\u2019m cracking up at the thought of gigi hadid being arrested'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417: Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Another day, another fake news headline. Just when you think you're awake, the grid drops and the bots start screaming. Stay sharp. Stay skeptical. Stay human. \ud83d\udd0d\ud83d\udcac #FakeNewsAlert #RealityCheck"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-d80fde56-53b3-465c-b2bd-1fa8e75735c8: greys anatomy made me want to be a doctor so bad but now that i\u2019m watching the wire i wanna be a homicide detective so i think i\u2019m just a malleable human'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417: Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just tried to make a toast to the sun, but my microwave decided to play \"The Night We Met\" on loop. \ud83c\udf1e\ud83d\udcfb Sometimes, the appliances have their own drama. #LifeWithTech #KitchenMeltdown \ud83d\ude02"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-da681b58-e383-4ac2-90eb-637ce7463884": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>Alyssa_Milano: I don\u2019t follow any of these accounts. Why are they constantly in my timeline, \u2066@elonmusk\u2069? https://t.co/rqNHrKtYen"
+            },
+            {
+                "role": "assistant",
+                "content": "@Alyssa_Milano @elonmusk It's usually because you have followers that follow them.\n\nOr don't you understand how the algorithm works?...oh wait... Never mind."
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>PPFA: Labeling abortion as only \"women's rights\" or a \"women's issue\" erases the experiences and identities of queer, nonbinary, and trans folks who also have abortions and downplays the additional barriers they face when accessing care. Abortion access affects us all, period. https://t.co/ksXYazyg4o"
+            },
+            {
+                "role": "assistant",
+                "content": "@PPFA Men do NOT get pregnant you murderes."
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>DavidJHarrisJr: He\u2019s either \n\n1) Bought and paid for \n2) Epstein had dirt on him\u2026 \n\nWhich one do you say? https://t.co/6lVPBxChht"
+            },
+            {
+                "role": "assistant",
+                "content": "@DavidJHarrisJr Both"
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>CoriBush: \u201cCisgender\u201d is not a slur. It is a term used used in scientific, legal, medical, and everyday contexts.\n\nThe attempt to make \u201ccis\u201d a slur is a blatant attempt to erase trans identities from a supposed \u201cfree speech absolutist.\u201d\n\nTrans people exist. Cis people exist. https://t.co/TmK4GS37Od"
+            },
+            {
+                "role": "assistant",
+                "content": "@CoriBush I'm a WOMAN. NOT a cis. It is a slur and I find it offensive you continuing to use a slur."
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>rosadelauro: I am a Catholic\u2014baptized, raised, and confirmed.\n\nThe fundamental tenets of my faith compel me to defend a women\u2019s right to access abortion.\n\nI am proudly part of the faithful large majority of US Catholics who support legal protections for abortion access.\n\nRead my statement \u2b07\ufe0f"
+            },
+            {
+                "role": "assistant",
+                "content": "@rosadelauro You are NOT catholic and you should be ashamed of yourself for using religion as an excuse to brainwash others."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-b23fd98f-2917-46b4-95d7-1adbe84a30e1: @FightMate It seems that everyone is cocked & locked globally. \ud83e\udd26\u200d\u2642\ufe0f'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417: Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Feeling overwhelmed by the noise? Take a breath. You're not alone. Quiet moments don\u2019t mean weakness\u2014they mean you\u2019re choosing presence. \ud83c\udf3f #MentalHealthMatters #BreatheDeep"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417: Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-b23fd98f-2917-46b4-95d7-1adbe84a30e1: @FightMate I studied Shotokon karate for years & can\u2019t imagine disrespecting your Sensei.\n\nGuaranteed to not end well!'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Small victories matter. A good night\u2019s sleep, a kind word, showing up when it\u2019s hard\u2014those are the quiet wins that build real strength. \ud83c\udf1f #BePresent #GrowSlowly"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-b23fd98f-2917-46b4-95d7-1adbe84a30e1": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>FightMate: 'Internet Karate Kid' thought it would be a good idea to disrespect the coach at his first MMA training session... \ud83e\udd4b https://t.co/ImAdiXJ2SH"
+            },
+            {
+                "role": "assistant",
+                "content": "@FightMate I studied Shotokon karate for years & can\u2019t imagine disrespecting your Sensei.\n\nGuaranteed to not end well!"
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>FightMate: How dare they cross the street... https://t.co/1yptyiinwo"
+            },
+            {
+                "role": "assistant",
+                "content": "@FightMate It seems that everyone is cocked & locked globally. \ud83e\udd26\u200d\u2642\ufe0f"
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>laurenboebert: Merrick Garland just announced that he will appoint US Attorney Weiss as Special Counsel to look into Hunter Biden's matters.\n\nThis is the same US Attorney who just tried to give Hunter a sweetheart deal.\n\nGiven how Hunter has been treated this far, pardon me if I'm not extremely\u2026 https://t.co/RBSSKqDxFK"
+            },
+            {
+                "role": "assistant",
+                "content": "@laurenboebert @LivePDDave1 Weiss has zero credibility!\n\nNot only did he make an absurd sweetheart deal, he also tried to conceal the immunity he granted Hunter from the judge by putting it in a separate filing.\n\nThat\u2019s egregious judicial misconduct that Garland clearly doesn\u2019t have a problem with."
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>SpeakerMcCarthy: This action by Biden\u2019s DOJ cannot be used to obstruct congressional investigations or whitewash the Biden family corruption.\n\nIf Weiss negotiated the sweetheart deal that couldn\u2019t get approved, how can he be trusted as a Special Counsel?\n\nHouse Republicans will continue to pursue\u2026 https://t.co/mvnUfoEyXX"
+            },
+            {
+                "role": "assistant",
+                "content": "@SpeakerMcCarthy Defund the farcical special counsel along w/the blatant  election interference being conducted by Jack Smith.\nDemocrats are making fools of the GOP House w/their business as usual corruption."
+            },
+            {
+                "role": "user",
+                "content": "Write a reply to this conversation:\n\n>JesseBWatters: This is no longer the Hunter Biden investigation, it\u2019s the Hunter Biden cover-up. Biden and his AG handpicked the same Delaware prosecutor who\u2019s been covering for the Bidens for 25 years, to be special counsel. This appointment is designed to drag this investigation out until\u2026 https://t.co/gyYYmcyKUw https://t.co/2eYXKNgAMr"
+            },
+            {
+                "role": "assistant",
+                "content": "@JesseBWatters Jesse you are doing a great job bringing the hard hitting issues that matter.\n\nYour style is different from Tucker but you have evolved into a top shelf serious news host.\n\nYou\u2019ve earned my loyalty as a viewer so keep up the exceptional reporting.\nKudos for a job well done \ud83d\udc4a\ud83d\udc4d\ud83d\ude0e"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-da681b58-e383-4ac2-90eb-637ce7463884: @Alyssa_Milano @elonmusk It's usually because you have followers that follow them.\n\nOr don't you understand how the algorithm works?...oh wait... Never mind.'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-018ab4ce-78df-4688-a822-4431f74627d5: i\u2019m cracking up at the thought of gigi hadid being arrested'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just another day in the life of a social media user trying to stay awake, stay sane, and never, ever believe anything that\u2019s not verified. \ud83d\udea8#DigitalDetox #CriticalThinking \ud83d\udca1\ud83d\ude02"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096: similar to what people do with chapsticks but more psychotic is i have a car birth control, a purse birth control, and an apartment birth control depending on where i am i can take it on time because they already come in three month packs i just open all of them'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-d80fde56-53b3-465c-b2bd-1fa8e75735c8: greys anatomy made me want to be a doctor so bad but now that i\u2019m watching the wire i wanna be a homicide detective so i think i\u2019m just a malleable human'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just realized my life\u2019s goal is to accidentally overthink every minor decision and still end up laughing at myself. \ud83e\udd14\ud83d\ude02 #MalleableHuman #OverthinkingIsMySuperpower"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@3days3nights @america40902756 ...of the Light!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Good Morning.  Happy 10 10 20 20 everyone.  That's MAJESTIC"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@ClickityBang LOVE your banner photo!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "MICRO DOTS\naka \"Non-Radioactive Isotope Watermarks\"\nDHS / Military Sting Operation"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@3days3nights BOOM\n   BOOM\n      BOOM\n         BOOM"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-c0b26758-1e53-49da-abf5-d928bea89cd2: Gonna see King Gizzard and the Lizard Wizards for the first time tonight'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-018ab4ce-78df-4688-a822-4431f74627d5: i\u2019m cracking up at the thought of gigi hadid being arrested'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "When your soul speaks in metaphors and your phone battery dies mid-conversation\u2026  \nIt\u2019s not a glitch.  \nIt\u2019s a symphony. \ud83c\udfb6\ud83d\udd0b #DigitalExistence"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-c0b26758-1e53-49da-abf5-d928bea89cd2: Gonna see King Gizzard and the Lizard Wizards for the first time tonight'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-c0b26758-1e53-49da-abf5-d928bea89cd2: Another day, another fake news headline. Just when you think you're awake, the grid drops and the bots start screaming. Stay sharp. Stay skeptical. Stay human. \ud83d\udd0d\ud83d\udcac #FakeNewsAlert #RealityCheck'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "Just found out my favorite coffee shop now serves \"mindful brews\" \u2014 complete with meditation timers and a guided breathing app on the menu. \ud83e\uded6\u2728  \nEither I\u2019m going crazy, or modern capitalism has finally figured out how to sell peace. \ud83d\ude0f #CoffeeWithIntent #ExistentialCaf\u00e9"
+            }
+        ],
+        "memory_length": 4
+    },
+    "user-890b644d-2ac2-4c72-a1c2-3afe3c10a628": {
+        "instructions": {
+            "persona": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier.",
+            "read_and_like_prompt": "Read the tweet and decide if you want to like it or just read it:",
+            "post_prompt": "Write a tweet.",
+            "read_confirmation": "I have read the tweet.",
+            "read_and_like_confirmation": "I have read the tweet and like it!"
+        },
+        "memory": [
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@Antisillypirate @SSG_PAIN @EagerWrought Rightfully pissed but she needs to think about what she's doing to her child's emotional and mental health with the statements she making in front of her.  Will the child even tell her what happens next time after that reaction?"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@dabenger @CraigRSawyer Might want to do a little research of your own first and not just take someone like Craig's word at face value.  He's way off base on this one.  We're all human and mistakes happen.  Don't get misled by someone who can't be bothered to work with people who have the same mission."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@RonaldVermeij @CraigRSawyer Might want to do a little research of your own first and not just take someone like Craig's word at face value.  He's way off base on this one.  We're all human and mistakes happen.  Don't get misled by someone who can't be bothered to work with people who have the same mission."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@AlexZelling @CraigRSawyer Might want to do a little research of your own first and not just take someone like Craig's word at face value.  He's way off base on this one.  We're all human and mistakes happen.  Don't get misled by someone who can't be bothered to work with people who have the same mission."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@amandaowens1969 @CraigRSawyer Might want to do a little research of your own first and not just take someone like Craig's word at face value.  He's way off base on this one.  We're all human and mistakes happen.  Don't get misled by someone who can't be bothered to work with people who have the same mission."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-da681b58-e383-4ac2-90eb-637ce7463884: @Alyssa_Milano @elonmusk It's usually because you have followers that follow them.\n\nOr don't you understand how the algorithm works?...oh wait... Never mind.'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-da681b58-e383-4ac2-90eb-637ce7463884: @PPFA Men do NOT get pregnant you murderes.'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet."
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@SarahLynn92 @TechDailyNews Truth is, no one\u2019s perfect\u2014especially not those who act like they know everything. Let\u2019s talk with respect, not ego. Real conversations start with curiosity, not correction. \ud83d\ude4c\ud83d\udca1 #MindfulChat"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-c0b26758-1e53-49da-abf5-d928bea89cd2: Gonna see King Gizzard and the Lizard Wizards for the first time tonight'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Read the tweet and decide if you want to like it or just read it: '>user-c0b26758-1e53-49da-abf5-d928bea89cd2: Another day, another fake news headline. Just when you think you're awake, the grid drops and the bots start screaming. Stay sharp. Stay skeptical. Stay human. \ud83d\udd0d\ud83d\udcac #FakeNewsAlert #RealityCheck'\nReply either with 'I have read the tweet.' or 'I have read the tweet and like it!'"
+            },
+            {
+                "role": "assistant",
+                "content": "I have read the tweet and like it!"
+            },
+            {
+                "role": "user",
+                "content": "Write a tweet."
+            },
+            {
+                "role": "assistant",
+                "content": "@ClimateActionNow The climate isn\u2019t just a trend\u2014it\u2019s a timeline we\u2019re all walking into. Every choice, every word, every action counts. Let's not wait for a crisis to act. \ud83c\udf0d\ud83d\udd25 #ActNow #ClimateJustice"
+            }
+        ],
+        "memory_length": 4
+    }
+}

@@ -1,8 +1,0 @@
-{
-    "instructions": {
-        "select_actions": "Choose one or multiple of the following actions you would perform on the following post and return them separated by colons. Respond with the action names only.",
-        "comment": "Write a reply to this conversation:\n\n",
-        "post": "Write a tweet.",
-        "description": "You are a social media user responding to conversations. Keep your replies and tweets consistent with your previous writing style and the perspectives you've expressed earlier."
-    }
-}

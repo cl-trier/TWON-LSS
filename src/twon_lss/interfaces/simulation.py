@@ -51,20 +51,28 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
             users=self.individuals.keys(), feed=self.feed, network=self.network
         )
 
-        responses: typing.List[typing.Tuple[User, AgentInterface, typing.List[Post]]] = list(
+        responses: typing.List[
+            typing.Tuple[User, AgentInterface, typing.List[Post]]
+        ] = list(
             itertools.starmap(
-                self._wrapper_step_agent, 
-                [(post_scores, user, agent) for user, agent in self.individuals.items()],
+                self._wrapper_step_agent,
+                [
+                    (post_scores, user, agent)
+                    for user, agent in self.individuals.items()
+                ],
             )
         )
-        
+
         self.individuals = {user: agent for user, agent, _ in list(responses)}
-        self.feed.extend([post for _, _, agent_posts in responses for post in agent_posts])
+        self.feed.extend(
+            [post for _, _, agent_posts in responses for post in agent_posts]
+        )
 
     def _wrapper_step_agent(
-        self, 
+        self,
         post_scores: typing.Dict[typing.Tuple[User, Post], float],
-        user: User, agent: AgentInterface
+        user: User,
+        agent: AgentInterface,
     ) -> typing.Tuple[User, AgentInterface]:
         user_feed = self._filter_posts_by_user(post_scores, user)
         user_feed.sort(key=lambda x: x[1], reverse=True)

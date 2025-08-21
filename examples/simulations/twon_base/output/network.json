@@ -1,0 +1,119 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "id": "user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096"
+        },
+        {
+            "id": "user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6"
+        },
+        {
+            "id": "user-452e595e-5f5c-4d6a-9985-4b03b65a82aa"
+        },
+        {
+            "id": "user-d80fde56-53b3-465c-b2bd-1fa8e75735c8"
+        },
+        {
+            "id": "user-018ab4ce-78df-4688-a822-4431f74627d5"
+        },
+        {
+            "id": "user-c0b26758-1e53-49da-abf5-d928bea89cd2"
+        },
+        {
+            "id": "user-da681b58-e383-4ac2-90eb-637ce7463884"
+        },
+        {
+            "id": "user-b23fd98f-2917-46b4-95d7-1adbe84a30e1"
+        },
+        {
+            "id": "user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417"
+        },
+        {
+            "id": "user-890b644d-2ac2-4c72-a1c2-3afe3c10a628"
+        }
+    ],
+    "edges": [
+        {
+            "source": "user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096",
+            "target": "user-452e595e-5f5c-4d6a-9985-4b03b65a82aa"
+        },
+        {
+            "source": "user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096",
+            "target": "user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6"
+        },
+        {
+            "source": "user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096",
+            "target": "user-b23fd98f-2917-46b4-95d7-1adbe84a30e1"
+        },
+        {
+            "source": "user-e9a72ab3-3d3a-4d06-a2b0-48f8bb653096",
+            "target": "user-d80fde56-53b3-465c-b2bd-1fa8e75735c8"
+        },
+        {
+            "source": "user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6",
+            "target": "user-da681b58-e383-4ac2-90eb-637ce7463884"
+        },
+        {
+            "source": "user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6",
+            "target": "user-d80fde56-53b3-465c-b2bd-1fa8e75735c8"
+        },
+        {
+            "source": "user-2b6bf97c-df8f-47c8-bfdf-f04c8eead3d6",
+            "target": "user-452e595e-5f5c-4d6a-9985-4b03b65a82aa"
+        },
+        {
+            "source": "user-452e595e-5f5c-4d6a-9985-4b03b65a82aa",
+            "target": "user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417"
+        },
+        {
+            "source": "user-452e595e-5f5c-4d6a-9985-4b03b65a82aa",
+            "target": "user-890b644d-2ac2-4c72-a1c2-3afe3c10a628"
+        },
+        {
+            "source": "user-d80fde56-53b3-465c-b2bd-1fa8e75735c8",
+            "target": "user-b23fd98f-2917-46b4-95d7-1adbe84a30e1"
+        },
+        {
+            "source": "user-d80fde56-53b3-465c-b2bd-1fa8e75735c8",
+            "target": "user-c0b26758-1e53-49da-abf5-d928bea89cd2"
+        },
+        {
+            "source": "user-018ab4ce-78df-4688-a822-4431f74627d5",
+            "target": "user-890b644d-2ac2-4c72-a1c2-3afe3c10a628"
+        },
+        {
+            "source": "user-018ab4ce-78df-4688-a822-4431f74627d5",
+            "target": "user-c0b26758-1e53-49da-abf5-d928bea89cd2"
+        },
+        {
+            "source": "user-018ab4ce-78df-4688-a822-4431f74627d5",
+            "target": "user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417"
+        },
+        {
+            "source": "user-018ab4ce-78df-4688-a822-4431f74627d5",
+            "target": "user-b23fd98f-2917-46b4-95d7-1adbe84a30e1"
+        },
+        {
+            "source": "user-c0b26758-1e53-49da-abf5-d928bea89cd2",
+            "target": "user-890b644d-2ac2-4c72-a1c2-3afe3c10a628"
+        },
+        {
+            "source": "user-c0b26758-1e53-49da-abf5-d928bea89cd2",
+            "target": "user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417"
+        },
+        {
+            "source": "user-da681b58-e383-4ac2-90eb-637ce7463884",
+            "target": "user-23e4d7cd-89e6-4b24-9fb8-f6c532a9a417"
+        },
+        {
+            "source": "user-da681b58-e383-4ac2-90eb-637ce7463884",
+            "target": "user-b23fd98f-2917-46b4-95d7-1adbe84a30e1"
+        },
+        {
+            "source": "user-da681b58-e383-4ac2-90eb-637ce7463884",
+            "target": "user-890b644d-2ac2-4c72-a1c2-3afe3c10a628"
+        }
+    ]
+}
