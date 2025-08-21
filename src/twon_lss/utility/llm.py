@@ -1,3 +1,6 @@
+import os
+from urllib import response
+import requests
 import typing
 
 import pydantic
@@ -27,27 +30,39 @@ class LLM(pydantic.BaseModel):
 
     """
 
-    client: huggingface_hub.InferenceClient
-    model: str
+    
+    model: str = "Qwen/Qwen3-4B-Instruct-2507:nscale"
+    url: str = "https://router.huggingface.co/v1/chat/completions"
+    api_key: str = os.environ['HF_TOKEN']
 
-    model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
+
+
+    def _query(self, payload):
+        headers: dict = {"Authorization": f"Bearer {self.api_key}"}
+        response = requests.post(self.url, headers=headers, json=payload)
+        return response.json()
+
 
     def generate(self, chat: Chat) -> str:
-        return (
-            self.client.chat.completions.create(
-                model=self.model, messages=chat.model_dump()
-            )
-            .choices[0]
-            .message.content
-        )
+        return (self._query({
+        "messages": chat.model_dump(),
+        "model": self.model,
+        }))["choices"][0]["message"]["content"]
 
-    def embed(self, text: str) -> numpy.ndarray:
-        return self.client.feature_extraction(text)
 
     def similarity(self, text: str, references: typing.List[str]) -> typing.List[float]:
-        return self.client.sentence_similarity(text, references)
+        
+        if self.url == "https://router.huggingface.co/v1/chat/completions":
+            raise ValueError("Similarity endpoint not supported for chat completions API. Use HF-Inference URL that includs endpoint and model for similarity")
 
-    def classification(
-        self, text: str
-    ) -> typing.List[huggingface_hub.TextClassificationOutputElement]:
-        return self.client.text_classification(text)
+        return (
+            self._query({
+                "inputs": {
+                    "source_sentence": text,
+                    "sentences": references
+                },
+            })
+        )
+
+
+
