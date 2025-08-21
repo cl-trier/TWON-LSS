@@ -28,7 +28,7 @@ class LLM(pydantic.BaseModel):
 
     model: str = "Qwen/Qwen3-4B-Instruct-2507:nscale"
     url: str = "https://router.huggingface.co/v1/chat/completions"
-    api_key: str = os.environ["HF_TOKEN"]
+    api_key: str = ""
 
     def _query(self, payload):
         headers: dict = {"Authorization": f"Bearer {self.api_key}"}
