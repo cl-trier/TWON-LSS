@@ -3,7 +3,6 @@ import typing
 import logging
 import pathlib
 import json
-import multiprocessing
 
 import pydantic
 
@@ -51,35 +50,13 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
             users=self.individuals.keys(), feed=self.feed, network=self.network
         )
-        logging.debug(len(self.feed))
-        logging.debug(len(post_scores.keys()))
+        for user, agent in self.individuals.items():
+            # get user's post scores, sort by score, limit to top N
+            user_feed = self._filter_posts_by_user(post_scores, user)
+            user_feed.sort(key=lambda x: x[1], reverse=True)
+            user_feed_top = user_feed[: self.args.num_posts_to_interact_with]
 
-        with multiprocessing.Pool() as pool:
-            responses: typing.Tuple[User, AgentInterface, typing.List[Post]] = pool.starmap(
-                self._wrapper_step_agent, 
-                [
-                    (post_scores, user, agent)
-                    for user, agent in self.individuals.items()
-                ]
-            )
-            
-            self.individuals = {user: agent for user, agent, _ in responses}
-            self.feed = Feed([post for _, _, agent_posts in responses for post in agent_posts])
-            pool.close()
-            pool.join()
-    
-    def _wrapper_step_agent(
-            self, 
-            post_scores: typing.Dict[typing.Tuple[User, Post], float],
-            user: User, agent: AgentInterface
-        ) -> typing.Tuple[User, AgentInterface]:
-        user_feed = self._filter_posts_by_user(post_scores, user)
-        user_feed.sort(key=lambda x: x[1], reverse=True)
-        user_feed_top = user_feed[: self.args.num_posts_to_interact_with]
-
-        logging.debug(f">i {len(user_feed)=}")
-
-        return self._step_agent(user, agent, Feed([post for post, _ in user_feed_top]))
+            self._step_agent(user, agent, Feed([post for post, _ in user_feed_top]))
 
     @abc.abstractmethod
     def _step_agent(

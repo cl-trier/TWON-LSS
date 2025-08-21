@@ -54,7 +54,7 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
     def get_individual_posts(self, user: User, feed: Feed, network: Network):
         return [
             post
-            for neighbor in network.neighbors[user]
+            for neighbor in network.get_neighbors(user)
             for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor)
         ]
 

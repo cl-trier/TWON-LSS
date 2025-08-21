@@ -31,12 +31,12 @@ class SimulationArgs(SimulationInterfaceArgs):
 class Simulation(SimulationInterface):
 
     def _step_agent(self, user: User, agent: AgentInterface, feed: Feed):
-        new_posts: typing.List[Post] = []
-
         for post in feed:
             actions = agent.select_actions(post)
 
-            if AgentActions.post in actions:
-                new_posts.append(Post(user=user, content=agent.post(post)))
+            if actions:
+                if AgentActions.post in actions:
+                    content = agent.post(post)
 
-        return user, agent, new_posts
+                    new_post = Post(user=user, content=content)
+                    self.feed.root.append(new_post)
