@@ -46,10 +46,6 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         logging.debug(">f init simulation")
         self.output_path.mkdir(exist_ok=True)
 
-        self.network.to_json(self.output_path / "network.json")
-        self.feed.to_json(self.output_path / "feed.step_0.json")
-        self._individuals_to_json(self.output_path / "individuals.step_0.json")
-
     def __call__(self) -> None:
         """
         TODO
@@ -57,10 +53,10 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         for n in track(range(self.args.num_steps)):
             logging.debug(f">f simulate step {n=}")
             self._step(n)
-            self.feed.to_json(self.output_path / f"feed.step_{n + 1}.json")
-            self._individuals_to_json(
-                self.output_path / f"individuals.step_{n + 1}.json"
-            )
+
+        self.network.to_json(self.output_path / "network.json")
+        self.feed.to_json(self.output_path / "feed.json")
+        self._individuals_to_json(self.output_path / "individuals.json")
 
     def _step(self, n: int = 0) -> None:
         """
@@ -69,20 +65,20 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
             users=self.individuals.keys(), feed=self.feed, network=self.network
         )
-        self._rankings_to_json(post_scores, self.output_path / f"ranking.step_{n}.json")
+        logging.debug(len(self.feed))
+        logging.debug(len(post_scores.keys()))
 
         with multiprocessing.Pool() as pool:
-            self.individuals = {
-                user: agent
-                for user, agent in 
-                    pool.starmap(
-                    self._wrapper_step_agent, 
-                    [
-                        (post_scores, user, agent)
-                        for user, agent in self.individuals.items()
-                    ]
-                ) 
-            }
+            responses: typing.Tuple[User, AgentInterface, typing.List[Post]] = pool.starmap(
+                self._wrapper_step_agent, 
+                [
+                    (post_scores, user, agent)
+                    for user, agent in self.individuals.items()
+                ]
+            )
+            
+            self.individuals = {user: agent for user, agent, _ in responses}
+            self.feed = Feed([post for _, _, agent_posts in responses for post in agent_posts])
             pool.close()
             pool.join()
     
@@ -95,6 +91,8 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         user_feed.sort(key=lambda x: x[1], reverse=True)
         user_feed_top = user_feed[: self.args.num_posts_to_interact_with]
 
+        logging.debug(f">i {len(user_feed)=}")
+
         return self._step_agent(user, agent, Feed([post for post, _ in user_feed_top]))
 
     @abc.abstractmethod
@@ -103,7 +101,7 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         user: User, 
         agent: AgentInterface, 
         feed: Feed
-    ) -> typing.Tuple[User, AgentInterface]:
+    ) -> typing.Tuple[User, AgentInterface, typing.List[Post]]:
         """
         TODO
         """

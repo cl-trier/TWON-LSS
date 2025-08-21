@@ -1,6 +1,9 @@
+import typing
 import uuid
 
 import pydantic
+
+from twon_lss.schemas.post import Post
 
 
 class User(pydantic.BaseModel):
@@ -18,6 +21,7 @@ class User(pydantic.BaseModel):
     """
 
     id: str = pydantic.Field(default_factory=lambda: f"user-{uuid.uuid4()}")
+    history: typing.List[Post] = pydantic.Field(default_factory=list)
 
     def __hash__(self):
         return hash(self.id)

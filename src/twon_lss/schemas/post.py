@@ -8,48 +8,6 @@ import pydantic
 from twon_lss.schemas.user import User
 
 
-class InteractionTypes(str, enum.Enum):
-    """
-    Enum defining the types of user interactions with posts.
-
-    Supported interaction types:
-        read: User has read the post
-        like: User has liked the post
-    """
-
-    read = "read"
-    like = "like"
-
-
-class Interaction(pydantic.BaseModel):
-    """
-    Represents user interactions with posts.
-
-    The Interaction class models various types of user engagement with posts,
-    including reads, likes, and shares, with automatic timestamping.
-
-    Attributes:
-        user (User): A User object representing who performed the interaction.
-        type (InteractionTypes): An InteractionTypes enum value specifying the interaction type (read, like, or share).
-        timestamp (datetime.datetime): The timestamp when the interaction occurred, automatically set to current time if not provided.
-
-    Example:
-        >>> from src.twon_lss.schemas import Interaction, InteractionTypes
-        ... interaction = Interaction(
-        ...    user=user,
-        ...    type=InteractionTypes.like
-        ... )
-    """
-
-    user: User
-    type: InteractionTypes
-
-    timestamp: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)
-
-    def __hash__(self):
-        return hash((self.user.id, self.type))
-
-
 class Post(pydantic.BaseModel):
     """
     Models a social media post/comment for the simulation.
@@ -70,40 +28,21 @@ class Post(pydantic.BaseModel):
         ... post = Post(
         ...     user=user,
         ...     content="This is a sample post content",
-        ...     interactions=[],  # list of Interaction objects
-        ...     comments=[],      # list of Post objects
+        ...     reads=[],
+        ...     likes=[],
         ... )
     """
 
     user: User
     content: str
 
-    interactions: typing.List[Interaction] = pydantic.Field(default_factory=list)
-    comments: typing.List["Post"] = pydantic.Field(default_factory=list)
+    reads: typing.List[User] = pydantic.Field(default_factory=list)
+    likes: typing.List[User] = pydantic.Field(default_factory=list)
 
     id: str = pydantic.Field(default_factory=lambda: f"post-{uuid.uuid4()}")
-    timestamp: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)
+    timestamp: int = 0
 
     def __hash__(self):
         return hash(self.id)
 
-    def add_comment(self, comment: "Post") -> None:
-        self.comments.append(comment)
-        self.interactions = list(
-            filter(
-                lambda interaction: interaction.type is not InteractionTypes.read,
-                self.interactions,
-            )
-        )
 
-    def get_interactions(
-        self,
-    ) -> typing.Dict[InteractionTypes, typing.List[Interaction]]:
-        return {
-            i_type: list(
-                filter(
-                    lambda interaction: i_type == interaction.type, self.interactions
-                )
-            )
-            for i_type in InteractionTypes
-        }

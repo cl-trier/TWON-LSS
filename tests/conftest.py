@@ -3,7 +3,7 @@ import datetime
 
 import pytest
 
-from twon_lss.schemas import User, Post, Interaction, InteractionTypes
+from twon_lss.schemas import User, Post
 
 
 @pytest.fixture
@@ -26,39 +26,19 @@ def posts(users: typing.List[User]) -> typing.List[Post]:
     return [
         Post(
             user=users[0],
-            content="Text Post P01 | Minimal post, no interactions or comments",
+            content="Text Post P01 | Minimal post, no reads or likes",
         ),
         Post(
             user=users[1],
-            content="Text Post P02 | Post with interaction, but no comment",
-            interactions=[
-                Interaction(user=users[0], type=InteractionTypes.read),
-                Interaction(user=users[0], type=InteractionTypes.like),
-            ],
+            content="Text Post P02 | Post with reads, but no likes",
+            reads=[users[0], users[2]],
         ),
         Post(
             user=users[2],
             content="Text Post P03 | Full-featured post",
-            interactions=[
-                Interaction(user=users[0], type=InteractionTypes.read),
-                Interaction(user=users[0], type=InteractionTypes.like),
-                Interaction(user=users[1], type=InteractionTypes.read),
-                Interaction(user=users[3], type=InteractionTypes.read),
-            ],
-            comments=[Post(user=users[3], content="Text Comment C01 on Post P01")],
-        ),
-        Post(
-            user=users[3],
-            content="Post P04 | With multiple comments",
-            interactions=[
-                Interaction(user=users[0], type=InteractionTypes.read),
-                Interaction(user=users[2], type=InteractionTypes.read),
-            ],
-            comments=[
-                Post(user=users[0], content="Comment C02 on Post P04"),
-                Post(user=users[2], content="Comment C03 on Post P04"),
-            ],
-        ),
+            reads=[users[0], users[2]],
+            likes=[users[0], users[2]],
+        )
     ]
 
 

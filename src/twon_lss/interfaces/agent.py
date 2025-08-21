@@ -14,7 +14,6 @@ class AgentActions(enum.Enum):
 
     read = "read"
     like = "like"
-    comment = "comment"
     post = "post"
 
 
@@ -36,13 +35,6 @@ class AgentInterface(abc.ABC, pydantic.BaseModel):
 
     @abc.abstractmethod
     def select_actions(self, post: Post) -> typing.Set[AgentActions]:
-        """
-        TODO
-        """
-        pass
-
-    @abc.abstractmethod
-    def comment(self, post: Post) -> str:
         """
         TODO
         """

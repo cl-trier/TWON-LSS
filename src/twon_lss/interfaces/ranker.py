@@ -93,14 +93,14 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
         # TODO parallelize on post level
         global_scores: typing.Dict[str, float] = {}
         for post in feed:
-            global_scores[post.id] = self.get_network_score(post)
+            global_scores[post.id] = self._compute_network(post)
 
         # retrieve indivual score for visible (if is neighbor) post for each user
         # TODO parallelize on user level
         final_scores: typing.Dict[typing.Tuple[User, Post], float] = {}
         for user in users:
             for post in self.get_individual_posts(user, feed, network):
-                individual_score = self.get_individual_score(user, post, feed)
+                individual_score = self._compute_individual(user, post, feed)
                 global_score = global_scores[post.id]
 
                 combined_score = (
@@ -133,41 +133,6 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
             for neighbor in network.neighbors[user]
             for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor)
         ]
-
-    def get_network_score(self, post: Post) -> float:
-        """
-        Calculate the weighted network-wide score for a post.
-
-        This method computes the global ranking score for a post by calling
-        the abstract _compute_network method and applying the configured
-        network weight.
-
-        Args:
-            post (Post): The post to calculate the network score for.
-
-        Returns:
-            float: Weighted network score for the post.
-
-        """
-        return self.args.weights.network * self._compute_network(post)
-
-    def get_individual_score(self, user: User, post: Post, feed: Feed) -> float:
-        """
-        Calculate the weighted individual user score for a post.
-
-        This method computes the personalized ranking score for a user-post
-        pair by calling the abstract _compute_individual method and applying
-        the configured individual weight.
-
-        Args:
-            user (User): The user to calculate the individual score for.
-            post (Post): The post to calculate the individual score for.
-            feed (Feed): Feed containing all posts.
-
-        Returns:
-            float: Weighted individual score for the user-post pair.
-        """
-        return self.args.weights.individual * self._compute_individual(user, post, feed)
 
     @abc.abstractmethod
     def _compute_network(self, post: Post) -> float:

@@ -11,8 +11,8 @@ __all__ = ["Agent", "AgentActions", "AgentInstructions"]
 
 
 class Agent(AgentInterface):
-    eps: float = 0.4
-    delta: float = 0.1
+    eps: float = 0.2
+    delta: float = 0.05
 
     memory: typing.List[float] = pydantic.Field(default_factory=list)
     memory_length: int = pydantic.Field(default=4, ge=0, le=20)
@@ -20,9 +20,6 @@ class Agent(AgentInterface):
     def select_actions(self, post: Post) -> typing.Set[AgentActions]:
         self.memory.append(self._bcm(self.memory[-1], float(post.content)))
         return {AgentActions.post}
-    
-    def comment(self, _: Post) -> str:
-        return str(False)
 
     def post(self, _: Post) -> str:
         return str(self.memory[-1])

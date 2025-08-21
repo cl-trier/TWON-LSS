@@ -116,58 +116,11 @@ class TestPost:
         assert basic_post.user == users[0]
         assert basic_post.content == "Basic test post"
         assert basic_post.id.startswith("post-")
-        assert isinstance(basic_post.timestamp, datetime.datetime)
-        assert len(basic_post.interactions) == 0
-        assert len(basic_post.comments) == 0
 
     def test_post_hash(self, basic_post: Post):
         post_hash = hash(basic_post)
         assert isinstance(post_hash, int)
         assert hash(basic_post) == post_hash
-
-    def test_post_interactions_grouping(self, posts: typing.List[Post]):
-        post_with_interactions = posts[1]  # Has interactions according to conftest
-        interactions = post_with_interactions.get_interactions()
-
-        assert InteractionTypes.read in interactions
-        assert InteractionTypes.like in interactions
-        assert len(interactions[InteractionTypes.read]) >= 0
-        assert len(interactions[InteractionTypes.like]) >= 0
-
-    def test_add_comment_removes_read_interactions(
-        self, basic_post: Post, users: typing.List[User]
-    ):
-        basic_post.interactions.append(
-            Interaction(user=users[0], type=InteractionTypes.read)
-        )
-        basic_post.interactions.append(
-            Interaction(user=users[1], type=InteractionTypes.like)
-        )
-
-        comment = Post(user=users[2], content="Test comment")
-        basic_post.add_comment(comment)
-
-        interactions = basic_post.get_interactions()
-        assert len(interactions[InteractionTypes.read]) == 0
-        assert len(interactions[InteractionTypes.like]) == 1
-        assert comment in basic_post.comments
-
-
-class TestInteraction:
-    def test_interaction_creation(self, users: typing.List[User]):
-        interaction = Interaction(user=users[0], type=InteractionTypes.like)
-        assert interaction.user == users[0]
-        assert interaction.type == InteractionTypes.like
-        assert isinstance(interaction.timestamp, datetime.datetime)
-
-    def test_interaction_hash(self, users: typing.List[User]):
-        interaction = Interaction(user=users[0], type=InteractionTypes.like)
-        interaction_hash = hash(interaction)
-        assert isinstance(interaction_hash, int)
-
-    def test_interaction_types_enum(self):
-        assert InteractionTypes.read.value == "read"
-        assert InteractionTypes.like.value == "like"
 
 
 class TestNetwork:

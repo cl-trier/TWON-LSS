@@ -30,6 +30,6 @@ class Ranker(RankerInterface):
         else:
             return 0.0
 
-    def _compute_individual(self, user: User, _p: Post, _f: Feed) -> float:
+    def _compute_individual(self, _user: User, _post: Post, _feed: Feed) -> float:
         return 0.0
        

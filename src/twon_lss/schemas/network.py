@@ -32,7 +32,15 @@ class Network(pydantic.RootModel):
 
     root: networkx.Graph = networkx.Graph()
 
+    _neighbors: typing.Dict[User, typing.List[User]]
+
     model_config = pydantic.ConfigDict(arbitrary_types_allowed=True)
+
+    def model_post_init(self, _: typing.Any):
+        self._neighbors = {
+            user: self.root.neighbors(user)
+            for user in self.root.nodes
+        }
 
     def __iter__(self):
         return iter(self.root.nodes())
@@ -43,10 +51,7 @@ class Network(pydantic.RootModel):
     @pydantic.computed_field()
     @functools.cached_property
     def neighbors(self) -> typing.Dict[User, typing.List[User]]:
-        return {
-            user: self.root.neighbors(user)
-            for user in self.root.nodes
-        }
+        return self._neighbors
 
     @classmethod
     def from_graph(cls, graph: networkx.Graph, users: typing.List[User]) -> "Network":
