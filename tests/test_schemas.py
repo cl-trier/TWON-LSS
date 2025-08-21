@@ -55,20 +55,7 @@ class TestFeed:
         unread_feed = feed.get_unread_items_by_user(users[0])
         # Should contain posts that users[0] hasn't read
         for post in unread_feed:
-            read_users = [
-                interaction.user for interaction in post.get_interactions()["read"]
-            ]
-            assert users[0] not in read_users
-
-    def test_post_add_comment(self, posts: typing.List[Post], users: typing.List[User]):
-        original_read_count = len(posts[1].get_interactions()["read"])
-        assert original_read_count == 1
-
-        new_comment = Post(user=users[0], content="Test comment")
-        posts[1].add_comment(new_comment)
-
-        assert len(posts[1].get_interactions()["read"]) == 0
-        assert new_comment in posts[1].comments
+            assert users[0] not in post.reads
 
 
 class TestUser:

@@ -15,19 +15,11 @@ from twon_lss.schemas import User, Network, Feed, Post
 
 
 class SimulationInterfaceArgs(pydantic.BaseModel):
-    """
-    TODO
-    """
-
     num_steps: int = 100
     num_posts_to_interact_with: int = 5
 
 
 class SimulationInterface(abc.ABC, pydantic.BaseModel):
-    """
-    TODO
-    """
-
     args: SimulationInterfaceArgs = pydantic.Field(
         default_factory=SimulationInterfaceArgs
     )
@@ -47,9 +39,6 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         self.output_path.mkdir(exist_ok=True)
 
     def __call__(self) -> None:
-        """
-        TODO
-        """
         for n in track(range(self.args.num_steps)):
             logging.debug(f">f simulate step {n=}")
             self._step(n)
@@ -59,9 +48,6 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         self._individuals_to_json(self.output_path / "individuals.json")
 
     def _step(self, n: int = 0) -> None:
-        """
-        TODO
-        """
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
             users=self.individuals.keys(), feed=self.feed, network=self.network
         )

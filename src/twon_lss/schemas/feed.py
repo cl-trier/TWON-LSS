@@ -55,14 +55,7 @@ class Feed(pydantic.RootModel):
     def get_unread_items_by_user(self, user: User) -> "Feed":
         return Feed(
             list(
-                filter(
-                    lambda post: user
-                    not in map(
-                        lambda interaction: interaction.user,
-                        post.get_interactions()["read"],
-                    ),
-                    self.root,
-                )
+                filter(lambda post: user not in post.reads, self.root)
             )
         )
 
