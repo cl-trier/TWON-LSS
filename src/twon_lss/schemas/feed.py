@@ -29,11 +29,7 @@ class Feed(pydantic.RootModel):
         return Feed(list(filter(lambda post: post.user == user, self.root)))
 
     def get_unread_items_by_user(self, user: User) -> "Feed":
-        return Feed(
-            list(
-                filter(lambda post: user not in post.reads, self.root)
-            )
-        )
+        return Feed(list(filter(lambda post: user not in post.reads, self.root)))
 
     def to_json(self, path: str) -> None:
         json.dump(self.model_dump(mode="json"), open(path, "w"), indent=4)

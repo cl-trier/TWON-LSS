@@ -1,12 +1,11 @@
 import typing
-import datetime
 
 import pytest
 import dotenv
 
 import huggingface_hub
 
-from twon_lss.utility import Noise, Decay, LLM, Message, Chat
+from twon_lss.utility import Noise, LLM, Message, Chat
 
 
 CFG = dotenv.dotenv_values(".env")

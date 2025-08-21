@@ -38,7 +38,7 @@ def posts(users: typing.List[User]) -> typing.List[Post]:
             content="Text Post P03 | Full-featured post",
             reads=[users[0], users[2]],
             likes=[users[0], users[2]],
-        )
+        ),
     ]
 
 

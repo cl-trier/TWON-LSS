@@ -46,8 +46,8 @@ class Agent(AgentInterface):
 
     def _append_to_memory(self, content: str, role="assistant") -> None:
         self.memory.append(Message(role=role, content=content))
-    
-    def _inference(self, prompt:str) -> Chat:
+
+    def _inference(self, prompt: str) -> Chat:
         """
         TODO
         """
@@ -55,12 +55,11 @@ class Agent(AgentInterface):
             Chat(
                 [
                     Message(role="system", content=self.instructions.persona),
-                    *self.memory[-self.memory_length * 2:],
+                    *self.memory[-self.memory_length * 2 :],
                     Message(role="user", content=prompt),
                 ]
             )
         )
-
 
     def select_actions(self, post: Post) -> typing.Set[AgentActions]:
         """
@@ -77,7 +76,6 @@ class Agent(AgentInterface):
 
         return {AgentActions(item) for item in matches}
 
-
     def comment(self, post: Post) -> str:
         """
         TODO NILS:
@@ -90,7 +88,6 @@ class Agent(AgentInterface):
 
         return response
 
-
     def post(self) -> str:
         """
         TODO
@@ -99,5 +96,5 @@ class Agent(AgentInterface):
         response: str = self._inference(prompt)
         self._append_to_memory(prompt, role="user")
         self._append_to_memory(response)
-        
+
         return response

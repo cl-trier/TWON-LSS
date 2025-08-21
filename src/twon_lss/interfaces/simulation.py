@@ -12,7 +12,6 @@ from twon_lss.interfaces import AgentInterface, RankerInterface
 from twon_lss.schemas import User, Network, Feed, Post
 
 
-
 class SimulationInterfaceArgs(pydantic.BaseModel):
     num_steps: int = 100
     num_posts_to_interact_with: int = 5
@@ -60,10 +59,7 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
 
     @abc.abstractmethod
     def _step_agent(
-        self, 
-        user: User, 
-        agent: AgentInterface, 
-        feed: Feed
+        self, user: User, agent: AgentInterface, feed: Feed
     ) -> typing.Tuple[User, AgentInterface, typing.List[Post]]:
         pass
 

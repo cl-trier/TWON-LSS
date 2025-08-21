@@ -6,11 +6,12 @@ from twon_lss.schemas import User, Post, Feed
 from twon_lss.utility import LLM
 
 
-__all__ = ["Ranker", "RankerArgs", "Engagement"]
+__all__ = ["Ranker", "RankerArgs"]
 
 
 class RankerArgs(RankerArgsInterface):
     pass
+
 
 class Ranker(RankerInterface):
     llm: LLM

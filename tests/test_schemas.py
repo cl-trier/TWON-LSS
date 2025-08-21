@@ -1,11 +1,10 @@
 import typing
-import datetime
 
 import pytest
 
 import networkx
 
-from twon_lss.schemas import Feed, Post, User, Network, Interaction, InteractionTypes
+from twon_lss.schemas import Feed, Post, User, Network
 
 
 class TestFeed:

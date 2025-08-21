@@ -1,6 +1,5 @@
 import typing
 import json
-import functools
 
 import pydantic
 
@@ -19,7 +18,7 @@ class Network(pydantic.RootModel):
 
     def __len__(self):
         return len(self.root.nodes())
-    
+
     def get_neighbors(self, user: User) -> typing.List[User]:
         return list(self.root.neighbors(user))
 

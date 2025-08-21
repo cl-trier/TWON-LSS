@@ -14,7 +14,6 @@ class AgentActions(enum.Enum):
 
 
 class AgentInterface(abc.ABC, pydantic.BaseModel):
-
     @abc.abstractmethod
     def select_actions(self, post: Post) -> typing.Set[AgentActions]:
         pass

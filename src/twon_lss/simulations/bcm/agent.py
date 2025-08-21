@@ -6,8 +6,7 @@ from twon_lss.interfaces import AgentInterface, AgentActions
 
 from twon_lss.schemas import Post
 
-__all__ = ["Agent", "AgentActions", "AgentInstructions"]
-
+__all__ = ["Agent", "AgentActions"]
 
 
 class Agent(AgentInterface):

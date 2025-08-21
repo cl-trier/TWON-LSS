@@ -1,6 +1,3 @@
-import logging
-import typing
-
 from twon_lss.interfaces import (
     AgentInterface,
     AgentActions,
@@ -29,7 +26,6 @@ class SimulationArgs(SimulationInterfaceArgs):
 
 
 class Simulation(SimulationInterface):
-
     def _step_agent(self, user: User, agent: AgentInterface, feed: Feed):
         for post in feed:
             actions = agent.select_actions(post)

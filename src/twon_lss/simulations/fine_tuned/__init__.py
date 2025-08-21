@@ -28,7 +28,6 @@ class SimulationArgs(SimulationInterfaceArgs):
 
 
 class Simulation(SimulationInterface):
-
     def _step_agent(self, user: User, agent: AgentInterface, feed: Feed):
         new_posts: typing.List[Post] = []
 
