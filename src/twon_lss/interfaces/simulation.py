@@ -63,10 +63,12 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
             )
         )
 
+        posts = [post for _, _, agent_posts in responses for post in agent_posts]
+        for post in posts:
+            post.timestamp = n
+       
         self.individuals = {user: agent for user, agent, _ in list(responses)}
-        self.feed.extend(
-            [post for _, _, agent_posts in responses for post in agent_posts]
-        )
+        self.feed.extend(posts)
 
     def _wrapper_step_agent(
         self,
