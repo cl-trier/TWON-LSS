@@ -18,6 +18,7 @@ class RankerArgsInterface(abc.ABC, pydantic.BaseModel):
         default_factory=RankerInterfaceWeights
     )
     noise: Noise = pydantic.Field(default_factory=Noise)
+    persistence: int = 1
 
 
 class RankerInterface(abc.ABC, pydantic.BaseModel):
@@ -52,10 +53,13 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
         return final_scores
 
     def get_individual_posts(self, user: User, feed: Feed, network: Network):
+
+        latest_timestamp = max(post.timestamp for post in feed.get_items_by_user(user))
+
         return [
             post
             for neighbor in network.get_neighbors(user)
-            for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor)
+            for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor).filter_by_timestamp(latest_timestamp, self.args.persistence)
         ]
 
     @abc.abstractmethod

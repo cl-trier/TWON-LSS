@@ -30,6 +30,9 @@ class Feed(pydantic.RootModel):
 
     def get_unread_items_by_user(self, user: User) -> "Feed":
         return Feed(list(filter(lambda post: user not in post.reads, self.root)))
+    
+    def filter_by_timestamp(self, timestamp:int, persistence: int) -> "Feed":
+        return Feed(list(filter(lambda post: post.timestamp > (timestamp - persistence), self.root)))
 
     def to_json(self, path: str) -> None:
         json.dump(self.model_dump(mode="json"), open(path, "w"), indent=4)
