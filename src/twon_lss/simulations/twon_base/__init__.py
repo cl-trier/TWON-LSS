@@ -32,6 +32,8 @@ class Simulation(SimulationInterface):
         new_posts: typing.List[Post] = []
 
         for post in feed:
+            post.reads.append(user)
+            
             if agent.consume_and_rate(post):
                 post.likes.append(user)
 

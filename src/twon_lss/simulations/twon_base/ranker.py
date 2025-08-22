@@ -1,5 +1,6 @@
 import statistics
 import logging
+import time
 
 from twon_lss.interfaces import RankerInterface, RankerArgsInterface
 
@@ -22,9 +23,14 @@ class Ranker(RankerInterface):
     def _compute_network(self, post: Post) -> float:
         return len(post.likes)
 
-    def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:    
-        return statistics.mean(
-            self.llm.similarity(
-                post.content, [item.content for item in feed.get_items_by_user(user)]
+    def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:   
+        try:
+            return statistics.mean(
+                self.llm.similarity(
+                    post.content, [item.content for item in feed.get_items_by_user(user)]
+                )
             )
-        )
+        except Exception as e:
+            logging.error(f"Error computing individual score: {e}")
+            time.sleep(15)
+            return 0.0
