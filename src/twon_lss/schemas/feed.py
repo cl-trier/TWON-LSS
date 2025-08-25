@@ -33,6 +33,10 @@ class Feed(pydantic.RootModel):
     
     def filter_by_timestamp(self, timestamp:int, persistence: int) -> "Feed":
         return Feed(list(filter(lambda post: post.timestamp > (timestamp - persistence), self.root)))
+    
+    def get_like_count_by_user(self, user: User) -> int:
+        posts = self.get_items_by_user(user)
+        return sum(len(post.likes) for post in posts)
 
     def to_json(self, path: str) -> None:
         json.dump(self.model_dump(mode="json"), open(path, "w"), indent=4)
