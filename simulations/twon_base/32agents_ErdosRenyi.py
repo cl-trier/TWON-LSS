@@ -90,7 +90,7 @@ for ranker_implementation, ranker_name in zip(RANKERS, RANKER_NAMES):
 
     USERS = [User(id=username) for username in usernames]
 
-    NETWORK = Network.from_graph(networkx.erdos_renyi_graph(n = len(USERS), p=0.3), USERS)
+    NETWORK = Network.from_graph(networkx.erdos_renyi_graph(n = len(USERS), p=0.3, seed=42), USERS)
 
     FEED = Feed(
     [
