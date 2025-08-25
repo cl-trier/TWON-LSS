@@ -44,16 +44,6 @@ class LLM(pydantic.BaseModel):
         
         return response
 
-    def similarity(self, text: str, references: typing.List[str]) -> typing.List[float]:
-        if self.url == "https://router.huggingface.co/v1/chat/completions":
-            raise ValueError("Similarity endpoint not supported for chat completions API. Use HF-Inference URL that includs endpoint and model for similarity")
-        
-        return self._query(
-            {
-                "inputs": {"source_sentence": text, "sentences": references},
-            }
-        )
-
     def extract(self, text: typing.Optional[typing.Union[str, list]]):
         """
         Returns embeddings for either text or list of texts.
