@@ -71,6 +71,9 @@ class UserLikeRanker(RankerInterface):
     def _compute_network(self, post: Post, feed: Feed) -> float:
         return feed.get_like_count_by_user(post.user)
 
+    def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:   
+        return 0.0
+
     def __call__(
         self, users: typing.List[User], feed: Feed, network: Network
     ) -> typing.Dict[typing.Tuple[User, Post], float]:
