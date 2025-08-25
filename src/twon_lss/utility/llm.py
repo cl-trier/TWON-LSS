@@ -53,3 +53,42 @@ class LLM(pydantic.BaseModel):
                 "inputs": {"source_sentence": text, "sentences": references},
             }
         )
+
+    def extract(self, text: typing.Optional[typing.Union[str, list]]):
+        """
+        Returns embeddings for either text or list of texts.
+        """
+
+        if self.url == "https://router.huggingface.co/v1/chat/completions":
+            raise ValueError("Extract endpoint not supported for chat completions API. Use HF-Inference URL that includs endpoint and model for extract")
+
+        return self._query({
+            "inputs": text,
+        })
+
+
+    @staticmethod
+    def generate_username(llm, history):
+        """Generate a username based on user's posting history"""
+        
+        # Create a sample of recent posts for context
+        recent_posts = history[-5:] if len(history) >= 5 else history
+        posts_text = " ".join([msg.get("content", "") for msg in recent_posts if msg.get("role") == "assistant"])
+
+        # Truncate if too long
+        if len(posts_text) > 500:
+            posts_text = posts_text[:500] + "..."
+
+        # Create chat messages for username generation
+        chat_messages = [
+            {"role": "system", "content": "Generate a creative username based on the user's posting style and interests. Keep it under 20 characters and make it appropriate for social media."},
+            {"role": "user", "content": f"Based on these posts, generate a username: {posts_text}. Generate only the username!"}
+        ]
+
+        # Query the LLM
+        response = llm._query({
+            "messages": chat_messages,
+            "model": llm.model,
+        })
+
+        return response["choices"][0]["message"]["content"].strip().replace("@", "").replace(" ", "_").replace("\"", "").replace("#", "").split("\n")[-1][:15]
