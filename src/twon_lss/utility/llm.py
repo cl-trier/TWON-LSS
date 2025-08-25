@@ -44,17 +44,24 @@ class LLM(pydantic.BaseModel):
         
         return response
 
-    def extract(self, text: typing.Optional[typing.Union[str, list]]):
+    def extract(self, text: typing.Optional[typing.Union[str, list]], max_retries: int = 3):
         """
         Returns embeddings for either text or list of texts.
         """
 
         if self.url == "https://router.huggingface.co/v1/chat/completions":
             raise ValueError("Extract endpoint not supported for chat completions API. Use HF-Inference URL that includs endpoint and model for extract")
-
-        return self._query({
-            "inputs": text,
-        })
+        
+        try:
+            return self._query({
+                "inputs": text,
+            })
+        except requests.exceptions.RequestException as e:
+            logging.error(f"Failed to extract embeddings: {e}")
+            if max_retries > 0:
+                time.sleep(5)
+                return self.extract(text, max_retries - 1)
+            raise RuntimeError("Failed to extract embeddings after retries") from e
 
 
     @staticmethod
