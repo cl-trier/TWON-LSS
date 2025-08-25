@@ -120,7 +120,7 @@ for ranker_implementation, ranker_name in zip(RANKERS, RANKER_NAMES):
         individuals=INDIVIDUALS,
         network=NETWORK,
         feed=FEED,
-        output_path=Path(f"Output_32agents_ErdosRenyi/{ranker_name}/").mkdir(exist_ok=True) or f"Output_32agents_ErdosRenyi/{ranker_name}/"
+        output_path=Path(f"Output_32agents_ErdosRenyi/{ranker_name}/").mkdir(exist_ok=True, parents=True) or f"Output_32agents_ErdosRenyi/{ranker_name}/"
     )
 
     simulation()
