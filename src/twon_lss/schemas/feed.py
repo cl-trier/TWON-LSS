@@ -38,5 +38,13 @@ class Feed(pydantic.RootModel):
         posts = self.get_items_by_user(user)
         return sum(len(post.likes) for post in posts)
 
+    def get_like_count_by_user(self, user: User) -> int:
+        posts = self.get_items_by_user(user)
+        return sum(len(post.likes) for post in posts)
+
+    def get_likes_given_to_user(self, source_user: User, target_user: User) -> int:
+        target_posts = self.get_items_by_user(target_user)
+        return sum(1 for post in target_posts if source_user in post.likes)
+
     def to_json(self, path: str) -> None:
         json.dump(self.model_dump(mode="json"), open(path, "w"), indent=4)
