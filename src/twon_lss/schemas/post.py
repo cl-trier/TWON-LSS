@@ -15,6 +15,7 @@ class Post(pydantic.BaseModel):
 
     id: str = pydantic.Field(default_factory=lambda: f"post-{uuid.uuid4()}")
     timestamp: int = 0
+    embedding: typing.Optional[typing.List[float]] = None
 
     def __hash__(self):
         return hash(self.id)
