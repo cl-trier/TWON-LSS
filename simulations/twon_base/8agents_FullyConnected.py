@@ -78,7 +78,7 @@ histories = [
 ]
 
 
-for ranker_implementation, ranker_name in zip(RANKERS[-1:], RANKER_NAMES[-1:]):
+for ranker_implementation, ranker_name in zip(RANKERS, RANKER_NAMES):
 
     print(f"Starting simulation with {ranker_name}...")
 
