@@ -10,6 +10,8 @@ from twon_lss.schemas import User, Post, Feed
 from twon_lss.schemas.network import Network
 from twon_lss.utility import LLM
 
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 __all__ = ["Ranker", "RankerArgs"]
 
@@ -104,3 +106,17 @@ class PersonalizedUserLikeRanker(RankerInterface):
         return feed.get_likes_given_to_user(user, post.user) + random.uniform(0, 1) # Add noise in case that there are no likes, liked user has multiple unread tweets, multiple users have same like count etc.
     
     
+
+class SemanticSimilarityRanker(RankerInterface):
+    llm: LLM
+    args: RankerArgs = RankerArgs()
+
+    def _compute_network(self, post: Post) -> float:
+        return 0.0
+
+    def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:   
+
+        return(statistics.mean(
+                cosine_similarity([post.embedding], [item.embedding for item in feed.get_items_by_user(user)])[0]
+        ))
+        
