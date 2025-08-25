@@ -1,6 +1,7 @@
 import logging
 import requests
 import typing
+import time
 
 import pydantic
 
@@ -25,7 +26,7 @@ class LLM(pydantic.BaseModel):
         response = requests.post(self.url, headers=headers, json=payload)
         return response.json()
 
-    def generate(self, chat: Chat, max_retries: int = 1) -> str:
+    def generate(self, chat: Chat, max_retries: int = 3) -> str:
         try:
             response: str = self._query(
                 {
@@ -37,6 +38,7 @@ class LLM(pydantic.BaseModel):
         except requests.exceptions.RequestException as e:
             logging.error(f"Failed to query LLM: {e}")
             if max_retries > 0:
+                time.sleep(5)
                 return self.generate(chat, max_retries - 1)
             raise RuntimeError("Failed to generate response from LLM after retries") from e
         
