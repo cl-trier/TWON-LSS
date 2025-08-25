@@ -10,7 +10,7 @@ from twon_lss.schemas import Feed, User, Post
 
 
 from twon_lss.simulations.twon_base.agent import Agent, AgentInstructions
-from twon_lss.simulations.twon_base.ranker import Ranker, RankerArgs, RandomRanker, LikeRanker, UserLikeRanker
+from twon_lss.simulations.twon_base.ranker import Ranker, RankerArgs, RandomRanker, LikeRanker, UserLikeRanker, PersonalizedUserLikeRanker
 
 
 __all__ = [
@@ -22,6 +22,7 @@ __all__ = [
     "RandomRanker",
     "LikeRanker",
     "UserLikeRanker",
+    "PersonalizedUserLikeRanker",
     "RankerArgs",
 ]
 
