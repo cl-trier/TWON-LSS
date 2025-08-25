@@ -1,6 +1,7 @@
 import statistics
 import logging
 import time
+import random
 
 from twon_lss.interfaces import RankerInterface, RankerArgsInterface
 
@@ -34,3 +35,27 @@ class Ranker(RankerInterface):
             logging.error(f"Error computing individual score: {e}")
             time.sleep(15)
             return 0.0
+        
+
+class RandomRanker(RankerInterface):
+    llm: LLM
+
+    args: RankerArgs = RankerArgs()
+
+    def _compute_network(self, post: Post) -> float:
+        return random.uniform(0, 1)
+
+    def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:   
+        return random.uniform(0, 1)
+    
+
+class LikeRanker(RankerInterface):
+    llm: LLM
+
+    args: RankerArgs = RankerArgs()
+
+    def _compute_network(self, post: Post) -> float:
+        return len(post.likes)
+
+    def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:   
+        return 0.0
