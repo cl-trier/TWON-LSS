@@ -35,14 +35,16 @@ class Feed(pydantic.RootModel):
         return Feed(list(filter(lambda post: post.timestamp > (timestamp - persistence), self.root)))
     
     def get_like_count_by_user(self, user: User) -> int:
-        posts = self.get_items_by_user(user)
-        return sum(len(post.likes) for post in posts)
-
-    def get_like_count_by_user(self, user: User) -> int:
+        """
+        Get count of likes that user received on their posts
+        """
         posts = self.get_items_by_user(user)
         return sum(len(post.likes) for post in posts)
 
     def get_likes_given_to_user(self, source_user: User, target_user: User) -> int:
+        """
+        Get count of likes that source_user gave to target_user's posts
+        """
         target_posts = self.get_items_by_user(target_user)
         return sum(1 for post in target_posts if source_user in post.likes)
 
