@@ -35,16 +35,9 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
 
     def model_post_init(self, __context: typing.Any):
 
-        if hasattr(self.ranker, "llm") and self.ranker.llm is not None:
-            logging.debug(f">f generating embeddings for {len(self.feed)} feed posts")
-            embeddings = self.ranker.llm.extract(
-                [post.content for post in self.feed]
-            )
-            for post, embedding in zip(self.feed, embeddings):
-                post.embedding = embedding
-
         logging.debug(">f init simulation")
         self.output_path.mkdir(exist_ok=True)
+
 
     def __call__(self) -> None:
         for n in track(range(self.args.num_steps)):
@@ -76,16 +69,7 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         posts = [post for _, _, agent_posts in responses for post in agent_posts]
         for post in posts:
             post.timestamp = n
-
-        # Generate embeddings if required
-        if hasattr(self.ranker, "llm") and self.ranker.llm is not None:
-            logging.debug(f">f generating embeddings for {len(posts)} posts")
-            embeddings = self.ranker.llm.extract([post.content for post in posts])
-
-            for post, embedding in zip(posts, embeddings):
-                post.embedding = embedding
-
-
+            
         self.individuals = {user: agent for user, agent, _ in list(responses)}
         self.feed.extend(posts)
 
