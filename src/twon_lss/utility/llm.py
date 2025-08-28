@@ -35,7 +35,7 @@ class LLM(pydantic.BaseModel):
                 }
             )["choices"][0]["message"]["content"]
         
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
             logging.error(f"Failed to query LLM: {e}")
             if max_retries > 0:
                 time.sleep(5)
@@ -56,7 +56,7 @@ class LLM(pydantic.BaseModel):
             return self._query({
                 "inputs": text,
             })
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
             logging.error(f"Failed to extract embeddings: {e}")
             if max_retries > 0:
                 time.sleep(5)
