@@ -1,7 +1,7 @@
 import logging
 import multiprocessing
 import typing
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import multiprocessing
 
 from twon_lss.interfaces import (
@@ -37,7 +37,7 @@ class SimulationArgs(SimulationInterfaceArgs):
 
 
 class Simulation(SimulationInterface):
-    
+
     def model_post_init(self, __context: typing.Any):
         
         if hasattr(self.ranker, "llm") and self.ranker.llm is not None:
