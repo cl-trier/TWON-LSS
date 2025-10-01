@@ -63,7 +63,6 @@ RANKERS: typing.List[typing.Type[Ranker]] = [
     SemanticSimilarityRanker(
         llm=LLM(api_key=ENV["HF_TOKEN"], model="mxbai-embed-large-v1", url="https://router.huggingface.co/hf-inference/models/mixedbread-ai/mxbai-embed-large-v1/pipeline/feature-extraction"),
         args=RankerArgs(persistence=PERSISTENCE)
-
     )
 ]
 RANKER_NAMES = ["RandomRanker", "LikeRanker", "UserLikeRanker", "PersonalizedUserLikeRanker", "SemanticSimilarityRanker"]

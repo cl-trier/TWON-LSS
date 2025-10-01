@@ -48,14 +48,12 @@ AGENTS_PERSONAS_CFG = random.sample(AGENTS_PERSONAS_CFG, k=NUM_AGENTS)
 
 # Rankers to test
 RANKERS: typing.List[typing.Type[Ranker]] = [
-    RandomRanker(
-        args=RankerArgs(persistence=PERSISTENCE)
-    ),
-    UserLikeRanker(
+    SemanticSimilarityRanker(
+        llm=LLM(api_key=ENV["HF_TOKEN"], model="mxbai-embed-large-v1", url="https://router.huggingface.co/hf-inference/models/mixedbread-ai/mxbai-embed-large-v1/pipeline/feature-extraction"),
         args=RankerArgs(persistence=PERSISTENCE)
     )
 ]
-RANKER_NAMES = ["RandomRanker", "UserLikeRanker"]
+RANKER_NAMES = ["SemanticSimilarityRanker"]
 
 
 
