@@ -17,6 +17,8 @@ from twon_lss.schemas import Feed, User, Post
 from twon_lss.simulations.wp3_simulation.agent import WP3Agent, AgentInstructions
 from twon_lss.simulations.twon_base.ranker import Ranker, RankerArgs, RandomRanker, LikeRanker, UserLikeRanker, PersonalizedUserLikeRanker, SemanticSimilarityRanker
 
+from twon_lss.simulations.wp3_simulation.utility import WP3LLM
+
 
 __all__ = [
     "Simulation",
@@ -30,11 +32,12 @@ __all__ = [
     "PersonalizedUserLikeRanker",
     "SemanticSimilarityRanker",
     "RankerArgs",
+    "WP3LLM",
 ]
 
 
 class SimulationArgs(SimulationInterfaceArgs):
-    pass
+    num_steps: int = 100
 
 
 class Simulation(SimulationInterface):
@@ -77,14 +80,14 @@ class Simulation(SimulationInterface):
         posts: typing.List[Post] = []
 
         if random.random() > agent.theta: # PLACEHOLDER
-            return user, agent, posts
+            return user, agent, posts # Session not activated
 
-        ### Activate session
-
+        ### Session activated
+        agent.activations += 1
         # Read posts in the feed
         for post in feed:
             post.reads.append(user)
-        agent.read(feed)
+        agent.read_and_like(feed, user)
 
         # Post new posts
         post_probability = agent.theta * 2 # PLACEHOLDER
@@ -95,11 +98,11 @@ class Simulation(SimulationInterface):
             posts.append(Post(user=user, content=agent.post()))
 
         # Update cognition
-        agent.cognition_update()
+        if agent.activations % 3 == 0:  # PLACEHOLDER
+            agent.cognition_update()
 
         return user, agent, posts
     
-
 
     def _step(self, n: int = 0) -> None:
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
