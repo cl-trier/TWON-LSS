@@ -9,17 +9,20 @@ from twon_lss.interfaces import AgentInterface
 
 from twon_lss.schemas import Post
 from twon_lss.utility import LLM, Chat, Message
+from twon_lss.schemas import Feed, User, Post
+
+import numpy as np
 
 
 __all__ = ["Agent", "AgentInstructions"]
 
 
 class AgentInstructions(pydantic.BaseModel):
-    cognition: str
     read_prompt: str
     post_prompt: str
     feed_placeholder: str
     cognition_update: str
+    profile_format: str
 
 
 class WP3Agent(AgentInterface):
@@ -30,8 +33,11 @@ class WP3Agent(AgentInterface):
     memory_length: int = pydantic.Field(default=4, ge=0, le=50)
 
     theta: float = pydantic.Field(default=0.5, ge=0.0, le=1.0)
-    cognition: str = pydantic.Field(default="")
+    activations: int = 0
 
+    bio: str = pydantic.Field(default="")
+    cognition: str = pydantic.Field(default="")
+    
     
     def select_actions(self, post: Post):
         pass
@@ -43,30 +49,38 @@ class WP3Agent(AgentInterface):
         return self.llm.generate(
             Chat(
                 [
-                    Message(role="system", content=self.cognition),
+                    Message(role="system", content=self._profile()),
                     *self.memory[-self.memory_length * 2 :],
                     Message(role="user", content=prompt),
                 ]
             )
         )
-
+    
+    
     # Actions
+    def _profile(self) -> str:
+        return self.instructions.profile_format.format(bio=self.bio, cognition=self.cognition)
+    
     def cognition_update(self) -> None:
         response: str = self._inference(self.instructions.cognition_update)
         logging.debug(f"Agent response: {response}")
         self.cognition = response
 
-
-    def read(self, posts: list[Post]) -> str:
-        """
-        MISSING:
-        - Likes???
-        """
-
-        feed_str = "\n".join(
-            [f">{post.user.id}: {post.model_dump()['content']}" for post in posts]
-        )
-        response: str = self._inference(self.instructions.read_prompt + feed_str)
+    def _like(self, post: Post) -> None:
+        if np.random.rand() < 0.75:
+            return True
+        return False
+    
+    def read_and_like(self, posts: list[Post], user:User) -> str:
+        feed_str = ""
+        for post in posts:
+            if self._like(post):
+                feed_str += f">{post.user.id}: {post.model_dump()['content']} (You like this post)\n"
+                post.likes.append(user)
+            else:
+                feed_str += f">{post.user.id}: {post.model_dump()['content']}\n"
+        
+        response: str = self._inference(self.instructions.read_prompt.format(feed=feed_str))
         logging.debug(f"Agent response: {response}")
 
         self._append_to_memory(self.instructions.feed_placeholder, role="user")
