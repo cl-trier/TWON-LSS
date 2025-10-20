@@ -27,29 +27,6 @@ class LLM(pydantic.BaseModel):
         return response.json()
     
 
-    #def generate(self, chat: Chat, max_retries: int = 3) -> str:
-    #    try:
-    #        response: str = self._query(
-    #            {
-    #                "input": {
-    #                    "messages": chat.model_dump()
-    #                },
-    #            }
-    #        )
-    #        logging.info(f"LLM response: {response}")
-#
-    #        response = response["output"][0]["choices"][0]["tokens"][0]
-    #    
-    #    except Exception as e:
-    #        logging.error(f"Failed to query LLM: {e}")
-    #        if max_retries > 0:
-    #            time.sleep(5)
-    #            return self.generate(chat, max_retries - 1)
-    #        raise RuntimeError("Failed to generate response from LLM after retries") from e
-    #    
-    #    return response
-
-
     def generate(self, chat: Chat, max_retries: int = 3) -> str:
         try:
             response: str = self._query(
@@ -62,7 +39,7 @@ class LLM(pydantic.BaseModel):
         except Exception as e:
             logging.error(f"Failed to query LLM: {e}")
             if max_retries > 0:
-                time.sleep(5)
+                time.sleep(60)
                 return self.generate(chat, max_retries - 1)
             raise RuntimeError("Failed to generate response from LLM after retries") from e
         
