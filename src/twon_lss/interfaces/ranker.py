@@ -7,6 +7,8 @@ import pydantic
 from twon_lss.utility import Noise
 from twon_lss.schemas import User, Post, Feed, Network
 
+from concurrent.futures import ProcessPoolExecutor
+
 
 class RankerInterfaceWeights(pydantic.BaseModel):
     network: float = 1.0
@@ -26,40 +28,53 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
 
     def __call__(
         self, users: typing.List[User], feed: Feed, network: Network
-    ) -> typing.Dict[typing.Tuple[User, Post], float]:
+        ) -> typing.Dict[typing.Tuple[User, Post], float]:
         logging.debug(f"{len(feed)=}")
 
-        # retrieve global score for each post
-        # TODO parallelize on post level
+        # compute global scores
         global_scores: typing.Dict[str, float] = {}
         for post in feed:
             global_scores[post.id] = self._compute_network(post)
 
-        # retrieve indivual score for visible (if is neighbor) post for each user
-        # TODO parallelize on user level
-        final_scores: typing.Dict[typing.Tuple[User, Post], float] = {}
-        for user in users:
-            for post in self.get_individual_posts(user, feed, network):
-                individual_score = self._compute_individual(user, post, feed)
-                global_score = global_scores[post.id]
+        # parallelize user processing
+        with ProcessPoolExecutor() as executor:
+            user_results = executor.map(
+                self._process_user,
+                [(user, feed, network, global_scores) for user in users]
+            )
 
-                combined_score = (
-                    self.args.weights.individual * individual_score
-                    + self.args.weights.network * global_score
-                )
-
-                final_scores[(user, post)] = self.args.noise() * combined_score
+        # merge results
+        final_scores = {}
+        for user_score_dict in user_results:
+            final_scores.update(user_score_dict)
 
         return final_scores
 
-    def get_individual_posts(self, user: User, feed: Feed, network: Network):
+    def _process_user(
+        self, args: typing.Tuple[User, Feed, Network, typing.Dict[str, float]]
+    ) -> typing.Dict[typing.Tuple[User, Post], float]:
+        user, feed, network, global_scores = args
+        scores = {}
 
-        latest_timestamp = max(post.timestamp for post in feed.get_items_by_user(user))
+        for post in self.get_individual_posts(user, feed, network):
+            individual_score = self._compute_individual(user, post, feed)
+            global_score = global_scores[post.id]
+
+            combined_score = (
+                self.args.weights.individual * individual_score
+                + self.args.weights.network * global_score
+            )
+
+            scores[(user, post)] = self.args.noise() * combined_score
+
+        return scores
+
+    def get_individual_posts(self, user: User, feed: Feed, network: Network):
 
         return [
             post
             for neighbor in network.get_neighbors(user)
-            for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor).filter_by_timestamp(latest_timestamp, self.args.persistence)
+            for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor)
         ]
 
     @abc.abstractmethod
