@@ -26,6 +26,7 @@ class AgentInstructions(pydantic.BaseModel):
 
 
 class WP3Agent(AgentInterface):
+    
     llm: LLM
     instructions: AgentInstructions
 
@@ -37,6 +38,8 @@ class WP3Agent(AgentInterface):
 
     bio: str = pydantic.Field(default="")
     cognition: str = pydantic.Field(default="")
+
+    posts: typing.List[Post] = pydantic.Field(default_factory=list)
     
     
     def select_actions(self, post: Post):
@@ -50,7 +53,7 @@ class WP3Agent(AgentInterface):
             Chat(
                 [
                     Message(role="system", content=self._profile()),
-                    *self.memory[-self.memory_length * 2 :],
+                    *self.memory[-self.memory_length * 2:],
                     Message(role="user", content=prompt),
                 ]
             )
