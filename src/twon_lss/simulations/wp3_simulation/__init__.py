@@ -89,19 +89,15 @@ class Simulation(SimulationInterface):
         agent.activations += 1
         
         # Read posts in the feed
-        for post in feed:
-            post.reads.append(user)
-        agent.read_and_like(feed, user)
+        agent.consume_feed(feed, user)
 
         # Post new posts
         post_probability = agent.theta * 2 # PLACEHOLDER
         while post_probability >= 1.0:
             posts.append(Post(user=user, content=agent.post()))
             post_probability = post_probability - 1.0
-            agent.posts.append
         if post_probability > 0 and post_probability > random.random():
             posts.append(Post(user=user, content=agent.post()))
-
         agent.posts.extend(posts)
 
         # Update cognition

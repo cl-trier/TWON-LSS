@@ -69,26 +69,29 @@ class WP3Agent(AgentInterface):
         logging.debug(f"Agent response: {response}")
         self.cognition = response
 
-    def _like(self, post: Post) -> None:
+    def _like(self, post: Post, user: User) -> None:
         if np.random.rand() < 0.75:
+            post.likes.append(user)
             return True
         return False
     
-    def read_and_like(self, posts: list[Post], user:User) -> str:
-        feed_str = ""
-        for post in posts:
-            if self._like(post):
-                feed_str += f">{post.user.id}: {post.model_dump()['content']} (You like this post)\n"
-                post.likes.append(user)
-            else:
-                feed_str += f">{post.user.id}: {post.model_dump()['content']}\n"
-        
+    def _read(self, feed_str) -> str:
         response: str = self._inference(self.instructions.read_prompt.format(feed=feed_str))
         logging.debug(f"Agent response: {response}")
 
         self._append_to_memory(self.instructions.feed_placeholder, role="user")
         self._append_to_memory(response)
-        return response
+
+    
+    def consume_feed(self, posts: list[Post], user:User) -> str:
+        feed_str = ""
+        for post in posts:
+            post.reads.append(user)
+            if self._like(post, user):
+                feed_str += f">{post.user.id}: {post.model_dump()['content']} (You like this post)\n"    
+            else:
+                feed_str += f">{post.user.id}: {post.model_dump()['content']}\n"
+        self._read(feed_str)
         
     def post(self) -> str:     
         prompt = self.instructions.post_prompt
