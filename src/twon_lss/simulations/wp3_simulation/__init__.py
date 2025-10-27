@@ -4,6 +4,7 @@ import typing
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import multiprocessing
 import random
+import numpy as np
 
 from twon_lss.interfaces import (
     AgentInterface,
@@ -17,7 +18,7 @@ from twon_lss.schemas import Feed, User, Post
 from twon_lss.simulations.wp3_simulation.agent import WP3Agent, AgentInstructions
 from twon_lss.simulations.wp3_simulation.ranker import RankerArgs, SemanticSimilarityRanker
 
-from twon_lss.simulations.wp3_simulation.utility import WP3LLM
+from twon_lss.simulations.wp3_simulation.utility import WP3LLM, agent_parameter_estimation, simulation_load_estimator
 
 __all__ = [
     "Simulation",
@@ -32,6 +33,8 @@ __all__ = [
     "SemanticSimilarityRanker",
     "RankerArgs",
     "WP3LLM",
+    "agent_parameter_estimation",
+    "simulation_load_estimator",
 ]
 
 
@@ -41,7 +44,13 @@ class SimulationArgs(SimulationInterfaceArgs):
 
 class Simulation(SimulationInterface):
 
+    
+
     def model_post_init(self, __context: typing.Any):
+
+        # Ensure there is no seed
+        random.seed() 
+        np.random.seed()
         
         if hasattr(self.ranker, "llm") and self.ranker.llm is not None:
             logging.debug(f">f generating embeddings for {len(self.feed)} feed posts")
@@ -77,32 +86,24 @@ class Simulation(SimulationInterface):
 
         posts: typing.List[Post] = []
 
-        # Determine how many posts the users reads
-        user_feed_top = feed[:int(max(agent.theta * 100, 10))] # PLACEHOLDER
-        logging.debug(f">i number of feed items {len(user_feed_top)} for user {user.id}")
-
-        # Determine if the user activates this session
-        if random.random() > agent.theta: # PLACEHOLDER
-            return user, agent, posts # Session not activated
-
         # Session activates
         agent.activations += 1
-        
-        # Read posts in the feed
-        agent.consume_feed(feed, user)
 
-        # Post new posts
-        post_probability = agent.theta * 2 # PLACEHOLDER
-        while post_probability >= 1.0:
+        # Determine how many posts the users reads
+        user_feed_top = feed[:agent.read_amount]
+        logging.debug(f">i number of feed items {len(user_feed_top)} for user {user.id}")
+
+        # Read posts in the feed
+        agent.consume_feed(user_feed_top, user)
+
+        # Post new content
+        agent_posting_probability = agent.posting_probability
+        while agent_posting_probability > 1.0:
             posts.append(Post(user=user, content=agent.post()))
-            post_probability = post_probability - 1.0
-        if post_probability > 0 and post_probability > random.random():
+            agent_posting_probability -= 1.0
+        if random.random() <= agent.posting_probability:
             posts.append(Post(user=user, content=agent.post()))
         agent.posts.extend(posts)
-
-        # Update cognition
-        if agent.activations % 3 == 0:  # PLACEHOLDER
-            agent.cognition_update()
 
         return user, agent, posts
     
@@ -112,17 +113,20 @@ class Simulation(SimulationInterface):
         stripped_feed = self.feed.filter_by_timestamp(n, self.ranker.args.persistence)
         
         # Calculate post scores
+        active_individuals = {user: agent for user, agent in self.individuals.items() if random.random() <= agent.activation_probability}
+        logging.debug(f">i calculating post scores for {len(active_individuals)} active individuals")
+
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
-            individuals=self.individuals, feed=stripped_feed, network=self.network
+            individuals=active_individuals, feed=stripped_feed, network=self.network
         )
         
         # For I/O bound: more workers; for CPU bound: stick to cpu_count
-        max_workers = min(len(self.individuals), multiprocessing.cpu_count() * 2)
-        
+        logging.debug(f">i stepping through {len(active_individuals)} active individuals")
+        max_workers = min(len(active_individuals), multiprocessing.cpu_count() * 2)
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = {
                 executor.submit(self._wrapper_step_agent, post_scores, user, agent): user 
-                for user, agent in self.individuals.items()
+                for user, agent in active_individuals.items()
             }
 
             responses = []
@@ -142,5 +146,4 @@ class Simulation(SimulationInterface):
             for post, embedding in zip(posts, embeddings):
                 post.embedding = embedding
 
-        self.individuals = {user: agent for user, agent, _ in list(responses)}
         self.feed.extend(posts)
