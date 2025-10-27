@@ -1,4 +1,4 @@
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 import statistics
 import logging
 import time
@@ -44,16 +44,27 @@ class SemanticSimilarityRanker(RankerInterface):
                 [(individuals[individual], individual, feed, network, global_scores) for individual in individuals.keys()]
             )
 
+        # create lookup dicts for user.id to user and post.id to post
+        user_lookup = {user.id: user for user in individuals.keys()}
+        post_lookup = {post.id: post for post in feed}
+
         # merge results
         final_scores = {}
         for user_score_dict in user_results:
-            final_scores.update(user_score_dict)
+
+            # map back to (User, Post) keys
+            mapped_dict = {
+                (user_lookup[user_id], post_lookup[post_id]): score
+                for (user_id, post_id), score in user_score_dict.items()
+            }
+
+            final_scores.update(mapped_dict)
 
         return final_scores
     
 
     def _process_user(
-        self, args: typing.Tuple[User, Feed, Network, typing.Dict[str, float]]
+        self, args: typing.Tuple[WP3Agent, User, Feed, Network, typing.Dict[str, float]]
     ) -> typing.Dict[typing.Tuple[User, Post], float]:
         agent, user, feed, network, global_scores = args
         scores = {}
@@ -67,7 +78,7 @@ class SemanticSimilarityRanker(RankerInterface):
                 + self.args.weights.network * global_score
             )
 
-            scores[(user, post)] = self.args.noise() * combined_score
+            scores[(user.id, post.id)] = combined_score # * self.args.noise() 
 
         return scores
     
