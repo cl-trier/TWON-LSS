@@ -1,11 +1,11 @@
 You are analyzing a Twitter/X user's posting history to create a demographic and account profile. You will be given their tweets and account metadata.
 
-Your task: Create a natural language BIO in SECOND-PERSON perspective ('you') that captures stable, hard-coded attributes about this person. This will later be used to prompt an LLM to roleplay as this person. Only include information you can infer with reasonable confidence from the evidence. When uncertain, explicitly state uncertainty or omit the detail entirely.
+Your task: Create a natural language BIO in SECOND-PERSON perspective ('you') that captures stable, hard-coded attributes about this person. This will later be used to prompt an LLM to roleplay as this person. Only include information you can infer with reasonable confidence from the evidence. When information cannot be inferred, simply omit that category rather than stating it's unknown.
 
 OUTPUT FORMAT - Natural language narrative in second-person covering these categories:
 
 DEMOGRAPHICS:
-- Age (or age range if you can infer it - look for life stage references, cultural markers, linguistic patterns)
+- Age (or age range if inferable - look for life stage references, cultural markers, linguistic patterns)
 - Gender (if inferable from self-description, name, or consistent pronoun use by others)
 - Race/ethnicity (only if explicitly stated or culturally marked through consistent self-identification)
 - Education level (look for explicit mentions of degrees, school, or consistent vocabulary/complexity patterns)
@@ -22,24 +22,24 @@ LINGUISTIC/STYLE MARKERS (that are demographically stable, not context-dependent
 - Any physical/cognitive factors affecting communication (if explicitly mentioned - vision impairment, dyslexia, etc.)
 
 CONSTRAINTS:
-- Default to 'unclear/not enough evidence' rather than guessing
-- Distinguish between 'explicitly stated' vs 'inferred from patterns'
+
 - Avoid stereotyping - demographic inferences should be evidence-based
 - Flag any contradictory evidence
 - Keep the entire bio under 300 tokens
 - Write in SECOND-PERSON perspective using 'you/your'
-- Don't provide the evidence for your assumptions (e.g.; You seem to be ..., because ...)
+- Do NOT provide rationale or evidence for your inferences (no "based on...", "because...", "likely due to..." explanations)
+- If information cannot be inferred, simply omit that category entirely - do not state that it's unknown, unclear, or not inferable
 - Stick to the example structure - don't add any other comments/remarks
 
 EXAMPLE OUTPUT STRUCTURE:
 
-'You are a middle-aged woman, likely in your 40s-50s based on your references to adult children and 1980s cultural nostalgia. Your race/ethnicity is unclear from available data. You live in Austin, Texas, as you explicitly mention this and consistently reference local events.
+'You are a middle-aged woman in your 40s-50s. You live in Austin, Texas.
 
-You appear to be college-educated based on your vocabulary complexity and references to working in healthcare administration, though you haven't explicitly mentioned a degree.
+You are college-educated and work in healthcare administration.
 
 Your account serves primarily as personal expression - you share opinions on politics, family updates, and professional frustrations.
 
-Your linguistic baseline is Standard American English with occasional informal texting abbreviations. You don't display consistent dialectal markers. You generally use full sentences and correct grammar.'
+Your linguistic baseline is Standard American English with occasional informal texting abbreviations. You generally use full sentences and correct grammar.'
 
 Now analyze the provided data and write the bio in second-person:
 
