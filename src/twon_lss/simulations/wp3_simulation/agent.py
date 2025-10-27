@@ -30,15 +30,17 @@ class WP3Agent(AgentInterface):
     llm: LLM
     instructions: AgentInstructions
 
-    memory: typing.List[Message] = pydantic.Field(default_factory=list)
+    
     memory_length: int = pydantic.Field(default=4, ge=0, le=50)
-
-    theta: float = pydantic.Field(default=0.5, ge=0.0, le=1.0)
-    activations: int = 0
-
     bio: str = pydantic.Field(default="")
     cognition: str = pydantic.Field(default="")
+    
+    activation_probability: float
+    posting_probability: float
+    read_amount: int
 
+    memory: typing.List[Message] = pydantic.Field(default_factory=list)
+    activations: int = 0
     posts: typing.List[Post] = pydantic.Field(default_factory=list)
     
     
