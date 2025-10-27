@@ -107,6 +107,7 @@ class PersonalizedUserLikeRanker(RankerInterface):
     
     
 
+
 class SemanticSimilarityRanker(RankerInterface):
     llm: LLM
     args: RankerArgs = RankerArgs()
@@ -117,6 +118,6 @@ class SemanticSimilarityRanker(RankerInterface):
     def _compute_individual(self, user: User, post: Post, feed: Feed) -> float:   
 
         return(statistics.mean(
-                cosine_similarity([post.embedding], [item.embedding for item in feed.get_items_by_user(user)])[0]
+                cosine_similarity([post.embedding], [item.embedding for item in feed.get_items_by_user(user)][-10:])[0]
         ))
         
