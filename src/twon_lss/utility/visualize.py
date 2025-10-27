@@ -83,6 +83,7 @@ class VisualizeRun(pydantic.BaseModel):
 
         for username in self.df["user"].unique():
             df_user = self.df[self.df["user"] == username].copy()
+            df_user = df_user.groupby(["created_at"]).sum("read_count").reset_index()
             df_user = df_user.sort_values("created_at")
             df_user["cumulative_views"] = df_user["read_count"].cumsum()
     
@@ -107,6 +108,7 @@ class VisualizeRun(pydantic.BaseModel):
 
         for username in self.df["user"].unique():
             df_user = self.df[self.df["user"] == username].copy()
+            df_user = df_user.groupby(["created_at"]).sum("read_count").reset_index()
             df_user = df_user.sort_values("created_at")
 
             fig.add_trace(go.Scatter(
