@@ -44,9 +44,9 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
             logging.debug(f">f simulate step {n=}")
             self._step(n)
 
-        self.network.to_json(self.output_path / "network.json")
-        self.feed.to_json(self.output_path / "feed.json")
-        self._individuals_to_json(self.output_path / "individuals.json")
+            self.network.to_json(self.output_path / "network.json")
+            self.feed.to_json(self.output_path / "feed.json")
+            self._individuals_to_json(self.output_path / "individuals.json")
 
     def _step(self, n: int = 0) -> None:
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
