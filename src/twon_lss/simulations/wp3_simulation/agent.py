@@ -72,7 +72,7 @@ class WP3Agent(AgentInterface):
         self.cognition = response
 
     def _like(self, post: Post, user: User) -> None:
-        if np.random.rand() < 0.75:
+        if np.random.rand() <= 0.25:
             post.likes.append(user)
             return True
         return False
@@ -90,7 +90,7 @@ class WP3Agent(AgentInterface):
         for post in posts:
             post.reads.append(user)
             if self._like(post, user):
-                feed_str += f">{post.user.id}: {post.model_dump()['content']} (You like this post)\n"    
+                feed_str += f">{post.user.id}: {post.model_dump()['content']}\n"   # (You like this post) 
             else:
                 feed_str += f">{post.user.id}: {post.model_dump()['content']}\n"
         self._read(feed_str)
