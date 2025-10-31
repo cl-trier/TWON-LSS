@@ -43,10 +43,18 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
                 [(user, feed, network, global_scores) for user in users]
             )
 
+        user_lookup = {user.id: user for user in users}
+        post_lookup = {post.id: post for post in feed}
+
         # merge results
         final_scores = {}
         for user_score_dict in user_results:
-            final_scores.update(user_score_dict)
+            mapped_dict = {
+                (user_lookup[user_id], post_lookup[post_id]): score
+                for (user_id, post_id), score in user_score_dict.items()
+            }
+
+            final_scores.update(mapped_dict)
 
         return final_scores
 
@@ -65,7 +73,7 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
                 + self.args.weights.network * global_score
             )
 
-            scores[(user, post)] = self.args.noise() * combined_score
+            scores[(user.id, post.id)] = self.args.noise() * combined_score
 
         return scores
 
