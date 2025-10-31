@@ -16,7 +16,7 @@ from twon_lss.schemas import Feed, User, Post
 
 
 from twon_lss.simulations.wp3_simulation.agent import WP3Agent, AgentInstructions
-from twon_lss.simulations.wp3_simulation.ranker import RankerArgs, SemanticSimilarityRanker
+from twon_lss.simulations.wp3_simulation.ranker import RankerArgs, SemanticSimilarityRanker, RandomRanker
 
 from twon_lss.simulations.wp3_simulation.utility import WP3LLM, agent_parameter_estimation, simulation_load_estimator
 
@@ -27,9 +27,6 @@ __all__ = [
     "AgentInstructions",
     "Ranker",
     "RandomRanker",
-    "LikeRanker",
-    "UserLikeRanker",
-    "PersonalizedUserLikeRanker",
     "SemanticSimilarityRanker",
     "RankerArgs",
     "WP3LLM",
@@ -44,14 +41,14 @@ class SimulationArgs(SimulationInterfaceArgs):
 
 class Simulation(SimulationInterface):
 
-    
-
     def model_post_init(self, __context: typing.Any):
 
         # Ensure there is no seed
         random.seed() 
         np.random.seed()
+        logging.debug(">f seeds removed for simulation run")
         
+        # Generate initial embeddings if required
         if hasattr(self.ranker, "llm") and self.ranker.llm is not None:
             logging.debug(f">f generating embeddings for {len(self.feed)} feed posts")
             embeddings = self.ranker.llm.extract(
@@ -60,12 +57,13 @@ class Simulation(SimulationInterface):
             for post, embedding in zip(self.feed, embeddings):
                 post.embedding = embedding
 
-        # add posts to agents
+        # Add posts to agents for proper ranking in the first step
         for post in self.feed:
             agent = self.individuals.get(post.user)
             if agent:
                 agent.posts.append(post)
 
+        # Start simulation
         logging.debug(">f init simulation")
         self.output_path.mkdir(exist_ok=True)
 

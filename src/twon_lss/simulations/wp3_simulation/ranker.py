@@ -22,6 +22,23 @@ class RankerArgs(RankerArgsInterface):
     pass
 
 
+class RandomRanker(RankerInterface):
+    args: RankerArgs = RankerArgs()
+
+    def __call__(
+        self, individuals: typing.List[User], feed: Feed, network: Network
+        ) -> typing.Dict[typing.Tuple[User, Post], float]:
+        # WP3 adapted call version because simulation step passes individuals instead of users at ranker call
+        # For this ranker we dont need individuals, so we drop them when passing to extract
+        return super().__call__(list(individuals.keys()), feed, network)
+
+    def _compute_network(self, post: Post) -> float:
+        return 0.0
+
+    def _compute_individual(self, agent: WP3Agent, post: Post, feed: Feed) -> float:
+        return random.random()
+    
+
 class SemanticSimilarityRanker(RankerInterface):
     llm: LLM
     args: RankerArgs = RankerArgs()
