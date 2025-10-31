@@ -19,27 +19,34 @@ class WP3LLM(LLM):
         return response.json()
     
 
-    def generate(self, chat: Chat, max_retries: int = 3) -> str:
+    def generate(self, chat: Chat, max_retries: int = 3, reasoning=False) -> str:
+
         try:
-            response: str = self._query(
-                {
-                    "input": {
-                        "messages": chat.model_dump()
-                    },
+            payload = {
+                "input": {
+                    "messages": chat.model_dump()
                 }
-            )
+            }
+
+            if not reasoning:
+                payload["input"]["chat_template_kwargs"] = {"enable_thinking": False}
+
+            response: str = self._query(payload)
             logging.info(f"LLM response: {response}")
-    
-            response = response["output"][0]["choices"][0]["tokens"][0]
+
+            response = response["output"][0]["choices"][0]["tokens"][0].split("</think>")[-1]
         
         except Exception as e:
             logging.error(f"Failed to query LLM: {e}")
             if max_retries > 0:
                 time.sleep(5)
                 return self.generate(chat, max_retries - 1)
-            raise RuntimeError("Failed to generate response from LLM after retries") from e
+            raise RuntimeError(f"Failed to generate response from LLM after retries\n\n{chat.model_dump()}\n\n") from e
         
         return response
+
+
+
 
 
 def power_law_sample(min_val, max_val, a=2.5):
@@ -61,23 +68,35 @@ def power_law_sample(min_val, max_val, a=2.5):
     return min_val + (max_val - min_val) * sample
 
 
-def agent_parameter_estimation(posts_per_day, seed = 42):
-    
-    # set seeds
+
+def agent_parameter_estimation(posts_per_day, seed=42):
     np.random.seed(seed)
     random.seed(seed)
+    
+    # Higher posting frequency → higher activation (correlated)
+    a = max(1, 15 - posts_per_day)  # More posts → lower a → higher activation
 
-    activation_probability = power_law_sample(0.006, 0.8, a=5.0)
+    activation_probability = power_law_sample(0.006, 0.5, a=a)
+    # Reads per day: correlated with activation probability
+    # More active users read more per day
+    min_reads = activation_probability * 144 * 3
+    max_reads = min(activation_probability * 144 * 75, 750) # Cap at 750 reads/day
+    reads_per_day = power_law_sample(min_reads, max_reads, a=3.0)
+    
+    # Calculate reads per activation
+    activations_per_day = activation_probability * 144
+    read_amount = int(reads_per_day / activations_per_day)
+    read_amount = np.clip(read_amount, 3, 100)
+    
+    # Calculate posting probability
+    posting_probability = posts_per_day / (activation_probability * 144)
+    
+    return {
+        "activation_probability": activation_probability,
+        "read_amount": read_amount,
+        "posting_probability": posting_probability
+    }
 
-    lower_bound = activation_probability * 144 * 3
-    upper_bound = min(activation_probability * 144 * 6 + 200, 750)
-    reads_per_day = power_law_sample(lower_bound, upper_bound)
-
-    read_amount = int(reads_per_day / ((24 * 6) * activation_probability))
-
-    posting_probability = posts_per_day / ((24 * 6) * activation_probability)
-
-    return {"activation_probability": activation_probability, "read_amount": read_amount, "posting_probability": posting_probability}
 
 
 
