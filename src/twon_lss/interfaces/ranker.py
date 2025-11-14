@@ -82,7 +82,7 @@ class RankerInterface(abc.ABC, pydantic.BaseModel):
         return [
             post
             for neighbor in network.get_neighbors(user)
-            for post in feed.get_unread_items_by_user(user).get_items_by_user(neighbor)
+            for post in feed.get_items_by_user(neighbor).get_unread_items_by_user(user)
         ]
 
     @abc.abstractmethod
