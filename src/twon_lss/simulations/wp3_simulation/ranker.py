@@ -104,7 +104,6 @@ class SemanticSimilarityRanker(RankerInterface):
         return 0.0
 
     def _compute_individual(self, agent: WP3Agent, post: Post, feed: Feed) -> float:
-
         return(statistics.mean(
                 cosine_similarity([post.embedding], [item.embedding for item in agent.posts[-10:]])[0]
         ))
