@@ -1,14 +1,23 @@
-import typing
-import json
-
-import pydantic
-
 from twon_lss.schemas.user import User
 from twon_lss.schemas.post import Post
+import json
 
+from pydantic import model_validator, PrivateAttr, Field, RootModel
+from typing import List, Dict
+from bisect import bisect_right
+import typing
 
-class Feed(pydantic.RootModel):
-    root: typing.List[Post] = pydantic.Field(default_factory=list)
+class Feed(RootModel):
+    root: typing.List[Post] = Field(default_factory=list)
+    _user_index: Dict[User, List[Post]] = PrivateAttr(default_factory=dict)
+    
+    @model_validator(mode='after')
+    def _build_indexes(self):
+        self.root = sorted(self.root, key=lambda p: p.timestamp)
+        self._user_index = {}
+        for post in self.root:
+            self._user_index.setdefault(post.user, []).append(post)
+        return self
 
     def __iter__(self):
         return iter(self.root)
@@ -21,32 +30,27 @@ class Feed(pydantic.RootModel):
 
     def append(self, post: Post) -> None:
         self.root.append(post)
+        self._user_index.setdefault(post.user, []).append(post)
 
     def extend(self, posts: typing.List[Post]) -> None:
-        self.root.extend(posts)
+        for post in posts:
+            self.append(post)
 
     def get_items_by_user(self, user: User) -> "Feed":
-        return Feed(list(filter(lambda post: post.user == user, self.root)))
-
+        return Feed(root=self._user_index.get(user, []))
+    
     def get_unread_items_by_user(self, user: User) -> "Feed":
-        return Feed(list(filter(lambda post: user not in post.reads, self.root)))
+        return Feed(root=[p for p in self.root if user not in p.reads])
     
-    def filter_by_timestamp(self, timestamp:int, persistence: int) -> "Feed":
-        return Feed(list(filter(lambda post: post.timestamp > (timestamp - persistence), self.root)))
+    def filter_by_timestamp(self, timestamp: int, persistence: int) -> "Feed":
+        cutoff = timestamp - persistence
+        idx = bisect_right([p.timestamp for p in self.root], cutoff)
+        return Feed(root=self.root[idx:])
     
-    def get_like_count_by_user(self, user: User) -> int:
-        """
-        Get count of likes that user received on their posts
-        """
-        posts = self.get_items_by_user(user)
-        return sum(len(post.likes) for post in posts)
-
-    def get_likes_given_to_user(self, source_user: User, target_user: User) -> int:
-        """
-        Get count of likes that source_user gave to target_user's posts
-        """
-        target_posts = self.get_items_by_user(target_user)
-        return sum(1 for post in target_posts if source_user in post.likes)
-
     def to_json(self, path: str) -> None:
-        json.dump(self.model_dump(mode="json"), open(path, "w"), indent=4)
+        """Save the Feed to a JSON file without the private attributes."""
+        with open(path, "w") as f:
+            json.dump([post.model_dump() for post in self.root], f, indent=4)
+
+    class Config:
+        arbitrary_types_allowed = True

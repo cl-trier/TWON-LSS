@@ -10,8 +10,8 @@ class Post(pydantic.BaseModel):
     user: User
     content: str
 
-    reads: typing.List[User] = pydantic.Field(default_factory=list)
-    likes: typing.List[User] = pydantic.Field(default_factory=list)
+    reads: typing.Set[User] = pydantic.Field(default_factory=set)
+    likes: typing.Set[User] = pydantic.Field(default_factory=set)
 
     id: str = pydantic.Field(default_factory=lambda: f"post-{uuid.uuid4()}")
     timestamp: int = 0
@@ -19,3 +19,7 @@ class Post(pydantic.BaseModel):
 
     def __hash__(self):
         return hash(self.id)
+    
+    @pydantic.field_serializer('reads', 'likes')
+    def serialize_sets(self, v: typing.Set[User]) -> typing.List[User]:
+        return list(v)
