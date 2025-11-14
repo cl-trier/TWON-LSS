@@ -4,6 +4,7 @@ import logging
 import pathlib
 import json
 import itertools
+import time
 
 import pydantic
 
@@ -41,12 +42,21 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
 
     def __call__(self) -> None:
         for n in track(range(self.args.num_steps)):
+            time_start = time.time()
             logging.debug(f">f simulate step {n=}")
+            
             self._step(n)
 
-            self.network.to_json(self.output_path / "network.json")
-            self.feed.to_json(self.output_path / "feed.json")
-            self._individuals_to_json(self.output_path / "individuals.json")
+            time_end = time.time()
+            logging.debug(f">f step {n=} done in {time_end - time_start:.2f}s")
+            with open(self.output_path / "time_per_step.log", "a") as f:
+                f.write(f"{n},{time_end - time_start:.2f}\n")
+
+
+            if n % 10 == 0:
+                self.network.to_json(self.output_path / "network.json")
+                self.feed.to_json(self.output_path / "feed.json")
+                self._individuals_to_json(self.output_path / "individuals.json")
 
     def _step(self, n: int = 0) -> None:
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
