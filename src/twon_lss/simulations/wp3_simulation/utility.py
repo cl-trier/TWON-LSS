@@ -18,8 +18,7 @@ class WP3LLM(LLM):
         response = requests.post(self.url, headers=headers, json=payload)
         return response.json()
     
-
-    def generate(self, chat: Chat, max_retries: int = 3, reasoning=False) -> str:
+    def generate(self, chat: Chat, max_retries: int = 3, enforce_disabled_reasoning = True) -> str:
 
         try:
             payload = {
@@ -28,14 +27,18 @@ class WP3LLM(LLM):
                 }
             }
 
-            if not reasoning:
-                payload["input"]["chat_template_kwargs"] = {"enable_thinking": False}
-
+            if enforce_disabled_reasoning:
+                for message in payload["input"]["messages"]:
+                    if message["role"] == "user":
+                        message["content"] += " /no_think"
+                    
             response: str = self._query(payload)
             logging.info(f"LLM response: {response}")
 
-            response = response["output"][0]["choices"][0]["tokens"][0].split("</think>")[-1]
-        
+            response = response["output"][0]["choices"][0]["tokens"][0]
+            if enforce_disabled_reasoning:
+                response = response.split("</think>")[-1].strip()
+
         except Exception as e:
             logging.error(f"Failed to query LLM: {e}")
             if max_retries > 0:
