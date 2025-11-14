@@ -30,7 +30,7 @@ class WP3Agent(AgentInterface):
     llm: LLM
     instructions: AgentInstructions
 
-    
+    feeds: typing.List[Post] = pydantic.Field(default_factory=list)
     memory_length: int = pydantic.Field(default=4, ge=0, le=50)
     bio: str = pydantic.Field(default="")
     cognition: str = pydantic.Field(default="")
@@ -67,13 +67,19 @@ class WP3Agent(AgentInterface):
         return self.instructions.profile_format.format(bio=self.bio, cognition=self.cognition)
     
     def cognition_update(self) -> None:
+        """
+        Currently not used in the simulation, but can be called to update the agent's cognition based on its memory
+        """
         response: str = self._inference(self.instructions.cognition_update)
         logging.debug(f"Agent response: {response}")
         self.cognition = response
 
     def _like(self, post: Post, user: User) -> None:
+        """
+        Currently a simple probabilistic like function. The likes arent used in the simulation yet.
+        """
         if np.random.rand() <= 0.25:
-            post.likes.append(user)
+            post.likes.add(user)
             return True
         return False
     
@@ -84,15 +90,15 @@ class WP3Agent(AgentInterface):
         self._append_to_memory(self.instructions.feed_placeholder, role="user")
         self._append_to_memory(response)
 
-    
     def consume_feed(self, posts: list[Post], user:User) -> str:
+        self.feeds.append(posts)
         feed_str = ""
         for post in posts:
-            post.reads.append(user)
+            post.reads.add(user)
             if self._like(post, user):
-                feed_str += f">{post.user.id}: {post.model_dump()['content']}\n"   # (You like this post) 
+                feed_str += f">{post.user.id}: {post.content}\n"   # (You like this post) 
             else:
-                feed_str += f">{post.user.id}: {post.model_dump()['content']}\n"
+                feed_str += f">{post.user.id}: {post.content}\n"
         self._read(feed_str)
         
     def post(self) -> str:     
