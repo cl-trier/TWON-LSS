@@ -113,6 +113,9 @@ class Simulation(SimulationInterface):
         # Calculate post scores
         active_individuals = {user: agent for user, agent in self.individuals.items() if random.random() <= agent.activation_probability}
         logging.debug(f">i calculating post scores for {len(active_individuals)} active individuals")
+        if len(active_individuals) == 0:
+            logging.warning(">w no active individuals this step ,this may be due to low activation probabilities -> consider adjusting them.")
+            return
 
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
             individuals=active_individuals, feed=stripped_feed, network=self.network
