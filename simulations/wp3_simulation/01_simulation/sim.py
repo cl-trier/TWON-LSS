@@ -125,7 +125,7 @@ def simulation_main(args):
         individuals=INDIVIDUALS,
         network=NETWORK,
         feed=FEED,
-        output_path=Path(f"Runs/TWON-Agent-8B-{args.num_agents}-{args.network_type}-Seed{args.seed}-{args.ranker}-{datetime.now().strftime('%Y%m%d_%H%M%S')}/").mkdir(exist_ok=True, parents=True) or f"Runs/TWON-Agent-8B-{args.num_agents}-{args.network_type}-Seed{args.seed}-{args.ranker}-{datetime.now().strftime('%Y%m%d_%H%M%S')}/"
+        output_path=Path(f"runs/{args.model_name}-{args.num_agents}-{args.network_type}-Seed{args.seed}-{args.ranker}-{datetime.now().strftime('%Y%m%d_%H%M%S')}/").mkdir(exist_ok=True, parents=True) or f"runs/{args.model_name}-{args.num_agents}-{args.network_type}-Seed{args.seed}-{args.ranker}-{datetime.now().strftime('%Y%m%d_%H%M%S')}/"
     )
     
     # Save configuration
