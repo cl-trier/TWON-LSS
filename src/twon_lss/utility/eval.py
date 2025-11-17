@@ -59,6 +59,7 @@ class RunEvaluation(pydantic.BaseModel):
         if not self._load_embeddings():
             # check for partially missing embeddings
             if self.df["embedding"].isna().any() and self.df["embedding"].notna().any():
+                print(f"{self.df['embedding'].isna().sum()} missing embeddings detected. {self.df['embedding'].notna().sum()} embeddings present.")
                 self._repair_embeddings()
             else:
                 self._generate_embeddings()
@@ -116,7 +117,6 @@ class RunEvaluation(pydantic.BaseModel):
 
         embeddings: list = []
         for i in range(0, len(self.df), 500):
-            print(self.df["tweet"].tolist()[i:i+500])
             embeddings.extend(self.embedding_model.extract(self.df["tweet"].tolist()[i:i+500])) # There is apparently a limit on the number of texts that can be processed at once
         self.df["embedding"] = embeddings
 
