@@ -130,7 +130,7 @@ def simulation_main(args):
     
     # Save configuration
     with open(Path(simulation.output_path) / "simulation_config.yaml", "w") as f:
-        args.version = "1.0.0" # Increase if script changes!!!
+        args.version = "1.0.1" # Increase if script changes!!!
         yaml.dump(vars(args), f)
 
     # Start simulation

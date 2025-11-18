@@ -79,7 +79,7 @@ def agent_parameter_estimation(posts_per_day, seed=42):
     # Higher posting frequency → higher activation (correlated)
     a = max(1, 15 - posts_per_day)  # More posts → lower a → higher activation
 
-    activation_probability = power_law_sample(0.006, 0.5, a=a)
+    activation_probability = power_law_sample(0.007, 0.5, a=a)
     # Reads per day: correlated with activation probability
     # More active users read more per day
     min_reads = activation_probability * 144 * 3
