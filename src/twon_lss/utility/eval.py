@@ -427,22 +427,25 @@ class RunEvaluation(pydantic.BaseModel):
             docs.extend(run.df["tweet"].tolist())
             embeddings.extend(run.df["embedding"].tolist())
 
-        topic_model = BERTopic(nr_topics=n_topics)
+        topic_model = BERTopic()
         topics, probs = topic_model.fit_transform(docs, embeddings=np.array(embeddings))
         
         fig = go.Figure()
 
-        for i, run in enumerate(runs):
-            run.df["label"] = topics[i*len(run.df):(i+1)*len(run.df)]
+        offset = 0
+        for run in runs:
+            run_len = len(run.df)
+            run.df["label"] = topics[offset:offset + run_len]
+            offset += run_len
             
             # Filter to top n topics
-            run.df = run.df[(run.df["label"] != -1) & (run.df["label"] < n_topics)]
+            df = run.df[(run.df["label"] != -1) & (run.df["label"] < n_topics)]
 
             # Replace labels with topic names
-            run.df["label"] = run.df["label"].apply(lambda x: topic_model.get_topic_info(x).iloc[0]["Name"])
+            df["label"] = df["label"].apply(lambda x: topic_model.get_topic_info(x).iloc[0]["Name"])
 
             traces = run._create_bar_traces(
-                run.df["label"].value_counts(normalize=True).reset_index(),
+                df["label"].value_counts(normalize=True).reset_index(),
                 name=run.name
             )
             for trace in traces:
