@@ -38,7 +38,7 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
 
         logging.debug(">f init simulation")
         self.output_path.mkdir(exist_ok=True)
-
+        (self.output_path / "rankings").mkdir(exist_ok=True)
 
     def __call__(self) -> None:
         for n in track(range(self.args.num_steps)):
@@ -52,6 +52,7 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
             with open(self.output_path / "time_per_step.log", "a") as f:
                 f.write(f"{n},{time_end - time_start:.2f}\n")
 
+            self._rankings_to_json(self.output_path / "rankings" / f"step_{n}_ranking")
 
             if n % 10 == 0:
                 self.network.to_json(self.output_path / "network.json")

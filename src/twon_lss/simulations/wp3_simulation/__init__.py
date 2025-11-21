@@ -66,6 +66,7 @@ class Simulation(SimulationInterface):
         # Start simulation
         logging.debug(">f init simulation")
         self.output_path.mkdir(exist_ok=True)
+        (self.output_path / "rankings").mkdir(exist_ok=True)
 
 
     def _wrapper_step_agent(

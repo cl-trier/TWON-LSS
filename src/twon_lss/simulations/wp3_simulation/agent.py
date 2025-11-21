@@ -30,7 +30,6 @@ class WP3Agent(AgentInterface):
     llm: LLM
     instructions: AgentInstructions
 
-    feeds: typing.List[Post] = pydantic.Field(default_factory=list)
     memory_length: int = pydantic.Field(default=4, ge=0, le=50)
     bio: str = pydantic.Field(default="")
     cognition: str = pydantic.Field(default="")
@@ -91,7 +90,6 @@ class WP3Agent(AgentInterface):
         self._append_to_memory(response)
 
     def consume_feed(self, posts: list[Post], user:User) -> str:
-        self.feeds.append(posts)
         feed_str = ""
         for post in posts:
             post.reads.add(user)
