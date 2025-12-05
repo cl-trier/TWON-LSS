@@ -65,6 +65,7 @@ def simulation_main(args):
     AGENT_LLM = WP3LLM(
         api_key=ENV["RUNPOD_TOKEN"],
         url=args.runpod_url,
+        enforce_disabled_reasoning=False,
     )
 
 

@@ -12,22 +12,26 @@ from twon_lss.utility import LLM, Chat, Message
 class WP3LLM(LLM):
     api_key: str
     url: str
+    enforce_disabled_reasoning: bool = True
+    missed_responses: int = 0
+    max_missed_responses: int = 5
 
     def _query(self, payload):
         headers: dict = {"Authorization": f"Bearer {self.api_key}"}
         response = requests.post(self.url, headers=headers, json=payload)
         return response.json()
     
-    def generate(self, chat: Chat, max_retries: int = 3, enforce_disabled_reasoning = True) -> str:
+    def generate(self, chat: Chat, max_retries: int = 5) -> str:
 
         try:
             payload = {
                 "input": {
-                    "messages": chat.model_dump()
+                    "messages": chat.model_dump(),
+                    "sampling_params": {"max_tokens": 400}
                 }
             }
 
-            if enforce_disabled_reasoning:
+            if self.enforce_disabled_reasoning:
                 for message in payload["input"]["messages"]:
                     if message["role"] == "user":
                         message["content"] += " /no_think"
@@ -36,14 +40,20 @@ class WP3LLM(LLM):
             logging.info(f"LLM response: {response}")
 
             response = response["output"][0]["choices"][0]["tokens"][0]
-            if enforce_disabled_reasoning:
+            if self.enforce_disabled_reasoning:
                 response = response.split("</think>")[-1].strip()
 
         except Exception as e:
             logging.error(f"Failed to query LLM: {e}")
             if max_retries > 0:
-                time.sleep(5)
+                time.sleep(60)
                 return self.generate(chat, max_retries - 1)
+            
+            if self.missed_responses < self.max_missed_responses:
+                self.missed_responses += 1
+                logging.error(f"Missed responses: {self.missed_responses}")
+                return ""
+            
             raise RuntimeError(f"Failed to generate response from LLM after retries\n\n{chat.model_dump()}\n\n") from e
         
         return response
