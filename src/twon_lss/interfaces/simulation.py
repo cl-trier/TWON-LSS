@@ -52,8 +52,6 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
             with open(self.output_path / "time_per_step.log", "a") as f:
                 f.write(f"{n},{time_end - time_start:.2f}\n")
 
-            self._rankings_to_json(self.output_path / "rankings" / f"step_{n}_ranking")
-
             if n % 10 == 0:
                 self.network.to_json(self.output_path / "network.json")
                 self.feed.to_json(self.output_path / "feed.json")
@@ -63,6 +61,8 @@ class SimulationInterface(abc.ABC, pydantic.BaseModel):
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
             users=self.individuals.keys(), feed=self.feed, network=self.network
         )
+
+        self._rankings_to_json(path = self.output_path / "rankings" / f"step_{n}_ranking.json", rankings=post_scores)
 
         responses: typing.List[
             typing.Tuple[User, AgentInterface, typing.List[Post]]

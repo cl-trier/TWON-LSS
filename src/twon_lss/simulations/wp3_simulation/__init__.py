@@ -121,6 +121,8 @@ class Simulation(SimulationInterface):
         post_scores: typing.Dict[typing.Tuple[User, Post], float] = self.ranker(
             individuals=active_individuals, feed=stripped_feed, network=self.network
         )
+
+        self._rankings_to_json(path = self.output_path / "rankings" / f"step_{n}_ranking.json", rankings=post_scores)
         
         # For I/O bound: more workers; for CPU bound: stick to cpu_count
         logging.debug(f">i stepping through {len(active_individuals)} active individuals")
